@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, Send, Linkedin, Twitter, ArrowRight, Calendar, Building } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Instagram, ArrowRight, Calendar, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -25,7 +25,7 @@ export default function Contact({ className = '' }: ContactProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,64 +40,36 @@ export default function Contact({ className = '' }: ContactProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Flowing section - reveal animations
       gsap.fromTo(
         headlineRef.current,
         { y: '6vh', opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 75%',
-          },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 75%' },
         }
       );
-
       gsap.fromTo(
         contentRef.current,
         { y: '4vh', opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 70%',
-          },
+          y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 70%' },
         }
       );
-
       gsap.fromTo(
         formRef.current,
         { y: '8vh', opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 65%',
-          },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 65%' },
         }
       );
-
       gsap.fromTo(
         stepsRef.current,
         { y: '6vh', opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 60%',
-          },
+          y: 0, opacity: 1, duration: 0.6, ease: 'power2.out',
+          scrollTrigger: { trigger: section, start: 'top 60%' },
         }
       );
     }, section);
@@ -108,10 +80,7 @@ export default function Contact({ className = '' }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
     setIsSubmitting(false);
     setSubmitted(true);
     setFormData({ name: '', email: '', organization: '', message: '' });
@@ -121,11 +90,11 @@ export default function Contact({ className = '' }: ContactProps) {
     <section
       ref={sectionRef}
       id="contact"
-      className={`relative w-full min-h-screen bg-[#12131A] py-20 lg:py-32 ${className}`}
+      className={`relative w-full bg-[#12131A] py-20 lg:py-32 ${className}`}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
         {/* Headline */}
         <h2
@@ -134,30 +103,27 @@ export default function Contact({ className = '' }: ContactProps) {
         >
           Start a <span className="text-gradient">Project.</span>
         </h2>
-        
+
         <p className="text-center text-gray-400 text-lg max-w-xl mx-auto mb-16">
           Tell us what you're building. We'll respond within 2 business days.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {/* Left Column - Contact Info */}
+          {/* Left Column — Contact Info */}
           <div ref={contentRef} className="space-y-8">
             <div>
-              <h3 className="font-sora font-semibold text-xl text-white mb-6">
-                Get in touch
-              </h3>
-              
+              <h3 className="font-sora font-semibold text-xl text-white mb-6">Get in touch</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:info@dnomotorsports@gmail.com"
+                  href="mailto:info@dnomotorsports.com"
                   className="flex items-center gap-4 text-gray-300 hover:text-amber-400 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
                     <Mail className="w-5 h-5 text-amber-500" />
                   </div>
-                  <span>info@dnomotorsports@gmail.com</span>
+                  <span>info@dnomotorsports.com</span>
                 </a>
-                
+
                 <a
                   href="tel:+919820154567"
                   className="flex items-center gap-4 text-gray-300 hover:text-amber-400 transition-colors group"
@@ -167,7 +133,7 @@ export default function Contact({ className = '' }: ContactProps) {
                   </div>
                   <span>+91 98201 54567</span>
                 </a>
-                
+
                 <div className="flex items-center gap-4 text-gray-300">
                   <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-amber-500" />
@@ -182,16 +148,20 @@ export default function Contact({ className = '' }: ContactProps) {
               <h4 className="font-sora font-medium text-white mb-4">Follow us</h4>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/united-motorsports-academy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-amber-500 hover:border-amber-500/30 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/unitedmotorsportsacademy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-amber-500 hover:border-amber-500/30 transition-colors"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <Instagram className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -204,7 +174,7 @@ export default function Contact({ className = '' }: ContactProps) {
             </div>
           </div>
 
-          {/* Right Column - Form */}
+          {/* Right Column — Form */}
           <div
             ref={formRef}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
@@ -214,12 +184,8 @@ export default function Contact({ className = '' }: ContactProps) {
                 <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto mb-6">
                   <Send className="w-8 h-8 text-amber-500" />
                 </div>
-                <h3 className="font-sora font-semibold text-2xl text-white mb-2">
-                  Message Sent!
-                </h3>
-                <p className="text-gray-400">
-                  We'll get back to you within 2 business days.
-                </p>
+                <h3 className="font-sora font-semibold text-2xl text-white mb-2">Message Sent!</h3>
+                <p className="text-gray-400">We'll get back to you within 2 business days.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -248,7 +214,7 @@ export default function Contact({ className = '' }: ContactProps) {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="organization" className="text-gray-300">Organization</Label>
                   <Input
@@ -259,7 +225,7 @@ export default function Contact({ className = '' }: ContactProps) {
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-amber-500/50 focus:ring-amber-500/20"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-gray-300">Message</Label>
                   <Textarea
@@ -272,7 +238,7 @@ export default function Contact({ className = '' }: ContactProps) {
                     className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-amber-500/50 focus:ring-amber-500/20 resize-none"
                   />
                 </div>
-                
+
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -296,10 +262,8 @@ export default function Contact({ className = '' }: ContactProps) {
         </div>
 
         {/* Next Steps */}
-        <div ref={stepsRef} className="mb-16">
-          <h3 className="font-sora font-semibold text-xl text-white text-center mb-8">
-            Next Steps
-          </h3>
+        <div ref={stepsRef}>
+          <h3 className="font-sora font-semibold text-xl text-white text-center mb-8">Next Steps</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {nextSteps.map((step, index) => (
               <div
@@ -318,35 +282,6 @@ export default function Contact({ className = '' }: ContactProps) {
             ))}
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <img 
-                src="/do-logo.png" 
-                alt="D&O Advanced Engineering" 
-                className="w-10 h-10 object-contain"
-              />
-              <span className="font-sora text-sm text-gray-400">
-                Advanced Engineering
-              </span>
-            </div>
-            
-            <p className="text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} D&O Advanced Engineering. All rights reserved.
-            </p>
-            
-            <div className="flex gap-6">
-              <a href="#" className="text-sm text-gray-500 hover:text-amber-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-gray-500 hover:text-amber-400 transition-colors">
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </footer>
       </div>
     </section>
   );
