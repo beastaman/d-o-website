@@ -239,7 +239,9 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
                 </div>
               </div>
             ))}
-
+           <a
+           href='/automotive'
+           >
             <Button
               ref={btnRef}
               variant="outline"
@@ -248,6 +250,7 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
               View All Capabilities
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
+             </a>
           </div>
         </div>
       </div>

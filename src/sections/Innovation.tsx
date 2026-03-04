@@ -128,14 +128,14 @@ export default function Innovation({ className = '' }: InnovationProps) {
       ref={sectionRef}
       className={`relative w-full h-screen overflow-hidden ${className}`}
     >
-      {/* Background Image */}
+      {/* Background — semi-transparent so 3D model shows as ethereal backdrop */}
       <div className="bg-image absolute inset-0 z-0">
         <img
           src="/rnd_lab.jpg"
           alt="Continuous Innovation"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/85 via-[#0B0C0E]/70 to-[#0B0C0E]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/70 via-[#0B0C0E]/50 to-[#0B0C0E]/75" />
       </div>
 
       {/* Content */}

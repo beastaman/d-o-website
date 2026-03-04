@@ -1,0 +1,10 @@
+DEFENCE PROJECTS IMAGES
+=========================
+Upload the following files in this folder (JPG or PNG):
+
+  indrajaal-card.jpg     — Indrajaal Ranger for project card thumbnail
+  mingo-card.jpg         — MINGO Airboat for project card thumbnail
+  nhai-card.jpg          — NHAI Survey Vehicle for project card thumbnail
+
+Recommended resolution: 800x500px minimum (16:10 ratio works well for cards)
+Format: JPG (preferred) or PNG

@@ -234,7 +234,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0" />
-                <span className="text-sm text-gray-400">Pune, Maharashtra, India</span>
+                <span className="text-sm text-gray-400">TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710</span>
               </div>
             </div>
 

@@ -288,7 +288,7 @@ export default function About() {
           ))}
         </div>
       </section>
-
+{/* 
       {/* ── LEADERSHIP & TEAM ────────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 bg-[#0D0E12]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -336,7 +336,140 @@ export default function About() {
             </a>
           </div>
         </div>
-      </section>
+      </section> 
+
+      {/* ── TEAM SECTION ─────────────────────────────────────────────── */}
+<section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
+  <div className="text-center mb-16 reveal">
+    <SectionLabel>Our People</SectionLabel>
+    <SectionHeading>Leadership <span className="text-gradient">Team</span></SectionHeading>
+    <p className="text-gray-500 text-base mt-4 max-w-2xl mx-auto">
+      Diverse expertise, unified vision. Meet the minds driving indigenous engineering innovation.
+    </p>
+  </div>
+
+  <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Omkar Rane */}
+    <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
+      {/* Image placeholder */}
+      <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
+        <img
+          src="/team-omkar.jpg"
+          alt="Omkar Rane"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
+          <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+            OR
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-8 relative">
+        <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
+          Founder & CTO
+        </div>
+        <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
+          Omkar Rane
+        </h3>
+        <ul className="space-y-3 text-sm text-gray-400">
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>Master's in Motorsport Engineering from Perth, Australia</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>7+ years in motorsport engineering and vehicle design</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Karan Shah */}
+    <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
+      {/* Image placeholder */}
+      <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
+        <img
+          src="/team-karan.jpg"
+          alt="Karan Shah"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
+          <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+            KS
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-8 relative">
+        <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
+          Technical & Industry Advisor
+        </div>
+        <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
+          Karan Shah
+        </h3>
+        <ul className="space-y-3 text-sm text-gray-400">
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>Owner of KS Motorsport — One of India's first tuner shops</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>20+ years of motorsport industry expertise</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Nimish Sawant */}
+    <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
+      {/* Image placeholder */}
+      <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
+        <img
+          src="/team-nimish.jpg"
+          alt="Nimish Sawant"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
+          <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+            NS
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-8 relative">
+        <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
+          CEO & CMO
+        </div>
+        <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
+          Nimish Sawant
+        </h3>
+        <ul className="space-y-3 text-sm text-gray-400">
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>MBA from NMIMS, Mumbai</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>4+ years of strategic business consulting experience</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* ── MILESTONES TIMELINE ──────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">

@@ -1,0 +1,12 @@
+PROJECT VIDEOS / THUMBNAILS
+=============================
+Place video thumbnail images here for the video showcase gallery.
+
+  indrajaal-thumb.jpg      — Indrajaal Ranger video thumbnail
+  mingo-thumb.jpg          — MINGO Airboat video thumbnail
+  automotive-thumb.jpg     — Automotive projects video thumbnail
+  exhaust-thumb.jpg        — Exhaust build / fabrication video thumbnail
+  workshop-thumb.jpg       — Workshop / engineering process video thumbnail
+
+For video hosting: upload videos to YouTube/Vimeo and add the embed URL in the site code.
+Format: JPG thumbnails (16:9 ratio — 1280x720px recommended)

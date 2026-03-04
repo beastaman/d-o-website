@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
-import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight } from "lucide-react"
+import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight, Database } from "lucide-react"
 
 interface Navbar1Props {
   logoSrc?: string;
@@ -54,7 +54,8 @@ const navItems: NavItem[] = [
       { label: "Defence Projects", href: "/projects/defence", desc: "Composite armor & classified systems" },
     ],
   },
-  { label: "Blog", href: "/blog" },
+  { label: "Data Library", href: "/data-library",},
+  // { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ]
 

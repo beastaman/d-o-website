@@ -1,0 +1,21 @@
+3D SCAN DATA LIBRARY PREVIEW IMAGES
+======================================
+Upload one representative image per vehicle (scan preview / wireframe / clean render):
+
+  bmw-e36.jpg              — BMW E36 M3
+  bmw-e46.jpg              — BMW E46 330i
+  bmw-m5.jpg               — BMW M5 E60
+  mercedes-c63.jpg         — Mercedes-Benz C63 AMG (W204)
+  mercedes-g63.jpg         — Mercedes-Benz G63 AMG
+  porsche-911.jpg          — Porsche 911 (992) GT3
+  porsche-cayman.jpg       — Porsche Cayman GT4 RS
+  lamborghini-huracan.jpg  — Lamborghini Huracán EVO
+  ktm-rc390.jpg            — KTM RC 390 Cup
+  formula4.jpg             — Formula 4 Chassis
+  harley-fatboy.jpg        — Harley-Davidson Fat Boy
+  mahindra-thar.jpg        — Mahindra Thar 2021
+
+Recommended: Use scan point cloud / wireframe screenshots or clean studio photos
+Resolution: 800x600px minimum
+Format: JPG (preferred) or PNG
+NOTE: Watermark all preview images before uploading.

@@ -1,0 +1,14 @@
+MINGO AIRBOAT PROJECT IMAGES
+==============================
+Upload the following files in this folder (JPG or PNG):
+
+  hero.jpg           — Main hero image (wide shot of airboat on water, 4:3 ratio)
+  gallery-01.jpg     — Gallery image 1
+  gallery-02.jpg     — Gallery image 2
+  gallery-03.jpg     — Gallery image 3
+  gallery-04.jpg     — Gallery image 4
+  gallery-05.jpg     — Gallery image 5
+  gallery-06.jpg     — Gallery image 6
+
+Recommended resolution: 1200x900px minimum
+Format: JPG (preferred) or PNG

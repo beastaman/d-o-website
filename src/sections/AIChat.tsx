@@ -1,20 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { MessageCircle, X, Send, Bot, User, Trash2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
+  ts: Date;
 }
 
 const initialMessages: Message[] = [
   {
     id: '1',
     role: 'assistant',
-    content:
-      "Hello! I'm D&O Assistant. How can I help you learn about our engineering capabilities, projects, or partnership opportunities?",
+    content: "Hello! I'm D&O Assistant. How can I help you learn about our engineering capabilities, projects, or partnership opportunities?",
+    ts: new Date(),
   },
 ];
 
@@ -124,7 +124,7 @@ Investing in advanced research and development: materials innovation, design & e
 === CONTACT INFORMATION ===
 - Email: info@dnomotorsports@gmail.com
 - Phone: +91 98201 54567
-- Location: Pune, Maharashtra, India
+- Location: TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710
 - Next Steps: Technical Consultation, Facility Visit, Pilot Proposal
 - Tagline: "Engineering the Future, Together."
 `;
@@ -169,191 +169,343 @@ async function callOpenRouter(messages: { role: string; content: string }[]): Pr
   }
 }
 
+function fmtTime(d: Date) {
+  return d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+}
+
+const SUGGESTIONS = ['Projects', 'Defence Tech', 'Capabilities', 'Team', 'Get a Quote'];
+
 export default function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(initialMessages);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesBoxRef = useRef<HTMLDivElement>(null);
+  const chatWindowRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+  /* ─────────────────────────────────────────────────────────────────
+     SCROLL LOCK — capture-phase approach:
+     Lenis registers its wheel/touch listeners in the bubble phase.
+     By intercepting in the capture phase first with
+     stopImmediatePropagation(), Lenis never receives the event at
+     all. Events inside the chat window are left alone so native
+     overflow-y scroll works; events outside get preventDefault() so
+     the page cannot scroll.
+  ───────────────────────────────────────────────────────────────── */
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if (!isOpen) return;
 
-  const handleSend = async () => {
-    if (!input.trim() || isTyping) return;
+    const blockOutside = (e: Event) => {
+      // Stop Lenis (bubble phase) from ever seeing this event
+      e.stopImmediatePropagation();
+      // If the event originated outside the chat window, block native scroll too
+      if (!chatWindowRef.current?.contains(e.target as Node)) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('wheel', blockOutside, { capture: true, passive: false });
+    document.addEventListener('touchmove', blockOutside, { capture: true, passive: false });
+
+    return () => {
+      document.removeEventListener('wheel', blockOutside, { capture: true });
+      document.removeEventListener('touchmove', blockOutside, { capture: true });
+    };
+  }, [isOpen]);
+
+  /* ── Auto-focus input when chat opens ── */
+  useEffect(() => {
+    if (isOpen) {
+      const t = setTimeout(() => inputRef.current?.focus(), 280);
+      return () => clearTimeout(t);
+    }
+  }, [isOpen]);
+
+  /* ── Auto-scroll to latest message inside the messages box ── */
+  useEffect(() => {
+    const box = messagesBoxRef.current;
+    if (!box) return;
+    // Use requestAnimationFrame to scroll after DOM paints
+    requestAnimationFrame(() => {
+      box.scrollTop = box.scrollHeight;
+    });
+  }, [messages, isTyping]);
+
+  const handleSend = async (text?: string) => {
+    const msg = (text ?? input).trim();
+    if (!msg || isTyping) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input,
+      content: msg,
+      ts: new Date(),
     };
 
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsTyping(true);
 
-    // Build conversation history for context (last 10 messages to stay within token limits)
     const history = [...messages, userMessage]
-      .filter((m) => m.id !== '1') // skip initial greeting from history
+      .filter((m) => m.id !== '1')
       .slice(-10)
       .map((m) => ({ role: m.role, content: m.content }));
 
     const aiResponse = await callOpenRouter(history);
 
-    const assistantMessage: Message = {
-      id: (Date.now() + 1).toString(),
-      role: 'assistant',
-      content: aiResponse,
-    };
-
-    setMessages((prev) => [...prev, assistantMessage]);
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: (Date.now() + 1).toString(),
+        role: 'assistant',
+        content: aiResponse,
+        ts: new Date(),
+      },
+    ]);
     setIsTyping(false);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSend();
     }
   };
 
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
+  const clearChat = () => setMessages(initialMessages);
+
   return (
     <>
-      {/* Chat Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-[300] w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
-          isOpen
-            ? 'bg-gray-700 hover:bg-gray-600'
-            : 'bg-amber-500 hover:bg-amber-600 hover:scale-110'
-        }`}
-      >
-        {isOpen ? (
-          <X className="w-6 h-6 text-white" />
-        ) : (
-          <MessageCircle className="w-6 h-6 text-black" />
-        )}
-      </button>
-
-      {/* Chat Window */}
-      <div
-        className={`fixed bottom-24 right-6 z-[300] w-[380px] max-w-[calc(100vw-48px)] bg-[#1a1b23] border border-white/10 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
-          isOpen
-            ? 'opacity-100 translate-y-0 visible'
-            : 'opacity-0 translate-y-4 invisible'
-        }`}
-      >
-        {/* Header */}
-        <div className="bg-gradient-to-r from-amber-500/20 to-amber-600/10 border-b border-white/10 p-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-              <Bot className="w-5 h-5 text-amber-500" />
-            </div>
-            <div>
-              <h3 className="font-sora font-semibold text-white">D&O Assistant</h3>
-              <p className="text-xs text-gray-400">Powered by AI</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Messages */}
-        <div className="h-[350px] overflow-y-auto p-4 space-y-4 scrollbar-hide">
-          {messages.map((message) => (
-            <div
-              key={message.id}
-              className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}
+      {/* ── FAB Toggle Button ── */}
+      <div className="fixed bottom-5 right-5 z-[400] sm:bottom-6 sm:right-6">
+        <AnimatePresence mode="wait">
+          {!isOpen ? (
+            <motion.button
+              key="fab-open"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 420, damping: 26 }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
+              onClick={open}
+              aria-label="Open chat"
+              className="relative w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-amber-500 hover:bg-amber-400 flex items-center justify-center shadow-[0_6px_28px_rgba(246,168,0,0.5)] transition-colors"
+              style={{ width: '48px', height: '48px' }}
             >
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                  message.role === 'user' ? 'bg-amber-500/20' : 'bg-white/10'
-                }`}
-              >
-                {message.role === 'user' ? (
-                  <User className="w-4 h-4 text-amber-500" />
-                ) : (
-                  <Bot className="w-4 h-4 text-gray-400" />
-                )}
-              </div>
-              <div
-                className={`max-w-[75%] rounded-2xl px-4 py-3 text-sm whitespace-pre-line ${
-                  message.role === 'user'
-                    ? 'bg-amber-500 text-black rounded-br-none'
-                    : 'bg-white/10 text-gray-200 rounded-bl-none'
-                }`}
-              >
-                {message.content}
-              </div>
-            </div>
-          ))}
+              <span className="absolute inset-0 rounded-full bg-amber-400/30 animate-ping pointer-events-none" />
+              <MessageCircle className="w-5 h-5 text-black relative z-10" />
+            </motion.button>
+          ) : (
+            <motion.button
+              key="fab-close"
+              initial={{ scale: 0, opacity: 0, rotate: -90 }}
+              animate={{ scale: 1, opacity: 1, rotate: 0 }}
+              exit={{ scale: 0, opacity: 0, rotate: 90 }}
+              transition={{ type: 'spring', stiffness: 420, damping: 26 }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
+              onClick={close}
+              aria-label="Close chat"
+              className="w-12 h-12 rounded-full bg-[#13141c] border border-white/10 flex items-center justify-center shadow-lg hover:border-white/20 transition-colors"
+              style={{ width: '48px', height: '48px' }}
+            >
+              <X className="w-4 h-4 text-gray-300" />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
 
-          {isTyping && (
-            <div className="flex gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                <Bot className="w-4 h-4 text-gray-400" />
+      {/* ── Chat Window ── */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            ref={chatWindowRef}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 14, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            /* Responsive: full-width on mobile, fixed width on sm+ */
+            className="fixed z-[400] flex flex-col
+              /* mobile: full width, anchored to bottom */
+              bottom-[72px] left-3 right-3
+              /* sm+: anchored to bottom-right like a widget */
+              sm:left-auto sm:right-5 sm:bottom-[72px] sm:w-[360px]
+              md:right-6 md:w-[380px]"
+            style={{
+              maxHeight: 'calc(100dvh - 90px)',
+              background: 'linear-gradient(160deg, #13141c 0%, #0f1016 100%)',
+              border: '1px solid rgba(255,255,255,0.07)',
+              borderRadius: '20px',
+              boxShadow:
+                '0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(246,168,0,0.06), inset 0 1px 0 rgba(255,255,255,0.04)',
+            }}
+          >
+            {/* Amber top accent */}
+            <div className="h-[2px] flex-shrink-0 bg-gradient-to-r from-transparent via-amber-500 to-transparent rounded-t-[20px]" />
+
+            {/* ── Header ── */}
+            <div className="flex items-center gap-2.5 px-4 py-3 border-b border-white/[0.06] flex-shrink-0">
+              <div className="relative flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                  <Bot className="w-4 h-4 text-amber-400" />
+                </div>
+                <span className="absolute -bottom-px -right-px w-2 h-2 bg-emerald-500 rounded-full border-[1.5px] border-[#13141c]" />
               </div>
-              <div className="bg-white/10 rounded-2xl rounded-bl-none px-4 py-3">
-                <div className="flex gap-1">
-                  <span
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                    style={{ animationDelay: '0ms' }}
-                  />
-                  <span
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                    style={{ animationDelay: '150ms' }}
-                  />
-                  <span
-                    className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                    style={{ animationDelay: '300ms' }}
-                  />
+              <div className="flex-1 min-w-0">
+                <div className="font-sora font-semibold text-white text-[12.5px] leading-tight">D&O Assistant</div>
+                <div className="text-[9px] text-emerald-400/80 font-mono flex items-center gap-1 mt-px">
+                  <span className="w-1 h-1 bg-emerald-400 rounded-full" />
+                  Online · AI Powered
                 </div>
               </div>
+              <div className="flex items-center gap-0.5 flex-shrink-0">
+                {messages.length > 1 && (
+                  <button
+                    onClick={clearChat}
+                    title="Clear conversation"
+                    className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-700 hover:text-red-400 hover:bg-red-500/10 transition-all"
+                  >
+                    <Trash2 className="w-3 h-3" />
+                  </button>
+                )}
+                <button
+                  onClick={close}
+                  className="w-7 h-7 rounded-lg flex items-center justify-center text-gray-600 hover:text-white hover:bg-white/[0.07] transition-all"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
-          )}
 
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Input */}
-        <div className="border-t border-white/10 p-4">
-          <div className="flex gap-2">
-            <Input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Ask about D&O..."
-              className="flex-1 bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-amber-500/50 focus:ring-amber-500/20"
-            />
-            <Button
-              onClick={handleSend}
-              disabled={!input.trim() || isTyping}
-              size="icon"
-              className="bg-amber-500 hover:bg-amber-600 text-black disabled:opacity-50"
+            {/* ── Messages — native overflow-y scroll, Lenis is stopped so it works ── */}
+            <div
+              ref={messagesBoxRef}
+              className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-3"
+              style={{
+                scrollbarWidth: 'none',
+                /* Give it a fixed height so flex-1 + overflow-y-auto actually scrolls */
+                overscrollBehavior: 'contain',
+              }}
             >
-              <Send className="w-4 h-4" />
-            </Button>
-          </div>
+              {messages.map((msg) => (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className={`flex gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
+                >
+                  {/* Avatar */}
+                  <div
+                    className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                      msg.role === 'user'
+                        ? 'bg-amber-500/15 border border-amber-500/20'
+                        : 'bg-white/[0.06] border border-white/[0.08]'
+                    }`}
+                  >
+                    {msg.role === 'user' ? (
+                      <User className="w-3 h-3 text-amber-400" />
+                    ) : (
+                      <Bot className="w-3 h-3 text-amber-500/70" />
+                    )}
+                  </div>
 
-          {/* Quick Suggestions */}
-          <div className="flex flex-wrap gap-2 mt-3">
-            {['Capabilities', 'Projects', 'Contact', 'Defence', 'Team'].map((suggestion) => (
-              <button
-                key={suggestion}
-                onClick={() => {
-                  setInput(`Tell me about your ${suggestion.toLowerCase()}`);
-                }}
-                className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-full text-gray-400 hover:text-amber-400 hover:border-amber-500/30 transition-colors"
-              >
-                {suggestion}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+                  {/* Bubble */}
+                  <div className={`max-w-[80%] flex flex-col gap-0.5 ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
+                    <div
+                      className={`px-3 py-2 text-[12.5px] leading-relaxed whitespace-pre-line ${
+                        msg.role === 'user'
+                          ? 'bg-amber-500 text-black font-medium rounded-2xl rounded-tr-sm'
+                          : 'bg-white/[0.06] text-gray-200 rounded-2xl rounded-tl-sm border border-white/[0.06]'
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
+                    <span className="font-mono text-[8.5px] text-gray-700 px-1">{fmtTime(msg.ts)}</span>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Typing indicator */}
+              <AnimatePresence>
+                {isTyping && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.18 }}
+                    className="flex gap-2"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center flex-shrink-0">
+                      <Bot className="w-3 h-3 text-amber-500/70" />
+                    </div>
+                    <div className="px-3 py-2.5 bg-white/[0.06] border border-white/[0.06] rounded-2xl rounded-tl-sm flex items-center gap-1">
+                      {[0, 160, 320].map((delay) => (
+                        <span
+                          key={delay}
+                          className="w-1.5 h-1.5 bg-amber-500/50 rounded-full animate-bounce"
+                          style={{ animationDelay: `${delay}ms` }}
+                        />
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* ── Quick Suggestions — horizontal scroll row ── */}
+            <div
+              className="px-3 pb-2 flex gap-1.5 flex-shrink-0 overflow-x-auto"
+              style={{ scrollbarWidth: 'none' }}
+            >
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => handleSend(`Tell me about ${s.toLowerCase()}`)}
+                  disabled={isTyping}
+                  className="flex-shrink-0 px-2.5 py-1 text-[10px] font-mono bg-white/[0.04] border border-white/[0.07] rounded-full text-gray-600 hover:text-amber-400 hover:border-amber-500/25 hover:bg-amber-500/[0.04] transition-all disabled:opacity-30 disabled:pointer-events-none whitespace-nowrap"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+
+            {/* ── Input Area ── */}
+            <div className="px-3 pb-3 flex-shrink-0">
+              <div className="flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] rounded-xl px-3 py-2 focus-within:border-amber-500/35 focus-within:bg-white/[0.05] transition-all">
+                <input
+                  ref={inputRef}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  placeholder="Ask about D&O..."
+                  maxLength={500}
+                  className="flex-1 bg-transparent text-[12.5px] text-white placeholder:text-gray-600 outline-none"
+                />
+                <motion.button
+                  onClick={() => handleSend()}
+                  disabled={!input.trim() || isTyping}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="w-7 h-7 rounded-full bg-amber-500 hover:bg-amber-400 flex items-center justify-center flex-shrink-0 disabled:opacity-25 disabled:pointer-events-none transition-colors"
+                >
+                  <Send className="w-3 h-3 text-black" />
+                </motion.button>
+              </div>
+              <p className="text-center mt-1.5 font-mono text-[8.5px] text-gray-700 tracking-wide">
+                D&O AI · Enter to send
+              </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

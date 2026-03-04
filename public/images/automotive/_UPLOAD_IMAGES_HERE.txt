@@ -1,0 +1,14 @@
+AUTOMOTIVE PROJECTS IMAGES
+============================
+Upload the following files in this folder (JPG or PNG):
+
+  bmw-e36-drift.jpg           — BMW E36 drift build image
+  bmw-m2-bic.jpg              — BMW M2 at Buddh International Circuit
+  hd-titanium-exhaust.jpg     — Harley-Davidson titanium exhaust
+  lamborghini-exhaust.jpg     — Lamborghini custom header/exhaust
+  cad-prototyping.jpg         — CAD/SolidWorks design screen or model
+  leh-ladakh-record.jpg       — Leh-Ladakh to Kanyakumari record car
+  gallery-01.jpg to gallery-08.jpg — General gallery images (workshop, cars, exhaust work)
+
+Recommended resolution: 1200x900px minimum
+Format: JPG (preferred) or PNG

@@ -109,7 +109,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Location</div>
-                  <div className="text-gray-300">Pune, Maharashtra,<br />India 🇮🇳</div>
+                  <div className="text-gray-300">TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710,<br />India 🇮🇳</div>
                 </div>
               </div>
             </div>

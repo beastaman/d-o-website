@@ -138,7 +138,7 @@ export default function Contact({ className = '' }: ContactProps) {
                   <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-amber-500" />
                   </div>
-                  <span>Pune, Maharashtra, India</span>
+                  <span>TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710</span>
                 </div>
               </div>
             </div>

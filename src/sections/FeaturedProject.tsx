@@ -138,9 +138,16 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
       id="projects"
       className={`relative w-full h-screen overflow-hidden ${className}`}
     >
-      {/* Background */}
+      {/* Background — left opaque, right semi-transparent for 3D model peek */}
       <div className="absolute inset-0 z-0 bg-[#0B0C0E]">
         <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+        {/* Right-half transparency gradient so 3D canvas shows through subtly */}
+        <div
+          className="absolute inset-0 hidden lg:block"
+          style={{
+            background: 'linear-gradient(90deg, rgba(11,12,14,1) 0%, rgba(11,12,14,1) 45%, rgba(11,12,14,0.75) 70%, rgba(11,12,14,0.55) 100%)',
+          }}
+        />
       </div>
 
       {/* Content Grid */}
@@ -199,6 +206,9 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
 
           {/* CTA */}
           <div ref={ctaRef}>
+            <a            
+              href="/projects/indrajaal-ranger"
+              >
             <Button
               size="lg"
               className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(246,168,0,0.4)] group"
@@ -206,6 +216,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
               View Project Details
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
+            </a>
           </div>
         </div>
 
