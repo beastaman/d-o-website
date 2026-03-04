@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
-import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight, Database } from "lucide-react"
+import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight } from "lucide-react"
 
 interface Navbar1Props {
   logoSrc?: string;

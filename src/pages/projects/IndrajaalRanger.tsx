@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { Shield, Zap, Eye, Radio, ChevronLeft, ArrowRight, CheckCircle2, Lock, Star } from 'lucide-react';
+import { Shield, Zap, Eye, Radio, ChevronLeft, ArrowRight, Lock, Star } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 

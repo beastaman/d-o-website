@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight, Clock, Tag, Search, BookOpen,
-  Shield, Cpu, Wrench, FlaskConical, Zap, Globe
+  Shield, Wrench, FlaskConical, Zap, Globe
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);

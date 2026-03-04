@@ -288,7 +288,7 @@ const licenseInfo = [
 /* ────────────────────────────────────────────────────────────── */
 function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: (p: ScanProduct) => void }) {
   const c = licenseColors[product.license];
-  const isInquiry = product.license === 'Inquiry';
+  // const isInquiry = product.license === 'Inquiry';
 
   return (
     <motion.div

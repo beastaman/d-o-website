@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
-import { Zap, Settings, Wrench, Trophy, ArrowRight, ChevronLeft, ExternalLink } from 'lucide-react';
+import { Zap, Settings, Wrench, Trophy, ArrowRight, ChevronLeft } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
