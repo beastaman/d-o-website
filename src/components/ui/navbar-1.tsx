@@ -47,11 +47,8 @@ const navItems: NavItem[] = [
     label: "Projects",
     href: "#projects",
     children: [
-      { label: "Indrajaal Ranger", href: "/projects/indrajaal-ranger", desc: "India's first anti-drone vehicle" },
-      { label: "MINGO Airboat", href: "/projects/mingo-airboat", desc: "Flagship disaster management platform" },
-      { label: "NHAI Survey Vehicles", href: "/projects/nhai-vehicles", desc: "Highway inspection systems" },
-      { label: "Automotive Projects", href: "/projects/automotive", desc: "Custom fab, tuning & drift builds" },
-      { label: "Defence Projects", href: "/projects/defence", desc: "Composite armor & classified systems" },
+      { label: "Automotive Projects", href: "/projects/automotive", icon: Cpu, desc: "Drift builds, track records & resto-mods" },
+      { label: "Defence Projects", href: "/projects/defence", icon: Shield, desc: "Indrajaal, MINGO, NHAI & classified programs" },
     ],
   },
   { label: "Data Library", href: "/data-library",},

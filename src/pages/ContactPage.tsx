@@ -81,7 +81,7 @@ export default function ContactPage() {
             {/* Contact details */}
             <div className="space-y-5">
               <h3 className="font-sora font-semibold text-white text-xl">Contact Details</h3>
-              <a href="mailto:info@dnomotorsports.com"
+              <a href="mailto:design.dnomotorsports@gmail.com"
                 className="flex items-start gap-4 group"
               >
                 <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-colors">
@@ -89,7 +89,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Email</div>
-                  <div className="text-gray-300 group-hover:text-amber-400 transition-colors">info@dnomotorsports.com</div>
+                  <div className="text-gray-300 group-hover:text-amber-400 transition-colors">design.dnomotorsports@gmail.com</div>
                 </div>
               </a>
 

@@ -115,13 +115,13 @@ export default function Contact({ className = '' }: ContactProps) {
               <h3 className="font-sora font-semibold text-xl text-white mb-6">Get in touch</h3>
               <div className="space-y-4">
                 <a
-                  href="mailto:info@dnomotorsports.com"
+                  href="mailto:design.dnomotorsports@gmail.com"
                   className="flex items-center gap-4 text-gray-300 hover:text-amber-400 transition-colors group"
                 >
                   <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
                     <Mail className="w-5 h-5 text-amber-500" />
                   </div>
-                  <span>info@dnomotorsports.com</span>
+                  <span>design.dnomotorsports@gmail.com</span>
                 </a>
 
                 <a

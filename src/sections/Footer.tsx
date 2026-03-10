@@ -219,11 +219,11 @@ export default function Footer() {
             <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Connect</h4>
             <div className="space-y-4 mb-6">
               <a
-                href="mailto:info@dnomotorsports.com"
+                href="mailto:design.dnomotorsports@gmail.com"
                 className="flex items-start gap-3 group"
               >
                 <Mail className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className="text-sm text-gray-400 group-hover:text-white transition-colors break-all">info@dnomotorsports.com</span>
+                <span className="text-sm text-gray-400 group-hover:text-white transition-colors break-all">design.dnomotorsports@gmail.com</span>
               </a>
               <a
                 href="tel:+919820154567"

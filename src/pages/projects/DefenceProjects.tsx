@@ -18,7 +18,7 @@ const projects = [
     desc: "India's first indigenously designed and manufactured anti-drone ground vehicle. Delivered to the Border Security Force and showcased at the 61st BSF Raising Day Parade 2025.",
     classification: 'DELIVERED — PUBLIC',
     link: '/projects/indrajaal-ranger',
-    image: '/images/indrajaal/hero.jpg',
+    image: '/images/indrajaal/hero.png',
   },
   {
     id: 'mingo',
@@ -30,7 +30,7 @@ const projects = [
     desc: "India's first indigenously designed and manufactured airboat, delivered to the Maharashtra State Government for flood rescue and disaster management operations.",
     classification: 'DELIVERED — PUBLIC',
     link: '/projects/mingo-airboat',
-    image: '/images/mingo/hero.jpg',
+    image: '/images/mingo/hero.png',
   },
   {
     id: 'nhai',
@@ -42,7 +42,7 @@ const projects = [
     desc: 'Specialised multi-sensor road survey vehicles developed for the National Highways Authority of India, enabling high-speed pavement condition assessment across the national highway network.',
     classification: 'DELIVERED — PUBLIC',
     link: '/projects/nhai-vehicles',
-    image: '/images/nhai/hero.jpg',
+    image: '/images/nhai/hero.png',
   },
   {
     id: 'composite-armour',

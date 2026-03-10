@@ -371,7 +371,7 @@ export default function About() {
       {/* Content */}
       <div className="p-8 relative">
         <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
-          Founder & CTO
+          Founder & CEO
         </div>
         <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
           Omkar Rane
@@ -395,7 +395,7 @@ export default function About() {
       <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
         <img
           src="/team-karan.jpg"
-          alt="Karan Shah"
+          alt="Vedang Patil"
           className="w-full h-full object-cover"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = 'none';
@@ -411,25 +411,65 @@ export default function About() {
       {/* Content */}
       <div className="p-8 relative">
         <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
-          Technical & Industry Advisor
+          CTO 
         </div>
         <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
-          Karan Shah
+          Vedang Patil
         </h3>
         <ul className="space-y-3 text-sm text-gray-400">
           <li className="flex items-start gap-3">
             <span className="text-amber-500/60 mt-1">•</span>
-            <span>Owner of KS Motorsport — One of India's first tuner shops</span>
+            <span>Senior Technical Director</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="text-amber-500/60 mt-1">•</span>
-            <span>20+ years of motorsport industry expertise</span>
+            <span>General Engineering and Defense Projects.</span>
           </li>
         </ul>
       </div>
     </div>
 
-    {/* Nimish Sawant */}
+    {/* Shantanu K */}
+    <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
+      {/* Image placeholder */}
+      <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
+        <img
+          src="/team-nimish.jpg"
+          alt="Shantanu K"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
+          <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
+            NS
+          </div>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-8 relative">
+        <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
+          Senior Technical 
+        </div>
+        <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
+          Shantanu K
+        </h3>
+        <ul className="space-y-3 text-sm text-gray-400">
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>Senior Technical Director</span>
+          </li>
+          <li className="flex items-start gap-3">
+            <span className="text-amber-500/60 mt-1">•</span>
+            <span>Automtoive and Motor Projects</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+        {/* Nimish Sawant */}
     <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
       {/* Image placeholder */}
       <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">

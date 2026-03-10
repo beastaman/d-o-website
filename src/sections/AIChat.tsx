@@ -122,7 +122,7 @@ A comprehensive quality control framework ensuring reliability and performance:
 Investing in advanced research and development: materials innovation, design & engineering, process innovation, technology integration.
 
 === CONTACT INFORMATION ===
-- Email: info@dnomotorsports@gmail.com
+- Email: design.dnomotorsports@gmail.com
 - Phone: +91 98201 54567
 - Location: TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710
 - Next Steps: Technical Consultation, Facility Visit, Pilot Proposal
