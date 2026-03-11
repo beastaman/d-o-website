@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import {
   Database, FileCode2, Lock, ShieldCheck, Search,
-  ScanLine, ArrowRight, ChevronLeft, Filter, Star, Package,
-  FileCheck, Globe, Zap, Users, CheckCircle2, AlertTriangle,
+  ScanLine, ArrowRight, ChevronLeft, Filter, Star,
+  FileCheck, Zap, CheckCircle2, AlertTriangle,
   ChevronDown, X, Send, Car, Cpu
 } from 'lucide-react';
 
@@ -259,29 +259,6 @@ const licenseColors: Record<LicenseTier, string> = {
   Inquiry: 'bg-gray-500/15 text-gray-400 border-gray-500/25',
 };
 
-const licenseInfo = [
-  {
-    tier: 'Academic',
-    icon: Users,
-    color: 'teal',
-    price: 'Reduced pricing',
-    perks: ['Research & academic use', 'Non-commercial only', 'Attribution required', 'Up to 2 users'],
-  },
-  {
-    tier: 'Commercial',
-    icon: Package,
-    color: 'amber',
-    price: 'Standard pricing',
-    perks: ['Single-project use', 'Internal fabrication', 'Up to 5 users', 'NDA available'],
-  },
-  {
-    tier: 'Enterprise',
-    icon: Globe,
-    color: 'purple',
-    price: 'Custom pricing',
-    perks: ['Multi-project unlimited', 'Sub-licensing rights', 'Priority support', 'White-label option'],
-  },
-];
 
 /* ────────────────────────────────────────────────────────────── */
 /*  Sub-components                                                 */
@@ -297,7 +274,7 @@ function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.35 }}
-      className={`reveal-card group relative rounded-2xl border overflow-hidden transition-all duration-300
+      className={`group relative rounded-2xl border overflow-hidden transition-all duration-300
         ${product.featured ? 'border-amber-500/30 bg-amber-500/[0.03]' : 'border-white/[0.08] bg-white/[0.02]'}
         hover:border-amber-500/40 hover:shadow-[0_0_40px_rgba(246,168,0,0.06)]`}
     >
@@ -381,17 +358,11 @@ function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: 
           )}
         </div>
 
-        {/* Price + CTA */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/[0.06]">
-          <div>
-            <div className="font-mono text-[8px] text-gray-600 uppercase tracking-wide">Starting from</div>
-            <div className="font-sora font-bold text-lg text-amber-400">
-              {product.priceFrom}
-            </div>
-          </div>
+        {/* CTA */}
+        <div className="pt-4 border-t border-white/[0.06]">
           <button
             onClick={() => onInquire(product)}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold rounded-full bg-amber-500 hover:bg-amber-400 text-black transition-all hover:scale-105"
+            className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold rounded-full bg-amber-500 hover:bg-amber-400 text-black transition-all hover:scale-105"
           >
             <Send className="w-3 h-3" /> Request Data
           </button>
@@ -896,70 +867,6 @@ export default function DataLibrary() {
         </div>
       </section>
 
-      {/* ── License Tiers ── */}
-      <section className="border-t border-white/[0.06] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
-            <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Licensing</span>
-            <h2 className="font-sora font-bold text-[clamp(26px,4vw,46px)] text-white mt-3">Flexible License Tiers</h2>
-            <p className="text-gray-400 mt-3 max-w-xl mx-auto">
-              Choose the license that fits your project scope — from academic research to full enterprise deployment.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-5">
-            {licenseInfo.map((l) => {
-              const Icon = l.icon;
-              const isEnterprise = l.tier === 'Enterprise';
-              return (
-                <div
-                  key={l.tier}
-                  className={`reveal-card p-7 rounded-2xl border transition-all ${
-                    isEnterprise
-                      ? 'border-purple-500/30 bg-purple-500/[0.04] relative overflow-hidden'
-                      : l.tier === 'Commercial'
-                      ? 'border-amber-500/25 bg-amber-500/[0.03]'
-                      : 'border-teal-500/25 bg-teal-500/[0.03]'
-                  }`}
-                >
-                  {isEnterprise && (
-                    <div className="absolute top-0 right-0 bg-purple-500/20 text-purple-300 text-[9px] font-bold px-3 py-1 rounded-bl-xl font-mono tracking-wide">POPULAR</div>
-                  )}
-                  <div className={`w-11 h-11 rounded-xl border flex items-center justify-center mb-5 ${
-                    isEnterprise ? 'border-purple-500/30 text-purple-400' : l.tier === 'Commercial' ? 'border-amber-500/30 text-amber-400' : 'border-teal-500/30 text-teal-400'
-                  }`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="font-sora font-bold text-white text-xl mb-1">{l.tier}</h3>
-                  <div className={`text-sm font-medium mb-5 ${isEnterprise ? 'text-purple-400' : l.tier === 'Commercial' ? 'text-amber-400' : 'text-teal-400'}`}>
-                    {l.price}
-                  </div>
-                  <ul className="space-y-2.5">
-                    {l.perks.map((perk) => (
-                      <li key={perk} className="flex items-start gap-2.5 text-gray-400 text-sm">
-                        <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${isEnterprise ? 'text-purple-500' : l.tier === 'Commercial' ? 'text-amber-500' : 'text-teal-500'}`} />
-                        {perk}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => setSelectedProduct(products[0])}
-                    className={`w-full mt-6 py-3 rounded-full text-sm font-bold transition-all ${
-                      isEnterprise
-                        ? 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 border border-purple-500/30'
-                        : l.tier === 'Commercial'
-                        ? 'bg-amber-500/15 text-amber-400 hover:bg-amber-500/25 border border-amber-500/25'
-                        : 'bg-teal-500/15 text-teal-400 hover:bg-teal-500/25 border border-teal-500/25'
-                    }`}
-                  >
-                    Get Started
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* ── How It Works ── */}
       <section className="border-t border-white/[0.06] py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -971,7 +878,7 @@ export default function DataLibrary() {
             {[
               { n: '01', icon: Search, title: 'Browse & Select', desc: 'Find your vehicle from the catalogue. Filter by format, category, or search by name.' },
               { n: '02', icon: FileCheck, title: 'Submit Request', desc: 'Complete the access form with your vehicle requirement, use case, and contact details.' },
-              { n: '03', icon: ShieldCheck, title: 'Verification', desc: 'Our team reviews your requirement and confirms the license terms and applicable pricing.' },
+              { n: '03', icon: ShieldCheck, title: 'Verification', desc: 'Our team reviews your requirement and confirms the use case before preparing the data for delivery.' },
               { n: '04', icon: Send, title: 'Data via Email', desc: 'Approved scan data is shared securely via email. No public file hosting or direct downloads.' },
             ].map((step) => {
               const Icon = step.icon;
