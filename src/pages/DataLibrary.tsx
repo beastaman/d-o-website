@@ -320,12 +320,6 @@ function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: 
             <div className="font-sora font-bold text-white text-sm">{product.coverage}</div>
           </div>
         </div>
-        {/* Scan lines animation */}
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="w-full h-px bg-amber-500/10 mb-6" style={{ animationDelay: `${i * 0.1}s` }} />
-          ))}
-        </div>
       </div>
 
       <div className="p-5">
