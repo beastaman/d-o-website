@@ -45,23 +45,6 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Background parallax
-      gsap.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1.1 },
-        {
-          scale: 1,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-
       // Label entrance
       gsap.fromTo(labelRef.current,
         { x: -60, opacity: 0 },
@@ -172,16 +155,12 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
     <section
       ref={sectionRef}
       id="capabilities"
-      className={`relative w-full min-h-screen flex items-center overflow-hidden py-20 ${className}`}
+      className={`relative w-full min-h-screen flex items-center overflow-hidden py-20 bg-[#0B0C0E] ${className}`}
     >
-      {/* Background Image */}
-      <div className="bg-image absolute inset-0 z-0 will-change-transform">
-        <img
-          src="/capabilities_workshop.jpg"
-          alt="Engineering Capabilities"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E]/95 via-[#0B0C0E]/85 to-[#0B0C0E]/70" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 0% 50%, rgba(246,168,0,0.05) 0%, transparent 65%)' }} />
       </div>
 
       {/* Content */}

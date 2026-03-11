@@ -354,9 +354,9 @@ export default function About() {
       {/* Image placeholder */}
       <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
         <img
-          src="/team-omkar.jpg"
+          src="/images/team/omkar-founder.jpeg"
           alt="Omkar Rane"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = 'none';
           }}
@@ -394,7 +394,7 @@ export default function About() {
       {/* Image placeholder */}
       <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
         <img
-          src="/team-karan.jpg"
+          src="/images/team/vedang.jpeg"
           alt="Vedang Patil"
           className="w-full h-full object-cover"
           onError={(e) => {
@@ -436,7 +436,7 @@ export default function About() {
         <img
           src="/team-nimish.jpg"
           alt="Shantanu K"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = 'none';
           }}
@@ -476,7 +476,7 @@ export default function About() {
         <img
           src="/team-nimish.jpg"
           alt="Nimish Sawant"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           onError={(e) => {
             (e.target as HTMLImageElement).style.display = 'none';
           }}

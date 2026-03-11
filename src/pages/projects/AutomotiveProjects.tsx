@@ -125,7 +125,7 @@ const projects = [
     tags: ['Maruti 800', 'Red Bull', 'Wall of Death', 'India 2025', 'Stunt Build'],
     desc: 'Developed specifically for the Red Bull Wall of Death stunt event in India 2025, this Maruti 800 is a purpose-built machine engineered to operate under extreme centripetal forces on a vertical surface. Every aspect — from chassis reinforcement and roll-over protection to engine reliability under sustained lateral G-loading and fuel system integrity at extreme angles — was analysed and addressed.',
     highlights: ['Centripetal force engineering', 'Roll-over protection system', 'Engine reliability under lateral G', 'Fuel system at extreme angles', 'Chassis reinforcement', 'Red Bull Wall of Death India 2025'],
-    image: '/images/automotive/redbull-maruti800.jpg',
+    image: '/images/automotive/redbull-maruti.jpeg',
     color: 'red',
   },
   {

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -40,6 +40,7 @@ import MingoAirboat from '@/pages/projects/MingoAirboat';
 import NHAIVehicles from '@/pages/projects/NHAIVehicles';
 import AutomotiveProjects from '@/pages/projects/AutomotiveProjects';
 import DefenceProjects from '@/pages/projects/DefenceProjects';
+import GeneralEngineeringProjects from '@/pages/projects/GeneralEngineeringProjects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -98,11 +99,29 @@ function App() {
   //   getLenis();
   // }, []);
 
-  // ── On every route change: scroll to top, refresh ScrollTrigger ───────────
+  // ── Disable browser's native scroll restoration (it fights our reset) ──────
   useEffect(() => {
-    // lenisInstance?.scrollTo(0, { immediate: true });
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  // ── On every route change: scroll to top, refresh ScrollTrigger ───────────
+  // useLayoutEffect fires synchronously before paint, before child effects
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
-    const t = setTimeout(() => ScrollTrigger.refresh(), 150);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [location.pathname]);
+
+  useEffect(() => {
+    // After ScrollTrigger recalculates positions, reset scroll again in case
+    // pin spacer removal or new triggers shifted it
+    const t = setTimeout(() => {
+      ScrollTrigger.refresh();
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+    }, 50);
     return () => clearTimeout(t);
   }, [location.pathname]);
 
@@ -134,6 +153,7 @@ function App() {
         <Route path="/projects/nhai-vehicles" element={<NHAIVehicles />} />
         <Route path="/projects/automotive" element={<AutomotiveProjects />} />
         <Route path="/projects/defence" element={<DefenceProjects />} />
+        <Route path="/projects/engineering" element={<GeneralEngineeringProjects />} />
       </Routes>
 
       {/* Footer — all pages */}

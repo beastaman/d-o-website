@@ -67,14 +67,6 @@ export default function Partners({ className = '' }: PartnersProps) {
       });
 
       // ENTRANCE (0-30%)
-      // Background
-      scrollTl.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1.08, x: '4vw' },
-        { scale: 1, x: 0, ease: 'none' },
-        0
-      );
-
       // Left block from left
       scrollTl.fromTo(
         [labelRef.current, headlineRef.current, descRef.current],
@@ -147,16 +139,12 @@ export default function Partners({ className = '' }: PartnersProps) {
     <section
       ref={sectionRef}
       id="partners"
-      className={`relative w-full h-screen overflow-hidden ${className}`}
+      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
     >
-      {/* Background Image */}
-      <div className="bg-image absolute inset-0 z-0">
-        <img
-          src="/partners_infrastructure.jpg"
-          alt="Government Partners"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E]/95 via-[#0B0C0E]/90 to-[#0B0C0E]/80" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 60% at 100% 50%, rgba(246,168,0,0.05) 0%, transparent 65%)' }} />
       </div>
 
       {/* Content */}

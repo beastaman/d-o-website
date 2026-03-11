@@ -47,14 +47,6 @@ export default function Innovation({ className = '' }: InnovationProps) {
       });
 
       // ENTRANCE (0-30%)
-      // Background
-      scrollTl.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1.06, opacity: 0.7 },
-        { scale: 1, opacity: 1, ease: 'none' },
-        0
-      );
-
       // Label
       scrollTl.fromTo(
         labelRef.current,
@@ -112,12 +104,6 @@ export default function Innovation({ className = '' }: InnovationProps) {
         0.72
       );
 
-      scrollTl.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1 },
-        { scale: 1.04, ease: 'power2.in' },
-        0.7
-      );
     }, section);
 
     return () => ctx.revert();
@@ -126,16 +112,12 @@ export default function Innovation({ className = '' }: InnovationProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full h-screen overflow-hidden ${className}`}
+      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
     >
-      {/* Background — semi-transparent so 3D model shows as ethereal backdrop */}
-      <div className="bg-image absolute inset-0 z-0">
-        <img
-          src="/rnd_lab.jpg"
-          alt="Continuous Innovation"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/70 via-[#0B0C0E]/50 to-[#0B0C0E]/75" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 70% at 50% 50%, rgba(246,168,0,0.06) 0%, transparent 65%)' }} />
       </div>
 
       {/* Content */}

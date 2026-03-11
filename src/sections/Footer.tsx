@@ -13,20 +13,6 @@ const footerLinks = {
     { label: 'Quality Assurance', href: '/quality' },
     { label: 'Continuous Innovation', href: '/innovation' },
   ],
-  capabilities: [
-    { label: 'Engineering Capabilities', href: '/capabilities' },
-    { label: 'Automotive & Mobility', href: '/automotive' },
-    { label: 'Defence & Strategic', href: '/defence' },
-    { label: 'Advanced Manufacturing', href: '/manufacturing' },
-    { label: 'Materials & Innovation', href: '/materials' },
-  ],
-  projects: [
-    { label: 'Indrajaal Ranger', href: '/projects/indrajaal-ranger' },
-    { label: 'MINGO Airboat', href: '/projects/mingo-airboat' },
-    { label: 'NHAI Survey Vehicles', href: '/projects/nhai-vehicles' },
-    { label: 'Automotive Projects', href: '/projects/automotive' },
-    { label: 'Defence Projects', href: '/projects/defence' },
-  ],
 };
 
 const socialLinks = [
@@ -162,9 +148,9 @@ export default function Footer() {
         </div>
 
         {/* Middle: Nav Columns */}
-        <div ref={columnsRef} className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+        <div ref={columnsRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-14">
           {/* Company */}
-          <div className="footer-col col-span-2 md:col-span-1">
+          <div className="footer-col">
             <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
@@ -180,42 +166,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Capabilities */}
-          <div className="footer-col col-span-2 md:col-span-1">
-            <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Capabilities</h4>
-            <ul className="space-y-3">
-              {footerLinks.capabilities.map((link) => (
-                <li key={link.label}>
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-light text-left"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Projects */}
-          <div className="footer-col col-span-2 md:col-span-1">
-            <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Projects</h4>
-            <ul className="space-y-3">
-              {footerLinks.projects.map((link) => (
-                <li key={link.label}>
-                  <button
-                    onClick={() => handleNavClick(link.href)}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-light text-left"
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact + Socials */}
-          <div className="footer-col col-span-2 md:col-span-1">
+          <div className="footer-col">
             <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Connect</h4>
             <div className="space-y-4 mb-6">
               <a

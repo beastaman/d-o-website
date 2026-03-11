@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "motion/react"
-import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight } from "lucide-react"
+import { Menu, X, ChevronDown, Shield, Cpu, Cog, Layers, FlaskConical, BarChart2, ArrowUpRight,Wrench } from "lucide-react"
 
 interface Navbar1Props {
   logoSrc?: string;
@@ -49,6 +49,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Automotive Projects", href: "/projects/automotive", icon: Cpu, desc: "Drift builds, track records & resto-mods" },
       { label: "Defence Projects", href: "/projects/defence", icon: Shield, desc: "Indrajaal, MINGO, NHAI & classified programs" },
+      { label: "General Engineering", href: "/projects/engineering", icon: Wrench, desc: "Pod cars, film props, Netflix & Bollywood builds" },
     ],
   },
   { label: "Data Library", href: "/data-library",},

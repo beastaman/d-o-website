@@ -117,7 +117,7 @@ export default function Hero({ className = '' }: HeroProps) {
               tracking-[0.12em] sm:tracking-[0.2em] uppercase"
           >
             <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-pulse shrink-0" />
-            <span>India's Premier Defence Engineering Company</span>
+            <span>India's Premier Advance Engineering Company</span>
             <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500/55 shrink-0" />
           </span>
         </div>

@@ -49,23 +49,6 @@ export default function Quality({ className = '' }: QualityProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Background parallax
-      gsap.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1.08 },
-        {
-          scale: 1,
-          ease: 'none',
-          force3D: true,
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-
       // Label
       gsap.fromTo(labelRef.current,
         { x: -50, opacity: 0 },
@@ -158,16 +141,12 @@ export default function Quality({ className = '' }: QualityProps) {
     <section
       ref={sectionRef}
       id="quality"
-      className={`relative w-full min-h-screen flex flex-col justify-center overflow-hidden py-20 ${className}`}
+      className={`relative w-full min-h-screen flex flex-col justify-center overflow-hidden py-20 bg-[#0B0C0E] ${className}`}
     >
-      {/* Background Image */}
-      <div className="bg-image absolute inset-0 z-0 will-change-transform">
-        <img
-          src="/quality_testing.jpg"
-          alt="Quality Assurance"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/90 via-[#0B0C0E]/80 to-[#0B0C0E]/90" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 70% 55% at 100% 50%, rgba(246,168,0,0.05) 0%, transparent 65%)' }} />
       </div>
 
       {/* Content */}

@@ -54,14 +54,6 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
       });
 
       // ENTRANCE (0-30%)
-      // Background
-      scrollTl.fromTo(
-        section.querySelector('.bg-image'),
-        { scale: 1.06, opacity: 0.7 },
-        { scale: 1, opacity: 1, ease: 'none' },
-        0
-      );
-
       // Label + Headline from left
       scrollTl.fromTo(
         [labelRef.current, headlineRef.current],
@@ -141,16 +133,12 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full h-screen overflow-hidden ${className}`}
+      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
     >
-      {/* Background Image */}
-      <div className="bg-image absolute inset-0 z-0">
-        <img
-          src="/manufacturing_cnc.jpg"
-          alt="Precision Manufacturing"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C0E]/90 via-[#0B0C0E]/80 to-[#0B0C0E]/90" />
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-pattern opacity-30" />
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(246,168,0,0.05) 0%, transparent 65%)' }} />
       </div>
 
       {/* Content */}
