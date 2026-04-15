@@ -13,7 +13,7 @@ const specs = [
   { label: 'EW Payload', value: 'Integrated Counter-UAV System' },
   { label: 'Detection Range', value: 'Classified' },
   { label: 'Jamming Frequencies', value: 'Classified' },
-  { label: 'Power System', value: 'Dual — Generator + Battery' },
+  { label: 'Power System', value: 'Dual  Generator + Battery' },
   { label: 'Crew', value: '2 Operators' },
   { label: 'Origin', value: '100% Indigenous (Make in India)' },
 ];
@@ -22,7 +22,7 @@ const features = [
   {
     icon: Radio,
     title: 'Electronic Warfare Integration',
-    desc: 'Ruggedised EW payload modules for multi-frequency drone jamming, GPS spoofing, and communication disruption — integrated directly into the vehicle architecture.',
+    desc: 'Ruggedised EW payload modules for multi-frequency drone jamming, GPS spoofing, and communication disruption  integrated directly into the vehicle architecture.',
   },
   {
     icon: Eye,
@@ -32,7 +32,7 @@ const features = [
   {
     icon: Zap,
     title: 'Rapid Deployment Architecture',
-    desc: 'Purpose-designed vehicle layout enables full operational readiness within minutes of arrival — critical for rapid-response border and perimeter security scenarios.',
+    desc: 'Purpose-designed vehicle layout enables full operational readiness within minutes of arrival  critical for rapid-response border and perimeter security scenarios.',
   },
   {
     icon: Shield,
@@ -42,7 +42,7 @@ const features = [
   {
     icon: Lock,
     title: 'Classified Capabilities',
-    desc: 'Additional operational capabilities are classified and available for discussion under NDA with verified defence organisations and government agencies.',
+    desc: 'Additional operational capabilities are classified and available for discussion under NDA with verified Government organisations and government agencies.',
   },
 ];
 
@@ -52,7 +52,7 @@ const timeline = [
   { phase: 'EW Integration', period: 'Q3 2024', desc: 'Electronic warfare systems integration, cabling, power management, and operator interface development.' },
   { phase: 'Field Testing', period: 'Q4 2024', desc: 'Extensive field validation including mobility, EW effectiveness, and operator ergonomics testing.' },
   { phase: 'BSF Delivery', period: 'Jan 2025', desc: 'Platform delivered to Border Security Force with full documentation and operator training.' },
-  { phase: '61st BSF Parade', period: '2025', desc: 'Indrajaal Ranger featured at the 61st BSF Raising Day Parade — national showcase of indigenous defence capability.' },
+  { phase: '61st BSF Parade', period: '2025', desc: 'Indrajaal Ranger featured at the 61st BSF Raising Day Parade  national showcase of indigenous Government capability.' },
 ];
 
 export default function IndrajaalRanger() {
@@ -95,7 +95,7 @@ export default function IndrajaalRanger() {
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 font-medium border border-amber-500/25">
-                  <Star className="w-3 h-3" /> Delivered — BSF 2025
+                  <Star className="w-3 h-3" /> Delivered  BSF 2025
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-red-500/10 text-red-400 font-mono border border-red-500/20">
                   CLASSIFIED CAPABILITIES
@@ -109,7 +109,7 @@ export default function IndrajaalRanger() {
                 India's First Indigenously Designed Anti-Drone Vehicle
               </p>
               <p className="text-gray-400 leading-relaxed max-w-xl">
-                The Indrajaal Ranger is India's first completely indigenously designed and manufactured counter-UAV ground vehicle. Developed in partnership with the Border Security Force (BSF), it integrates an electronic warfare payload suite into a purpose-built tactical platform — capable of detecting, jamming, and neutralising drone threats in contested border environments.
+                The Indrajaal Ranger is India's first completely indigenously designed and manufactured counter-UAV ground vehicle. Developed in partnership with the Border Security Force (BSF), it integrates an electronic warfare payload suite into a purpose-built tactical platform  capable of detecting, jamming, and neutralising drone threats in contested border environments.
               </p>
               <div className="flex flex-wrap gap-4 mt-7">
                 <motion.button
@@ -136,9 +136,9 @@ export default function IndrajaalRanger() {
               className="relative rounded-2xl overflow-hidden border border-amber-500/20 aspect-[4/3] bg-white/[0.02]"
             >
               <img
-                src="/images/indrajaal/hero.png"
+                src="/images/indrajaal/gallery-01.jpeg"
                 alt="Indrajaal Ranger"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   (e.target as HTMLImageElement).src = '/images/placeholder.svg';
                 }}
@@ -146,13 +146,11 @@ export default function IndrajaalRanger() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="font-mono text-[9px] tracking-[0.2em] text-amber-500/70 uppercase">D&O Advanced Engineering × BSF</div>
-                <div className="text-white font-semibold mt-1">61st BSF Raising Day Parade — 2025</div>
+                <div className="text-white font-semibold mt-1">61st BSF Raising Day Parade  2025</div>
               </div>
               {/* Fallback overlay when no image */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none" id="img-placeholder">
                 <div className="text-center">
-                  <Shield className="w-14 h-14 text-amber-500/15 mx-auto mb-3" />
-                  <div className="text-gray-700 font-mono text-xs tracking-widest">INDRAJAAL RANGER</div>
                 </div>
               </div>
             </motion.div>
@@ -260,7 +258,7 @@ export default function IndrajaalRanger() {
             Visual Documentation
           </h2>
           <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            Photographic record of the Indrajaal Ranger — from build process to BSF deployment and the 61st Raising Day Parade.
+            Photographic record of the Indrajaal Ranger  from build process to BSF deployment and the 61st Raising Day Parade.
           </p>
         </div>
 
@@ -268,21 +266,21 @@ export default function IndrajaalRanger() {
         <div className="reveal-card relative rounded-2xl overflow-hidden border border-amber-500/20 aspect-[16/7] mb-4 group">
           <img
             src="/images/indrajaal/gallery-01.jpeg"
-            alt="Indrajaal Ranger — Feature Shot"
+            alt="Indrajaal Ranger  Feature Shot"
             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
             onError={(e) => { (e.target as HTMLImageElement).src = '/images/placeholder.svg'; }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/70 via-transparent to-transparent" />
           <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
             <div>
-              <div className="font-mono text-[9px] tracking-[0.2em] text-amber-500/70 uppercase mb-1">D&O × BSF — 2025</div>
-              <div className="text-white font-semibold text-sm">Indrajaal Ranger — Anti-Drone Platform</div>
+              <div className="font-mono text-[9px] tracking-[0.2em] text-amber-500/70 uppercase mb-1">D&O × BSF  2025</div>
+              <div className="text-white font-semibold text-sm">Indrajaal Ranger  Anti-Drone Platform</div>
             </div>
             <span className="font-mono text-[9px] px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/25 text-amber-400">01 / 08</span>
           </div>
         </div>
 
-        {/* Secondary grid — 3 images */}
+        {/* Secondary grid  3 images */}
         <div className="grid grid-cols-3 gap-4 mb-4">
           {[2, 3, 4].map((n) => (
             <div key={n} className="reveal-card relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] group">
@@ -300,7 +298,7 @@ export default function IndrajaalRanger() {
           ))}
         </div>
 
-        {/* Bottom row — 4 smaller images */}
+        {/* Bottom row  4 smaller images */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[5, 6].map((n) => (
             <div key={n} className="reveal-card relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] group">
@@ -324,10 +322,10 @@ export default function IndrajaalRanger() {
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Partner With D&O</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
-            Need an Indigenous Defence Platform?
+            Need an Indigenous Government Platform?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether you require a bespoke C-UAV vehicle, surveillance platform, or tactical mobility solution — D&O has the capability, clearance, and track record to deliver.
+            Whether you require a bespoke C-UAV vehicle, surveillance platform, or tactical mobility solution  D&O has the capability, clearance, and track record to deliver.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.button
@@ -335,7 +333,7 @@ export default function IndrajaalRanger() {
               whileHover={{ scale: 1.04, boxShadow: '0 0 32px rgba(246,168,0,0.35)' }}
               className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm"
             >
-              Start a Defence Project Enquiry <ArrowRight className="w-4 h-4" />
+              Start a Government Project Enquiry <ArrowRight className="w-4 h-4" />
             </motion.button>
             <motion.button
               onClick={() => navigate('/projects/mingo-airboat')}

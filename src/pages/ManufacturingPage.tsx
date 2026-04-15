@@ -21,25 +21,25 @@ const capabilities = [
   {
     icon: Box,
     title: 'Rapid Prototyping',
-    desc: 'From CAD to physical prototype in record time using additive manufacturing, casting, and hybrid fabrication — compressing product development cycles.',
+    desc: 'From CAD to physical prototype in record time using additive manufacturing, casting, and hybrid fabrication  compressing product development cycles.',
     tags: ['3D Printing', 'Casting', 'Hybrid Fab'],
   },
   {
     icon: Layers,
     title: 'Multi-Material Manufacturing',
-    desc: 'Complex assemblies combining metals, advanced polymers (PEEK, ULTEM), composites, and ceramics — enabling performance-optimised multi-material solutions.',
+    desc: 'Complex assemblies combining metals, advanced polymers (PEEK, ULTEM), composites, and ceramics  enabling performance-optimised multi-material solutions.',
     tags: ['PEEK', 'ULTEM', 'Composites', 'Ceramics'],
   },
   {
     icon: Microscope,
     title: 'Material Testing & Validation',
-    desc: 'In-house mechanical testing including tensile, impact, hardness, and fatigue analysis — ensuring every component meets specification before delivery.',
+    desc: 'In-house mechanical testing including tensile, impact, hardness, and fatigue analysis  ensuring every component meets specification before delivery.',
     tags: ['Tensile Testing', 'Fatigue Analysis', 'QA'],
   },
   {
     icon: Activity,
     title: 'Process Optimisation',
-    desc: 'Lean manufacturing principles applied to every production line — cycle time reduction, scrap minimisation, and continuous improvement frameworks.',
+    desc: 'Lean manufacturing principles applied to every production line  cycle time reduction, scrap minimisation, and continuous improvement frameworks.',
     tags: ['Lean Manufacturing', 'Cycle Time', 'Six Sigma'],
   },
 ];
@@ -47,8 +47,8 @@ const capabilities = [
 const process = [
   { step: '01', title: 'Requirements Analysis', desc: 'Deep dive into functional requirements, tolerances, operating environment, and regulatory constraints.' },
   { step: '02', title: 'Design & Simulation', desc: 'CAD/CAE models validated through FEA, CFD, and dynamic simulation before any material is committed.' },
-  { step: '03', title: 'Material Selection', desc: 'Optimal material chosen based on strength-to-weight, thermal resistance, and cost — sourced and quality-verified.' },
-  { step: '04', title: 'Prototype Build', desc: 'First-article fabrication using the actual production process — not shortcuts — for true validation data.' },
+  { step: '03', title: 'Material Selection', desc: 'Optimal material chosen based on strength-to-weight, thermal resistance, and cost  sourced and quality-verified.' },
+  { step: '04', title: 'Prototype Build', desc: 'First-article fabrication using the actual production process  not shortcuts  for true validation data.' },
   { step: '05', title: 'Testing & Validation', desc: 'Comprehensive in-house testing against spec. Accelerated life testing where required.' },
   { step: '06', title: 'Production & Delivery', desc: 'Full-rate production with quality gates at every stage. Complete documentation and traceability.' },
 ];
@@ -127,7 +127,7 @@ export default function ManufacturingPage() {
           </h1>
 
           <p className="text-gray-300 text-lg max-w-xl leading-relaxed">
-            Precision fabrication, reverse engineering, and rapid prototyping — delivered with the rigour of aerospace and the speed of an engineering startup.
+            Precision fabrication, reverse engineering, and rapid prototyping  delivered with the rigour of aerospace and the speed of an engineering startup.
           </p>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function ManufacturingPage() {
           <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Services</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">Manufacturing Capabilities</h2>
           <p className="text-gray-400 mt-4 max-w-xl">
-            From single prototype to production batch — our manufacturing arm delivers precision, consistency, and traceability at every step.
+            From single prototype to production batch  our manufacturing arm delivers precision, consistency, and traceability at every step.
           </p>
         </div>
 
@@ -190,7 +190,7 @@ export default function ManufacturingPage() {
               From Brief to Build
             </h2>
             <p className="text-gray-400 mt-4 max-w-xl">
-              Our six-stage manufacturing process eliminates guesswork — ensuring first-article success and production-ready outcomes.
+              Our six-stage manufacturing process eliminates guesswork  ensuring first-article success and production-ready outcomes.
             </p>
           </div>
 

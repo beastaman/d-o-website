@@ -145,7 +145,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
           className="text-center text-gray-300 text-lg max-w-2xl mb-8"
         >
           Investing in advanced research and development to maintain technological leadership. 
-          Materials, design, and process research—built into every program.
+          Materials, design, and process researchbuilt into every program.
         </p>
 
         {/* Innovation Areas */}

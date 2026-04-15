@@ -116,7 +116,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-500 text-sm max-w-xs leading-relaxed font-light">
-              Indigenous engineering excellence for defence, mobility & advanced manufacturing. Proudly made in India.
+              Indigenous engineering excellence for Government, mobility & advanced manufacturing. Proudly made in India.
             </p>
             {/* Parent company */}
             <a

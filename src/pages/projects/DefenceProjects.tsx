@@ -10,25 +10,25 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 'indrajaal',
-    title: 'Indrajaal Ranger — Anti-Drone Vehicle',
+    title: 'Indrajaal Ranger  Anti-Drone Vehicle',
     category: 'Counter-UAV Platform',
-    status: 'Delivered — BSF 2025',
+    status: 'Delivered  BSF 2025',
     statusColor: 'amber',
     tags: ['C-UAV', 'Electronic Warfare', 'BSF', 'Indigenous', 'Make in India'],
     desc: "India's first indigenously designed and manufactured anti-drone ground vehicle. Delivered to the Border Security Force and showcased at the 61st BSF Raising Day Parade 2025.",
-    classification: 'DELIVERED — PUBLIC',
+    classification: 'DELIVERED  PUBLIC',
     link: '/projects/indrajaal-ranger',
     image: '/images/indrajaal/hero.png',
   },
   {
     id: 'mingo',
-    title: 'MINGO Airboat — Disaster Response Platform',
+    title: 'MINGO Airboat  Disaster Response Platform',
     category: 'Emergency Response Vehicle',
-    status: 'Delivered — Maharashtra Govt.',
+    status: 'Delivered  Maharashtra Govt.',
     statusColor: 'blue',
     tags: ['Airboat', 'Disaster Management', 'Maharashtra', 'Shallow Water', 'Indigenous'],
     desc: "India's first indigenously designed and manufactured airboat, delivered to the Maharashtra State Government for flood rescue and disaster management operations.",
-    classification: 'DELIVERED — PUBLIC',
+    classification: 'DELIVERED  PUBLIC',
     link: '/projects/mingo-airboat',
     image: '/images/mingo/hero.png',
   },
@@ -40,7 +40,7 @@ const projects = [
     statusColor: 'green',
     tags: ['NHAI', 'Survey Vehicle', 'LiDAR', 'Highway', 'Multi-Sensor'],
     desc: 'Specialised multi-sensor road survey vehicles developed for the National Highways Authority of India, enabling high-speed pavement condition assessment across the national highway network.',
-    classification: 'DELIVERED — PUBLIC',
+    classification: 'DELIVERED  PUBLIC',
     link: '/projects/nhai-vehicles',
     image: '/images/nhai/hero.png',
   },
@@ -50,21 +50,21 @@ const projects = [
     category: 'Ballistic Protection Systems',
     status: 'Active Development',
     statusColor: 'red',
-    tags: ['Composite Armour', 'UHMWPE', 'Ballistic', 'Lightweight', 'Defence'],
+    tags: ['Composite Armour', 'UHMWPE', 'Ballistic', 'Lightweight', 'Government'],
     desc: 'Development of advanced lightweight ballistic protection panels using UHMWPE, ceramic, and PEEK composites. Provides certified protection levels at significantly reduced weight versus steel armour.',
-    classification: 'RESTRICTED — NDA REQUIRED',
+    classification: 'RESTRICTED  NDA REQUIRED',
     link: null,
     image: null,
   },
   {
     id: 'classified-1',
     title: 'Classified Electronic Systems Integration',
-    category: 'Strategic Defence',
-    status: 'Active — Classified',
+    category: 'Strategic Government',
+    status: 'Active  Classified',
     statusColor: 'red',
     tags: ['Classified', 'Electronic Systems', 'Strategic', 'Secure'],
-    desc: 'Ongoing classified engineering programs for strategic defence applications, conducted under strict security protocols in collaboration with Indian defence agencies. Details available under NDA.',
-    classification: 'CLASSIFIED — RESTRICTED',
+    desc: 'Ongoing classified engineering programs for strategic Government applications, conducted under strict security protocols in collaboration with Indian Government agencies. Details available under NDA.',
+    classification: 'CLASSIFIED  RESTRICTED',
     link: null,
     image: null,
   },
@@ -75,8 +75,8 @@ const projects = [
     status: 'Active Development',
     statusColor: 'orange',
     tags: ['QRF', 'Tactical', 'Mobility', 'Off-Road', 'Payload'],
-    desc: 'High-speed tactical platform designed for quick reaction force (QRF) operations — combining off-road capability, payload capacity, and mission-critical systems integration.',
-    classification: 'RESTRICTED — NDA REQUIRED',
+    desc: 'High-speed tactical platform designed for quick reaction force (QRF) operations  combining off-road capability, payload capacity, and mission-critical systems integration.',
+    classification: 'RESTRICTED  NDA REQUIRED',
     link: null,
     image: null,
   },
@@ -90,7 +90,7 @@ const colorMap: Record<string, { border: string; bg: string; text: string; badge
   orange: { border: 'border-orange-500/25', bg: 'bg-orange-500/[0.04]', text: 'text-orange-400', badge: 'bg-orange-500/15 text-orange-300 border-orange-500/25' },
 };
 
-export default function DefenceProjects() {
+export default function GovernmentProjects() {
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -123,11 +123,11 @@ export default function DefenceProjects() {
               </span>
             </div>
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-5">
-              <span className="w-8 h-px bg-amber-500" /> Defence Engineering
+              <span className="w-8 h-px bg-amber-500" /> Government Engineering
             </span>
-            <h1 className="font-sora font-bold text-[clamp(34px,5vw,64px)] text-white leading-[1.05] mb-5">Defence Projects Portfolio</h1>
+            <h1 className="font-sora font-bold text-[clamp(34px,5vw,64px)] text-white leading-[1.05] mb-5">Government Projects Portfolio</h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              D&O's defence engineering capability spans from India's first anti-drone vehicle to classified strategic programs — all designed and built indigenously under the Make in India initiative.
+              D&O's Government engineering capability spans from India's first anti-drone vehicle to classified strategic programs  all designed and built indigenously under the Make in India initiative.
             </p>
           </motion.div>
         </div>
@@ -229,7 +229,7 @@ export default function DefenceProjects() {
           <div>
             <div className="font-sora font-semibold text-gray-300 text-sm mb-1">Classified & Restricted Projects</div>
             <p className="text-gray-500 text-sm">
-              Several D&O defence projects are conducted under confidentiality agreements and cannot be publicly disclosed. Verified government agencies and defence contractors may request a classified capabilities briefing under NDA.
+              Several D&O Government projects are conducted under confidentiality agreements and cannot be publicly disclosed. Verified government agencies and Government contractors may request a classified capabilities briefing under NDA.
             </p>
             <button
               onClick={() => navigate('/contact')}
@@ -245,16 +245,16 @@ export default function DefenceProjects() {
       <section className="py-20 lg:py-28 border-t border-white/[0.06]">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <Shield className="w-10 h-10 text-amber-500/40 mx-auto mb-5" />
-          <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Need an Indigenous Defence Platform?</h2>
+          <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Need an Indigenous Government Platform?</h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            D&O has the engineering depth, security protocols, and proven track record to deliver mission-critical defence systems — built entirely in India.
+            D&O has the engineering depth, security protocols, and proven track record to deliver mission-critical Government systems  built entirely in India.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}
             whileHover={{ scale: 1.04, boxShadow: '0 0 32px rgba(246,168,0,0.35)' }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm"
           >
-            Start a Defence Project Enquiry <ArrowRight className="w-4 h-4" />
+            Start a Government Project Enquiry <ArrowRight className="w-4 h-4" />
           </motion.button>
         </div>
       </section>

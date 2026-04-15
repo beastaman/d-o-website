@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { submitContactInquiry } from '@/lib/airtable';
+import { showToast } from '@/lib/toaster';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,10 +82,22 @@ export default function Contact({ className = '' }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', organization: '', message: '' });
+    try {
+      await submitContactInquiry({
+        name: formData.name,
+        email: formData.email,
+        organization: formData.organization,
+        inquiryType: 'General Inquiry',
+        message: formData.message,
+      });
+      setSubmitted(true);
+      setFormData({ name: '', email: '', organization: '', message: '' });
+      showToast({ title: 'Message Sent!', message: "We'll respond within 2 business days.", variant: 'success' });
+    } catch {
+      showToast({ title: 'Submission Failed', message: 'Please try again or email us directly.', variant: 'error' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -109,7 +123,7 @@ export default function Contact({ className = '' }: ContactProps) {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {/* Left Column — Contact Info */}
+          {/* Left Column  Contact Info */}
           <div ref={contentRef} className="space-y-8">
             <div>
               <h3 className="font-sora font-semibold text-xl text-white mb-6">Get in touch</h3>
@@ -174,7 +188,7 @@ export default function Contact({ className = '' }: ContactProps) {
             </div>
           </div>
 
-          {/* Right Column — Form */}
+          {/* Right Column  Form */}
           <div
             ref={formRef}
             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"

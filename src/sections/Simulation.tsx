@@ -122,7 +122,7 @@ export default function Simulation({ className = '' }: SimulationProps) {
           ref={subheadlineRef}
           className="text-center text-gray-300 text-lg max-w-2xl"
         >
-          CFD, FEA, and multi-physics modeling—optimized before prototyping.
+          CFD, FEA, and multi-physics modelingoptimized before prototyping.
         </p>
 
         {/* Feature Tags */}

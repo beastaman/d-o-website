@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
+import { submitScanRequest, submitCustomScanRequest, submitLicenseInquiry } from '@/lib/airtable';
+import { showToast } from '@/lib/toaster';
 import {
   Database, FileCode2, Lock, ShieldCheck, Search,
   ScanLine, ArrowRight, ChevronLeft, Filter, Star,
@@ -44,7 +46,7 @@ interface ScanProduct {
 const products: ScanProduct[] = [
   {
     id: 'bmw-e36-full',
-    vehicle: 'BMW E36 M3 — Full Body Scan',
+    vehicle: 'BMW E36 M3  Full Body Scan',
     year: '1997',
     category: 'BMW',
     formats: ['STL', 'STEP', 'IGES', 'OBJ'],
@@ -60,7 +62,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'bmw-e46-chassis',
-    vehicle: 'BMW E46 330i — Chassis & Suspension',
+    vehicle: 'BMW E46 330i  Chassis & Suspension',
     year: '2003',
     category: 'BMW',
     formats: ['STEP', 'IGES', 'SolidWorks'],
@@ -75,7 +77,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'bmw-m5-e60',
-    vehicle: 'BMW M5 E60 — Exterior Surface',
+    vehicle: 'BMW M5 E60  Exterior Surface',
     year: '2008',
     category: 'BMW',
     formats: ['STL', 'OBJ', 'STEP'],
@@ -91,7 +93,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'mercedes-w204-full',
-    vehicle: 'Mercedes-Benz C63 AMG (W204) — Full Scan',
+    vehicle: 'Mercedes-Benz C63 AMG (W204)  Full Scan',
     year: '2012',
     category: 'Mercedes-Benz',
     formats: ['STL', 'STEP', 'IGES', 'CATIA'],
@@ -107,7 +109,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'mercedes-g63',
-    vehicle: 'Mercedes-Benz G63 AMG — Exterior',
+    vehicle: 'Mercedes-Benz G63 AMG  Exterior',
     year: '2021',
     category: 'Mercedes-Benz',
     formats: ['STL', 'STEP', 'OBJ'],
@@ -123,7 +125,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'porsche-911-992',
-    vehicle: 'Porsche 911 (992) GT3 — Full Scan',
+    vehicle: 'Porsche 911 (992) GT3  Full Scan',
     year: '2022',
     category: 'Porsche',
     formats: ['STL', 'STEP', 'IGES', 'CATIA'],
@@ -140,7 +142,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'porsche-cayman-gt4',
-    vehicle: 'Porsche Cayman GT4 RS — Underbody',
+    vehicle: 'Porsche Cayman GT4 RS  Underbody',
     year: '2023',
     category: 'Porsche',
     formats: ['STEP', 'IGES'],
@@ -155,7 +157,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'lamborghini-huracan',
-    vehicle: 'Lamborghini Huracán EVO — Full Scan',
+    vehicle: 'Lamborghini Huracán EVO  Full Scan',
     year: '2020',
     category: 'Performance',
     formats: ['STL', 'STEP', 'IGES', 'OBJ'],
@@ -171,7 +173,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'ktm-rc390-race',
-    vehicle: 'KTM RC 390 Cup — Race-Spec Full Scan',
+    vehicle: 'KTM RC 390 Cup  Race-Spec Full Scan',
     year: '2022',
     category: 'Motorsport',
     formats: ['STL', 'STEP', 'OBJ'],
@@ -187,7 +189,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'formula-kart-chassis',
-    vehicle: 'Formula 4 Chassis — Full Scan Package',
+    vehicle: 'Formula 4 Chassis  Full Scan Package',
     year: '2021',
     category: 'Motorsport',
     formats: ['STEP', 'IGES', 'CATIA', 'SolidWorks'],
@@ -202,7 +204,7 @@ const products: ScanProduct[] = [
   },
   {
     id: 'harley-davidson-fatboy',
-    vehicle: 'Harley-Davidson Fat Boy — Exhaust Titanium',
+    vehicle: 'Harley-Davidson Fat Boy  Exhaust Titanium',
     year: '2019',
     category: 'Custom',
     formats: ['STL', 'STEP', 'OBJ'],
@@ -364,7 +366,7 @@ function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: 
         {/* Email note */}
         <div className="mt-3 flex items-center gap-1.5 text-[10px] text-gray-600 font-mono">
           <span className="w-1 h-1 rounded-full bg-amber-500/50 shrink-0" />
-          Send requirements via email — data shared directly
+          Send requirements via email  data shared directly
         </div>
       </div>
     </motion.div>
@@ -375,120 +377,172 @@ function ProductCard({ product, onInquire }: { product: ScanProduct; onInquire: 
 /*  Inquiry / Request Modal                                        */
 /* ────────────────────────────────────────────────────────────── */
 function RequestModal({ product, onClose }: { product: ScanProduct | null; onClose: () => void }) {
+  const [form, setForm] = useState({ name: '', organization: '', email: '', useCase: '', license: 'Academic (Non-commercial)', notes: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   if (!product) return null;
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await submitScanRequest({
+        name: form.name,
+        email: form.email,
+        organization: form.organization,
+        vehicle: product.vehicle,
+        year: product.year,
+        category: product.category,
+        formats: product.formats,
+        useCase: form.useCase,
+        licenseRequired: form.license,
+        notes: form.notes,
+      });
+      setSubmitted(true);
+      showToast({ title: 'Request Received!', message: "We'll send the scan data to your email within 24–48 hours.", variant: 'success' });
+    } catch {
+      showToast({ title: 'Submission Failed', message: 'Please try again or email us directly.', variant: 'error' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const field = 'w-full px-3 py-2 bg-white/[0.05] border border-white/[0.08] rounded-lg text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors';
+
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[500] flex items-center justify-center p-4"
+        className="fixed inset-0 z-[500] flex items-end sm:items-center justify-center sm:p-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
+        <motion.div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={onClose} />
         <motion.div
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-          onClick={onClose}
-        />
-        <motion.div
-          className="relative w-full max-w-lg bg-[#0D0E12] border border-white/[0.1] rounded-3xl overflow-hidden"
-          initial={{ scale: 0.93, y: 20 }}
-          animate={{ scale: 1, y: 0 }}
-          exit={{ scale: 0.93, y: 20 }}
-          style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)' }}
+          className="relative w-full sm:max-w-2xl bg-[#0D0E12] border border-white/[0.1] sm:rounded-2xl rounded-t-2xl overflow-hidden"
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 40, opacity: 0 }}
+          transition={{ type: 'spring', damping: 28, stiffness: 320 }}
+          style={{ boxShadow: '0 24px 80px rgba(0,0,0,0.95), 0 0 0 1px rgba(255,255,255,0.04), 0 0 60px rgba(246,168,0,0.05)' }}
         >
           <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
 
-          <div className="p-7">
-            <div className="flex items-start justify-between mb-5">
-              <div>
-                <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500 uppercase mb-1">
-                  Request Scan Data
-                </div>
-                <h3 className="font-sora font-bold text-white text-lg leading-snug">{product.vehicle}</h3>
-                <div className="text-gray-500 text-xs mt-1">{product.year} · {product.accuracy} · {product.formats.join(' / ')}</div>
-                <div className="mt-2 inline-flex items-center gap-1.5 text-[10px] px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono">
-                  Data shared directly via email after verification
-                </div>
+          {/* Close button */}
+          <button onClick={onClose} className="absolute top-3 right-3 z-20 text-gray-500 hover:text-white p-1.5 rounded-lg hover:bg-white/[0.08] transition-colors">
+            <X className="w-4 h-4" />
+          </button>
+
+          {submitted ? (
+            <div className="py-12 px-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
               </div>
-              <button onClick={onClose} className="text-gray-600 hover:text-white p-1.5 rounded-lg hover:bg-white/[0.08] transition-colors">
-                <X className="w-5 h-5" />
+              <h4 className="font-sora font-bold text-white text-base mb-1.5">Request Received</h4>
+              <p className="text-gray-400 text-sm max-w-xs mx-auto leading-relaxed">Our team will review your requirements and send the scan data directly to your email within 24–48 hours.</p>
+              <button onClick={onClose} className="mt-4 px-6 py-2 text-sm font-bold bg-amber-500 text-black rounded-full hover:bg-amber-400 transition-colors">
+                Done
               </button>
             </div>
-
-            {submitted ? (
-              <div className="py-8 text-center">
-                <div className="w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle2 className="w-7 h-7 text-emerald-400" />
+          ) : (
+            <div className="flex flex-col sm:flex-row max-h-[80vh] sm:max-h-[75vh] overflow-hidden">
+              {/* Left panel – product info */}
+              <div className="sm:w-[40%] bg-amber-500/[0.04] border-b sm:border-b-0 sm:border-r border-white/[0.06] p-5 flex flex-col gap-3 sm:overflow-y-auto">
+                <div className="pr-6">
+                  <div className="font-mono text-[8px] tracking-[0.28em] text-amber-500 uppercase mb-1">Requesting</div>
+                  <h3 className="font-sora font-bold text-white text-[13px] leading-snug">{product.vehicle}</h3>
+                  <div className="text-gray-600 text-[11px] mt-1">{product.year} · {product.accuracy}</div>
                 </div>
-                <h4 className="font-sora font-bold text-white text-lg mb-2">Request Received</h4>
-                <p className="text-gray-400 text-sm">Our team will review your requirements and send the scan data directly to your email within 24–48 hours, along with license documentation.</p>
-                <button onClick={onClose} className="mt-5 px-6 py-2.5 text-sm font-bold bg-amber-500 text-black rounded-full hover:bg-amber-400 transition-colors">
-                  Close
-                </button>
+
+                <div className="flex flex-wrap gap-1">
+                  {product.formats.map((f) => (
+                    <span key={f} className={`text-[9px] px-1.5 py-px rounded border font-mono ${formatColors[f]}`}>{f}</span>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-2 gap-1.5">
+                  <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/[0.05]">
+                    <div className="font-mono text-[7px] text-amber-500/50 uppercase tracking-wider mb-0.5">Scan Points</div>
+                    <div className="font-sora font-bold text-white text-xs">{product.scanPoints}</div>
+                  </div>
+                  <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/[0.05]">
+                    <div className="font-mono text-[7px] text-amber-500/50 uppercase tracking-wider mb-0.5">Coverage</div>
+                    <div className="font-sora font-bold text-white text-xs">{product.coverage}</div>
+                  </div>
+                </div>
+
+                <div className="bg-white/[0.03] rounded-xl p-2.5 border border-white/[0.05] flex items-center gap-2">
+                  <FileCode2 className="w-3.5 h-3.5 text-amber-500/50 shrink-0" />
+                  <div>
+                    <div className="font-mono text-[7px] text-gray-600 uppercase tracking-wide">File Size</div>
+                    <div className="text-white text-xs font-semibold">{product.fileSize}</div>
+                  </div>
+                </div>
+
+                <div className="hidden sm:flex items-start gap-1.5 text-[10px] text-amber-500/50 font-mono leading-snug mt-auto pt-2 border-t border-white/[0.05]">
+                  <span className="w-1 h-1 rounded-full bg-amber-500/50 shrink-0 mt-1" />
+                  Data delivered via secure email after verification
+                </div>
               </div>
-            ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
-                <div className="space-y-3.5">
-                  <div className="grid grid-cols-2 gap-3">
+
+              {/* Right panel – form */}
+              <div className="flex-1 overflow-y-auto p-5">
+                <form onSubmit={handleSubmit} className="space-y-2.5">
+                  <div className="grid grid-cols-2 gap-2">
                     <div>
-                      <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Full Name *</label>
-                      <input required className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors" placeholder="Your name" />
+                      <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Name *</label>
+                      <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className={field} placeholder="Your name" />
                     </div>
                     <div>
-                      <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Company / Institute *</label>
-                      <input required className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors" placeholder="Organisation" />
+                      <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Organisation *</label>
+                      <input required value={form.organization} onChange={e => setForm(f => ({ ...f, organization: e.target.value }))} className={field} placeholder="Company / Institute" />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Email *</label>
-                    <input required type="email" className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors" placeholder="your@email.com" />
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Email *</label>
+                    <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className={field} placeholder="your@email.com" />
                   </div>
                   <div>
-                    <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Intended Use Case *</label>
-                    <select required className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors">
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Intended Use Case *</label>
+                    <select required value={form.useCase} onChange={e => setForm(f => ({ ...f, useCase: e.target.value }))} className={field}>
                       <option value="" className="bg-[#0D0E12]">Select use case</option>
-                      <option className="bg-[#0D0E12]">Body Kit Development</option>
-                      <option className="bg-[#0D0E12]">CFD Simulation</option>
-                      <option className="bg-[#0D0E12]">Reverse Engineering</option>
-                      <option className="bg-[#0D0E12]">Motorsport Aero Development</option>
-                      <option className="bg-[#0D0E12]">EV Conversion</option>
-                      <option className="bg-[#0D0E12]">FEA Structural Analysis</option>
-                      <option className="bg-[#0D0E12]">Race Car Preparation</option>
-                      <option className="bg-[#0D0E12]">Film / TV / Props</option>
-                      <option className="bg-[#0D0E12]">Academic Research</option>
-                      <option className="bg-[#0D0E12]">Defence / Government</option>
-                      <option className="bg-[#0D0E12]">Other</option>
+                      {['Body Kit Development','CFD Simulation','Reverse Engineering','Motorsport Aero Development','EV Conversion','FEA Structural Analysis','Race Car Preparation','Film / TV / Props','Academic Research','Government / Government','Other'].map(o => (
+                        <option key={o} className="bg-[#0D0E12]">{o}</option>
+                      ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">License Required</label>
-                    <select className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm focus:outline-none focus:border-amber-500/50 transition-colors">
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">License Required</label>
+                    <select value={form.license} onChange={e => setForm(f => ({ ...f, license: e.target.value }))} className={field}>
                       <option className="bg-[#0D0E12]">Academic (Non-commercial)</option>
                       <option className="bg-[#0D0E12]">Commercial (Single-project)</option>
                       <option className="bg-[#0D0E12]">Enterprise (Multi-project)</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Additional Notes</label>
-                    <textarea rows={2} className="w-full px-3.5 py-2.5 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors resize-none" placeholder="Any specific requirements..." />
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Additional Notes</label>
+                    <textarea rows={2} value={form.notes} onChange={e => setForm(f => ({ ...f, notes: e.target.value }))} className={`${field} resize-none`} placeholder="Any specific requirements..." />
                   </div>
-                </div>
 
-                <div className="mt-4 p-3 rounded-xl bg-amber-500/[0.04] border border-amber-500/15 flex items-start gap-2.5">
-                  <FileCheck className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0" />
-                  <p className="text-gray-500 text-xs leading-relaxed">
-                    D&O will share the data directly via email after reviewing your requirements. No files are available for direct download. Unauthorised redistribution is strictly prohibited.
-                  </p>
-                </div>
+                  <div className="p-2.5 rounded-lg bg-amber-500/[0.04] border border-amber-500/15 flex items-start gap-2">
+                    <FileCheck className="w-3.5 h-3.5 text-amber-500/60 mt-0.5 shrink-0" />
+                    <p className="text-gray-600 text-[11px] leading-relaxed">
+                      No direct downloads  data shared via email after review. Unauthorised redistribution prohibited.
+                    </p>
+                  </div>
 
-                <button type="submit" className="w-full mt-4 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm transition-colors flex items-center justify-center gap-2">
-                  <Send className="w-4 h-4" /> Send Request to D&O
-                </button>
-              </form>
-            )}
-          </div>
+                  <button type="submit" disabled={isSubmitting} className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-black font-bold rounded-full text-sm transition-all hover:shadow-[0_0_20px_rgba(246,168,0,0.35)] flex items-center justify-center gap-2">
+                    {isSubmitting ? (
+                      <><span className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" /> Sending...</>
+                    ) : (
+                      <><Send className="w-3.5 h-3.5" /> Send Request to D&O</>
+                    )}
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
         </motion.div>
       </motion.div>
     </AnimatePresence>
@@ -499,7 +553,25 @@ function RequestModal({ product, onClose }: { product: ScanProduct | null; onClo
 /*  Custom Scan Request Form                                       */
 /* ────────────────────────────────────────────────────────────── */
 function CustomScanForm() {
+  const [form, setForm] = useState({ name: '', company: '', email: '', vehicle: '', timeline: 'ASAP (Rush)', budget: 'Under ₹10,000', useCase: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await submitCustomScanRequest(form);
+      setSubmitted(true);
+      showToast({ title: 'Request Sent!', message: 'Our scanning team will contact you within 1 business day.', variant: 'success' });
+    } catch {
+      showToast({ title: 'Submission Failed', message: 'Please try again or email us directly.', variant: 'error' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const field = 'w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50';
 
   return (
     <div className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.03] overflow-hidden">
@@ -512,11 +584,11 @@ function CustomScanForm() {
             <span className="text-gradient">We Don't Have?</span>
           </h3>
           <p className="text-gray-400 leading-relaxed mb-6">
-            D&O operates a professional-grade structured-light and LiDAR scanning facility in Mumbai. If your vehicle isn't in our catalogue, we can scan it to your exact specification — from a single panel to a complete exterior and underbody capture.
+            D&O operates a professional-grade structured-light and LiDAR scanning facility in Mumbai. If your vehicle isn't in our catalogue, we can scan it to your exact specification  from a single panel to a complete exterior and underbody capture.
           </p>
           <ul className="space-y-3">
             {[
-              'Any vehicle — road car, race car, motorcycle, truck',
+              'Any vehicle  road car, race car, motorcycle, truck',
               'Turnaround: 3–10 business days depending on scope',
               'Deliverables in your chosen CAD format',
               'Full accuracy report and scan validation included',
@@ -539,29 +611,29 @@ function CustomScanForm() {
             <p className="text-gray-400 text-sm">Our scanning team will contact you within 1 business day with a quote and feasibility assessment.</p>
           </div>
         ) : (
-          <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Name *</label>
-                <input required className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50" placeholder="Your name" />
+                <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className={field} placeholder="Your name" />
               </div>
               <div>
                 <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Company</label>
-                <input className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50" placeholder="Organisation" />
+                <input value={form.company} onChange={e => setForm(f => ({ ...f, company: e.target.value }))} className={field} placeholder="Organisation" />
               </div>
             </div>
             <div>
               <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Email *</label>
-              <input required type="email" className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50" placeholder="your@email.com" />
+              <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className={field} placeholder="your@email.com" />
             </div>
             <div>
               <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Vehicle Required *</label>
-              <input required className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50" placeholder="e.g. Ferrari 488 GTB 2019 — Full exterior" />
+              <input required value={form.vehicle} onChange={e => setForm(f => ({ ...f, vehicle: e.target.value }))} className={field} placeholder="e.g. Ferrari 488 GTB 2019  Full exterior" />
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Timeline</label>
-                <select className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm focus:outline-none focus:border-amber-500/50">
+                <select value={form.timeline} onChange={e => setForm(f => ({ ...f, timeline: e.target.value }))} className={field}>
                   <option className="bg-[#0D0E12]">ASAP (Rush)</option>
                   <option className="bg-[#0D0E12]">1–2 Weeks</option>
                   <option className="bg-[#0D0E12]">2–4 Weeks</option>
@@ -570,7 +642,7 @@ function CustomScanForm() {
               </div>
               <div>
                 <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Budget Range</label>
-                <select className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm focus:outline-none focus:border-amber-500/50">
+                <select value={form.budget} onChange={e => setForm(f => ({ ...f, budget: e.target.value }))} className={field}>
                   <option className="bg-[#0D0E12]">Under ₹10,000</option>
                   <option className="bg-[#0D0E12]">₹10,000 – ₹25,000</option>
                   <option className="bg-[#0D0E12]">₹25,000 – ₹50,000</option>
@@ -580,15 +652,238 @@ function CustomScanForm() {
             </div>
             <div>
               <label className="block font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-1.5">Use Case *</label>
-              <textarea required rows={2} className="w-full px-4 py-3 bg-white/[0.05] border border-white/[0.08] rounded-xl text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 resize-none" placeholder="Describe your application (aero development, FEA input, film, etc.)" />
+              <textarea required rows={2} value={form.useCase} onChange={e => setForm(f => ({ ...f, useCase: e.target.value }))} className={`${field} resize-none`} placeholder="Describe your application (aero development, FEA input, film, etc.)" />
             </div>
-            <button type="submit" className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm transition-colors flex items-center justify-center gap-2">
-              <ScanLine className="w-4 h-4" /> Submit Scan Request
+            <button type="submit" disabled={isSubmitting} className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-black font-bold rounded-full text-sm transition-colors flex items-center justify-center gap-2">
+              {isSubmitting ? (
+                <><span className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> Sending...</>
+              ) : (
+                <><ScanLine className="w-4 h-4" /> Submit Scan Request</>
+              )}
             </button>
           </form>
         )}
       </div>
     </div>
+  );
+}
+
+/* ────────────────────────────────────────────────────────────── */
+/*  License Tiers Data                                             */
+/* ────────────────────────────────────────────────────────────── */
+type ActiveLicenseTier = 'Academic' | 'Commercial' | 'Enterprise';
+
+const licenseTiers = [
+  {
+    tier: 'Academic' as ActiveLicenseTier,
+    tagline: 'Research & Education',
+    color: 'teal',
+    borderClass: 'border-teal-500/25 hover:border-teal-500/50',
+    accentClass: 'text-teal-400',
+    bgClass: 'bg-teal-500/[0.06]',
+    iconBg: 'bg-teal-500/10 border-teal-500/25',
+    badgeClass: 'bg-teal-500/15 text-teal-400 border-teal-500/25',
+    description: 'For universities, research institutions and individual students working on non-commercial projects.',
+    features: [
+      'Non-commercial use only',
+      'Single researcher or team',
+      'Must cite D&O in publications',
+      'Accuracy report included',
+    ],
+    ideal: 'PhD research, university coursework, thesis projects',
+  },
+  {
+    tier: 'Commercial' as ActiveLicenseTier,
+    tagline: 'Single-Project Use',
+    color: 'amber',
+    borderClass: 'border-amber-500/40 hover:border-amber-500/70',
+    accentClass: 'text-amber-400',
+    bgClass: 'bg-amber-500/[0.06]',
+    iconBg: 'bg-amber-500/10 border-amber-500/25',
+    badgeClass: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+    description: 'For businesses and engineers building commercial products using scan data for one defined project.',
+    features: [
+      'One defined project scope',
+      'Up to 5-member team',
+      'Commercial product development',
+      'All file formats included',
+    ],
+    ideal: 'Body kit development, film production, EV conversion',
+    featured: true,
+  },
+  {
+    tier: 'Enterprise' as ActiveLicenseTier,
+    tagline: 'Multi-Project Access',
+    color: 'purple',
+    borderClass: 'border-purple-500/25 hover:border-purple-500/50',
+    accentClass: 'text-purple-400',
+    bgClass: 'bg-purple-500/[0.06]',
+    iconBg: 'bg-purple-500/10 border-purple-500/25',
+    badgeClass: 'bg-purple-500/15 text-purple-400 border-purple-500/25',
+    description: 'For engineering firms, OEMs and Government contractors requiring cross-project access and redistribution rights.',
+    features: [
+      'Unlimited project scope',
+      'Organisation-wide access',
+      'Custom NDA available',
+      'Priority delivery & support',
+    ],
+    ideal: 'Government contractors, motorsport teams, OEM suppliers',
+  },
+];
+
+/* ────────────────────────────────────────────────────────────── */
+/*  License Inquiry Modal                                          */
+/* ────────────────────────────────────────────────────────────── */
+function LicenseModal({ tier, onClose }: { tier: ActiveLicenseTier | null; onClose: () => void }) {
+  const [form, setForm] = useState({ name: '', email: '', organization: '', intendedUse: '', projectDescription: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  if (!tier) return null;
+
+  const info = licenseTiers.find(t => t.tier === tier)!;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await submitLicenseInquiry({
+        name: form.name,
+        email: form.email,
+        organization: form.organization,
+        licenseTier: tier,
+        intendedUse: form.intendedUse,
+        projectDescription: form.projectDescription,
+      });
+      setSubmitted(true);
+      showToast({ title: 'License Inquiry Sent!', message: "We'll review your requirements and get back to you shortly.", variant: 'success' });
+    } catch {
+      showToast({ title: 'Submission Failed', message: 'Please try again or email us directly.', variant: 'error' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const field = 'w-full px-3 py-2 bg-white/[0.05] border border-white/[0.08] rounded-lg text-white text-sm placeholder:text-gray-700 focus:outline-none focus:border-amber-500/50 transition-colors';
+
+  const topBarClass =
+    tier === 'Academic' ? 'bg-gradient-to-r from-transparent via-teal-400 to-transparent' :
+    tier === 'Commercial' ? 'bg-gradient-to-r from-transparent via-amber-500 to-transparent' :
+    'bg-gradient-to-r from-transparent via-purple-400 to-transparent';
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 z-[500] flex items-end sm:items-center justify-center sm:p-4"
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      >
+        <motion.div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={onClose} />
+        <motion.div
+          className="relative w-full sm:max-w-2xl bg-[#0D0E12] border border-white/[0.1] sm:rounded-2xl rounded-t-2xl overflow-hidden"
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 40, opacity: 0 }}
+          transition={{ type: 'spring', damping: 28, stiffness: 320 }}
+          style={{ boxShadow: '0 24px 80px rgba(0,0,0,0.95), 0 0 0 1px rgba(255,255,255,0.04)' }}
+        >
+          <div className={`h-[2px] w-full ${topBarClass}`} />
+
+          {/* Close button */}
+          <button onClick={onClose} className="absolute top-3 right-3 z-20 text-gray-500 hover:text-white p-1.5 rounded-lg hover:bg-white/[0.08] transition-colors">
+            <X className="w-4 h-4" />
+          </button>
+
+          {submitted ? (
+            <div className="py-12 px-8 text-center">
+              <div className="w-12 h-12 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto mb-3">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h4 className="font-sora font-bold text-white text-base mb-1.5">Inquiry Received</h4>
+              <p className="text-gray-400 text-sm max-w-xs mx-auto leading-relaxed">Our team will review your {tier} license request and respond within 24–48 hours with terms and next steps.</p>
+              <button onClick={onClose} className="mt-4 px-6 py-2 text-sm font-bold bg-amber-500 text-black rounded-full hover:bg-amber-400 transition-colors">
+                Done
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row max-h-[80vh] sm:max-h-[75vh] overflow-hidden">
+              {/* Left panel – tier info */}
+              <div className={`sm:w-[40%] ${info.bgClass} border-b sm:border-b-0 sm:border-r border-white/[0.06] p-5 flex flex-col gap-3 sm:overflow-y-auto`}>
+                <div className="pr-6">
+                  <span className={`inline-block font-mono text-[8px] tracking-[0.25em] uppercase mb-2 px-2.5 py-1 rounded-full border ${info.badgeClass}`}>
+                    {info.tagline}
+                  </span>
+                  <h3 className={`font-sora font-bold text-xl mt-1 ${info.accentClass}`}>{tier}</h3>
+                  <p className="text-gray-500 text-[11px] leading-relaxed mt-1">{info.description}</p>
+                </div>
+
+                {/* Features */}
+                <div className={`rounded-xl p-3 border ${info.borderClass} bg-white/[0.02] flex-1`}>
+                  <div className="space-y-2">
+                    {info.features.map(f => (
+                      <div key={f} className="flex items-start gap-2 text-[11px] text-gray-300">
+                        <CheckCircle2 className={`w-3 h-3 mt-0.5 shrink-0 ${info.accentClass}`} />
+                        {f}
+                      </div>
+                    ))}
+                  </div>
+                  <div className={`mt-2.5 pt-2 border-t border-white/[0.06] font-mono text-[9px] ${info.accentClass}`}>
+                    Ideal for: {info.ideal}
+                  </div>
+                </div>
+
+                <div className="hidden sm:flex items-start gap-1.5 text-[10px] text-gray-600 font-mono leading-snug">
+                  <span className="w-1 h-1 rounded-full bg-amber-500/40 shrink-0 mt-1" />
+                  License terms shared via email after review
+                </div>
+              </div>
+
+              {/* Right panel – form */}
+              <div className="flex-1 overflow-y-auto p-5">
+                <form onSubmit={handleSubmit} className="space-y-2.5">
+                  <div className="grid grid-cols-2 gap-2">
+                    <div>
+                      <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Full Name *</label>
+                      <input required value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} className={field} placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Organisation *</label>
+                      <input required value={form.organization} onChange={e => setForm(f => ({ ...f, organization: e.target.value }))} className={field} placeholder="Company / Institute" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Email *</label>
+                    <input required type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className={field} placeholder="your@email.com" />
+                  </div>
+                  <div>
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Intended Use *</label>
+                    <input required value={form.intendedUse} onChange={e => setForm(f => ({ ...f, intendedUse: e.target.value }))} className={field} placeholder="e.g. Motorsport aero, PhD thesis, OEM supply" />
+                  </div>
+                  <div>
+                    <label className="block font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase mb-1">Project Description *</label>
+                    <textarea required rows={3} value={form.projectDescription} onChange={e => setForm(f => ({ ...f, projectDescription: e.target.value }))} className={`${field} resize-none`} placeholder="Describe your project, vehicle(s) needed, and expected deliverables..." />
+                  </div>
+
+                  <div className="p-2.5 rounded-lg bg-amber-500/[0.04] border border-amber-500/15 flex items-start gap-2">
+                    <FileCheck className="w-3.5 h-3.5 text-amber-500/60 mt-0.5 shrink-0" />
+                    <p className="text-gray-600 text-[11px] leading-relaxed">
+                      D&O will review your use case and respond with license terms. No public downloads.
+                    </p>
+                  </div>
+
+                  <button type="submit" disabled={isSubmitting} className="w-full py-2.5 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-black font-bold rounded-full text-sm transition-all hover:shadow-[0_0_20px_rgba(246,168,0,0.35)] flex items-center justify-center gap-2">
+                    {isSubmitting ? (
+                      <><span className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" /> Submitting...</>
+                    ) : (
+                      <><Send className="w-3.5 h-3.5" /> Submit {tier} License Inquiry</>
+                    )}
+                  </button>
+                </form>
+              </div>
+            </div>
+          )}
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
@@ -601,6 +896,7 @@ export default function DataLibrary() {
   const [activeCategory, setActiveCategory] = useState<Category | 'All'>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<ScanProduct | null>(null);
+  const [selectedLicenseTier, setSelectedLicenseTier] = useState<ActiveLicenseTier | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [selectedFormats, setSelectedFormats] = useState<DataFormat[]>([]);
 
@@ -631,9 +927,12 @@ export default function DataLibrary() {
   return (
     <div ref={containerRef} className="min-h-screen bg-[#0B0C0E] pt-28">
 
-      {/* Modal */}
+      {/* Modals */}
       {selectedProduct && (
         <RequestModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+      )}
+      {selectedLicenseTier && (
+        <LicenseModal tier={selectedLicenseTier} onClose={() => setSelectedLicenseTier(null)} />
       )}
 
       {/* Back */}
@@ -667,11 +966,11 @@ export default function DataLibrary() {
               Applications
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              Browse D&O's library of high-accuracy structured-light and LiDAR scan data. Send us your vehicle requirement and use case — we will review and share the data directly with you via email.
+              Browse D&O's library of high-accuracy structured-light and LiDAR scan data. Send us your vehicle requirement and use case  we will review and share the data directly with you via email.
             </p>
             <div className="flex items-center gap-2 mt-4">
               <span className="inline-flex items-center gap-1.5 text-[11px] px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono">
-                No direct file download — data delivered via email after verification
+                No direct file download  data delivered via email after verification
               </span>
             </div>
             <div className="flex flex-wrap gap-4 mt-8">
@@ -742,6 +1041,73 @@ export default function DataLibrary() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* ── License Tiers ── */}
+      <section className="border-t border-white/[0.06] py-16 lg:py-20 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Access Tiers</span>
+            <h2 className="font-sora font-bold text-[clamp(26px,4vw,46px)] text-white mt-3">Choose Your License</h2>
+            <p className="text-gray-500 text-sm mt-3 max-w-lg mx-auto">
+              All scan data is delivered via email after use-case verification. Select the tier that matches your project scope.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {licenseTiers.map((t) => (
+              <div
+                key={t.tier}
+                className={`reveal-card relative rounded-2xl border ${t.borderClass} bg-white/[0.02] p-7 flex flex-col transition-all duration-300
+                  ${t.featured ? 'ring-1 ring-amber-500/30 shadow-[0_0_40px_rgba(246,168,0,0.07)]' : ''}`}
+              >
+                {t.featured && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 text-[9px] px-3 py-1 rounded-full bg-amber-500 text-black font-bold tracking-wide">
+                      <Star className="w-2.5 h-2.5" /> MOST POPULAR
+                    </span>
+                  </div>
+                )}
+
+                {/* Tier badge */}
+                <div className="mb-5">
+                  <span className={`inline-block text-[9px] font-mono px-2.5 py-1 rounded-full border tracking-[0.2em] uppercase ${t.badgeClass}`}>
+                    {t.tagline}
+                  </span>
+                  <h3 className={`font-sora font-bold text-2xl mt-3 ${t.accentClass}`}>{t.tier}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed mt-2">{t.description}</p>
+                </div>
+
+                {/* Features */}
+                <ul className="space-y-2.5 mb-6 flex-1">
+                  {t.features.map(f => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-gray-300">
+                      <CheckCircle2 className={`w-4 h-4 mt-0.5 shrink-0 ${t.accentClass}`} />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Ideal for */}
+                <div className={`mb-5 px-3 py-2 rounded-lg ${t.bgClass} border ${t.borderClass}`}>
+                  <span className="font-mono text-[8px] tracking-[0.2em] text-gray-600 uppercase">Ideal for</span>
+                  <p className={`text-xs mt-0.5 ${t.accentClass}`}>{t.ideal}</p>
+                </div>
+
+                <button
+                  onClick={() => setSelectedLicenseTier(t.tier)}
+                  className={`w-full py-3 rounded-full text-sm font-bold transition-all
+                    ${t.featured
+                      ? 'bg-amber-500 hover:bg-amber-400 text-black hover:shadow-[0_0_24px_rgba(246,168,0,0.35)]'
+                      : `border ${t.borderClass} ${t.accentClass} hover:${t.bgClass} bg-transparent`
+                    }`}
+                >
+                  Request {t.tier} License
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -940,7 +1306,7 @@ export default function DataLibrary() {
             <AlertTriangle className="w-5 h-5 text-yellow-600/70 mt-0.5 shrink-0" />
             <div className="text-gray-600 text-xs leading-relaxed">
               <span className="text-gray-500 font-medium">Technical Disclaimer: </span>
-              All scan data is provided for engineering reference and fabrication guidance only. Dimensions should be independently verified before manufacturing. D&O makes no warranty of fitness for a particular purpose. Vehicle trademarks and model names belong to their respective manufacturers — scan data represents physical measurements of physical objects and does not imply endorsement by or affiliation with any vehicle manufacturer. Users are responsible for compliance with applicable regulations in their jurisdiction.
+              All scan data is provided for engineering reference and fabrication guidance only. Dimensions should be independently verified before manufacturing. D&O makes no warranty of fitness for a particular purpose. Vehicle trademarks and model names belong to their respective manufacturers  scan data represents physical measurements of physical objects and does not imply endorsement by or affiliation with any vehicle manufacturer. Users are responsible for compliance with applicable regulations in their jurisdiction.
             </div>
           </div>
         </div>
@@ -965,7 +1331,7 @@ export default function DataLibrary() {
             The Precision Data Your Project Demands
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether you're developing a race-winning aero package or engineering a precision replica — D&O scan data is the foundation trusted by engineers across automotive, defence, and entertainment.
+            Whether you're developing a race-winning aero package or engineering a precision replica  D&O scan data is the foundation trusted by engineers across automotive, Government, and entertainment.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <motion.button

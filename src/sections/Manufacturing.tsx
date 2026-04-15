@@ -168,7 +168,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
               ref={paragraphRef}
               className="text-gray-300 text-lg leading-relaxed max-w-lg"
             >
-              From advanced polymers to multi-material assemblies—engineered with
+              From advanced polymers to multi-material assembliesengineered with
               repeatability and built to perform in the most demanding environments.
               Implementing lean manufacturing principles for maximum efficiency.
             </p>

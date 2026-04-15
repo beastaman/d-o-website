@@ -26,7 +26,7 @@ const coreValues = [
   {
     icon: ShieldCheck,
     title: 'Integrity',
-    desc: 'Transparent operations and ethical practices in all our engagements — from government contracts to private partnerships.',
+    desc: 'Transparent operations and ethical practices in all our engagements from government contracts to private partnerships.',
     color: 'from-emerald-500/20 to-emerald-500/5',
     border: 'border-emerald-500/30',
   },
@@ -40,17 +40,17 @@ const coreValues = [
 ];
 
 const teamRoles = [
-  { role: 'Founder & Visionary Leader', name: 'Omkar Rane', desc: 'Driving indigenous engineering innovation with deep expertise in automotive, defence, and advanced manufacturing systems.' },
-  { role: 'Engineering Core', name: 'Design & Simulation', desc: 'Specialists in CAD/CAE, multi-physics modeling, FEA, and CFD analysis — the minds behind every technical breakthrough.' },
+  { role: 'Founder & Visionary Leader', name: 'Omkar Rane', desc: 'Driving indigenous engineering innovation with deep expertise in automotive, Government, and advanced manufacturing systems.' },
+  { role: 'Engineering Core', name: 'Design & Simulation', desc: 'Specialists in CAD/CAE, multi-physics modeling, FEA, and CFD analysis the minds behind every technical breakthrough.' },
   { role: 'Technical Staff', name: 'Fabrication & Assembly', desc: 'Skilled craftspeople operating precision manufacturing equipment, composites, and prototype builds.' },
 ];
 
 const milestones = [
   { year: '2019', title: 'Founded', desc: 'D&O established with roots in motorsport and advanced vehicle engineering.' },
   { year: '2022', title: 'MINGO Airboat', desc: 'Flagship indigenous disaster management vehicle delivered to Maharashtra Government.' },
-  { year: '2023', title: 'NHAI Partnership', desc: 'Developed specialized road survey and inspection vehicles for national highways.' },
-  { year: '2024', title: 'Defence Breakthrough', desc: 'Contributed to India\'s first indigenously developed anti-drone vehicle — the Indrajaal Ranger.' },
-  { year: '2025', title: 'BSF Parade', desc: 'Indrajaal Ranger displayed at the 61st BSF Parade 2025 — national recognition.' },
+  { year: '2024', title: 'NHAI Partnership', desc: 'Developed specialized road survey and inspection vehicles for national highways.' },
+  { year: '2025', title: 'Government Breakthrough', desc: 'Contributed to India\'s first indigenously developed anti-drone vehicle the Indrajaal Ranger.' },
+  { year: '2025', title: 'BSF Parade', desc: 'Indrajaal Ranger displayed at the 61st BSF Parade 2025 national recognition.' },
 ];
 
 const stats = [
@@ -155,7 +155,7 @@ export default function About() {
               <span className="text-white/50">PURPOSE.</span>
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl font-light leading-relaxed">
-              D&O Advanced Engineering is India's foremost indigenous engineering company — operating at the intersection of automotive excellence, defence innovation, and precision manufacturing.
+              D&O Advanced Engineering is India's foremost indigenous engineering company operating at the intersection of automotive excellence, Government innovation, and precision manufacturing.
             </p>
           </motion.div>
         </div>
@@ -173,10 +173,10 @@ export default function About() {
             </SectionHeading>
             <div className="mt-6 space-y-4 text-gray-400 text-base leading-relaxed font-light">
               <p>
-                D&O Advanced Engineering is an India-based engineering and technology company specialising in advanced automotive systems, defence-grade engineering solutions, and high-performance mobility platforms.
+                D&O Advanced Engineering is an India-based engineering and technology company specialising in advanced automotive systems, Government-grade engineering solutions, and high-performance mobility platforms.
               </p>
               <p>
-                Evolving from deep roots in motorsport and applied vehicle engineering, D&O operates at the intersection of R&D, manufacturing, integration, and real-world deployment — delivering solutions that meet both civilian and strategic requirements.
+                Evolving from deep roots in motorsport and applied vehicle engineering, D&O operates at the intersection of R&D, manufacturing, integration, and real-world deployment delivering solutions that meet both civilian and strategic requirements.
               </p>
               <p>
                 The company functions as the parent engineering entity for{' '}
@@ -192,7 +192,7 @@ export default function About() {
               </p>
             </div>
             <a
-              href="/capabilities"
+              href="/automotive"
               className="group inline-flex items-center gap-2 mt-8 text-amber-400 hover:text-amber-300 font-medium transition-colors"
             >
               Explore our capabilities
@@ -239,7 +239,7 @@ export default function About() {
                 <div className="font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-4">01 / Vision</div>
                 <h3 className="font-sora font-bold text-2xl text-white mb-5">World-Class Indigenous Engineering</h3>
                 <p className="text-gray-400 leading-relaxed font-light">
-                  To build indigenous, world-class engineering solutions that meet global performance standards while strengthening India's capabilities across defence, mobility, and advanced vehicle systems.
+                  To build indigenous, world-class engineering solutions that meet global performance standards while strengthening India's capabilities across Government, mobility, and advanced vehicle systems.
                 </p>
               </div>
             </div>
@@ -252,7 +252,7 @@ export default function About() {
                 <div className="font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-4">02 / Mission</div>
                 <h3 className="font-sora font-bold text-2xl text-white mb-5">Design, Develop, Deploy</h3>
                 <p className="text-gray-400 leading-relaxed font-light">
-                  To design, develop, and deploy robust, scalable, and field-ready engineering systems through innovation, precision manufacturing, and interdisciplinary expertise — from concept to deployment.
+                  To design, develop, and deploy robust, scalable, and field-ready engineering systems through innovation, precision manufacturing, and interdisciplinary expertise from concept to deployment.
                 </p>
               </div>
             </div>
@@ -423,7 +423,7 @@ export default function About() {
           </li>
           <li className="flex items-start gap-3">
             <span className="text-amber-500/60 mt-1">•</span>
-            <span>General Engineering and Defense Projects.</span>
+            <span>General Engineering and Government Projects.</span>
           </li>
         </ul>
       </div>
@@ -564,7 +564,7 @@ export default function About() {
                 Ready to Engineer the Future?
               </h2>
               <p className="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
-                Partner with India's premier indigenous engineering firm for your defence, automotive, or manufacturing project.
+                Partner with India's premier indigenous engineering firm for your Government, automotive, or manufacturing project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

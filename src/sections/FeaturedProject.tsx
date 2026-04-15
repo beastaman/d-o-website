@@ -138,7 +138,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
       id="projects"
       className={`relative w-full h-screen overflow-hidden ${className}`}
     >
-      {/* Background — left opaque, right semi-transparent for 3D model peek */}
+      {/* Background  left opaque, right semi-transparent for 3D model peek */}
       <div className="absolute inset-0 z-0 bg-[#0B0C0E]">
         <div className="absolute inset-0 bg-grid-pattern opacity-20" />
         {/* Right-half transparency gradient so 3D canvas shows through subtly */}
@@ -232,7 +232,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
             {/* Image container */}
             <div className="relative rounded-2xl overflow-hidden border border-amber-500/20 shadow-2xl">
               <img
-                src="/indrajaal-project.png"
+                src="/images/indrajaal/gallery-07.png"
                 alt="Indrajaal Ranger - India's First Indigenous Anti-Drone Vehicle"
                 className="w-full h-auto object-cover"
               />

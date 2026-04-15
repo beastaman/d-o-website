@@ -13,9 +13,9 @@ const collaborations = [
     category: 'Ministry of Home Affairs',
     icon: Shield,
     color: 'amber',
-    headline: 'Indrajaal Ranger — India\'s First Anti-Drone Vehicle',
+    headline: 'Indrajaal Ranger  India\'s First Anti-Drone Vehicle',
     description:
-      'D&O partnered with the BSF to develop and deliver the Indrajaal Ranger — India\'s first indigenously designed and manufactured anti-drone ground vehicle. The platform integrates electronic warfare payloads for counter-UAV (C-UAV) operations and was officially displayed at the 61st BSF Parade 2025, receiving national recognition.',
+      'D&O Motorsports partnered with the Indrajaal to develop and deliver the Indrajaal Ranger for Indian Defence Forces India\'s first indigenously designed and manufactured anti-drone ground vehicle. The platform integrates electronic warfare payloads for counter-UAV (C-UAV) operations and was officially displayed at the 61st BSF Parade 2025, receiving national recognition.',
     deliverables: [
       'Indigenous C-UAV vehicle platform',
       'Electronic warfare payload integration',
@@ -31,9 +31,9 @@ const collaborations = [
     category: 'State Disaster Management',
     icon: Waves,
     color: 'blue',
-    headline: 'MINGO Airboat — India\'s First Indigenously Built Airboat',
+    headline: 'MINGO Airboat  India\'s First Indigenously Built Airboat',
     description:
-      'In collaboration with the Maharashtra Government\'s disaster management initiative, D&O designed and manufactured the MINGO — India\'s first indigenously designed and built airboat. The platform serves as a rapid-deployment disaster response vehicle for flood rescue operations, combining high-speed shallow-water capability with operational reliability for the state\'s emergency response teams.',
+      'In collaboration with the Maharashtra Government\'s disaster management initiative, D&O Motorsports designed and manufactured the MINGO  India\'s first indigenously designed and built airboat. The platform serves as a rapid-deployment disaster response vehicle for flood rescue operations, combining high-speed shallow-water capability with operational reliability for the state\'s emergency response teams.',
     deliverables: [
       'Full in-house airboat design (SolidWorks CAD)',
       'Aluminium hull fabrication & structural assembly',
@@ -51,7 +51,7 @@ const collaborations = [
     color: 'green',
     headline: 'NHAI Road Survey & Inspection Vehicles',
     description:
-      'D&O developed specialised road inspection and survey vehicles for NHAI\'s national highway monitoring programme. The platforms integrate multi-sensor systems including LiDAR, cameras, and pavement distress detection equipment — enabling high-speed data collection across India\'s highway network without disrupting traffic flow.',
+      'D&O Motorsports developed specialised road inspection and survey vehicles for NHAI\'s national highway monitoring programme. The platforms integrate multi-sensor systems including LiDAR, cameras, and pavement distress detection equipment  enabling high-speed data collection across India\'s highway network without disrupting traffic flow.',
     deliverables: [
       'Multi-sensor survey vehicle development',
       'LiDAR & camera integration',
@@ -121,7 +121,7 @@ export default function GovtCollaborations() {
               <span className="text-gradient">Critical Agencies</span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              D&O Advanced Engineering has delivered mission-critical platforms for India's border security, state disaster management, and national highway infrastructure — establishing a proven track record with the government agencies that matter most.
+              D&O Advanced Engineering has delivered mission-critical platforms for India's border security, state disaster management, and national highway infrastructure  establishing a proven track record with the government agencies that matter most.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -232,7 +232,7 @@ export default function GovtCollaborations() {
                 <span className="text-gradient">Delivery, Not Promises</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Government procurement is unforgiving. Agencies need partners who deliver exactly what is specified, on time, with full documentation — and who stand behind their products in the field.
+                Government procurement is unforgiving. Agencies need partners who deliver exactly what is specified, on time, with full documentation  and who stand behind their products in the field.
               </p>
               <ul className="space-y-3">
                 {trustCredentials.map((c) => (
@@ -246,7 +246,7 @@ export default function GovtCollaborations() {
 
             <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] aspect-[4/3] bg-white/[0.02] flex items-center justify-center">
               <img
-                src="/indrajaal-project.png"
+                src="/images/indrajaal/gallery-07.png"
                 alt="Indrajaal Ranger"
                 className="w-full h-full object-cover opacity-60"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -254,7 +254,7 @@ export default function GovtCollaborations() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/70 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="font-mono text-[9px] tracking-[0.2em] text-amber-500/70 uppercase">BSF Parade 2025</div>
-                <div className="text-white font-semibold mt-1">Indrajaal Ranger — India's First Anti-Drone Vehicle</div>
+                <div className="text-white font-semibold mt-1">Indrajaal Ranger  India's First Anti-Drone Vehicle</div>
               </div>
             </div>
           </div>
@@ -269,7 +269,7 @@ export default function GovtCollaborations() {
             Ready to Build Something Indigenous?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether you represent a ministry, PSU, or state agency — D&O has the engineering depth and proven delivery record to bring your project to life.
+            Whether you represent a ministry, PSU, or state agency  D&O has the engineering depth and proven delivery record to bring your project to life.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

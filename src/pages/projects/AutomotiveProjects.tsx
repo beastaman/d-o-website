@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 'e46-ls3-drift',
-    title: 'E46 LS3 — Competition Drift Car',
+    title: 'E46 LS3  Competition Drift Car',
     category: 'Competition Drift Build',
     tags: ['BMW E46', 'LS3 V8 Swap', 'Drift', 'Roll Cage', '3D Scanning'],
     desc: 'A purpose-built drift machine born from the marriage of BMW\'s iconic E46 chassis and the raw, naturally aspirated power of a GM LS3 V8. The entire engine bay was 3D scanned to develop bespoke mounting solutions with submillimetre accuracy. A full FIA-specification roll cage and comprehensive chassis stiffening programme transform the unibody into a competition-grade structure.',
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     id: 'e46-lt1-drift',
-    title: 'E46 LT1 — Competition Drift Car',
+    title: 'E46 LT1  Competition Drift Car',
     category: 'Competition Drift Build',
     tags: ['BMW E46', 'LT1 Camaro Swap', 'Drift', 'CNC Fabrication'],
     desc: 'This E46 receives the potent GM LT1 engine sourced from the Chevrolet Camaro, delivering a distinct powerband ideally suited for drift applications. The swap demanded bespoke engine mounts designed through 3D scanning of the chassis, CNC-machined adapter plates, and a fully revised wiring harness integration.',
@@ -30,7 +30,7 @@ const projects = [
   },
   {
     id: 'e38-ls3-restomod',
-    title: 'E38 LS3 — Luxury Resto-Mod',
+    title: 'E38 LS3  Luxury Resto-Mod',
     category: 'Street Luxury Resto-Mod',
     tags: ['BMW E38', '7 Series', 'LS3 Swap', 'Resto-Mod', 'Grand Tourer'],
     desc: 'BMW\'s flagship E38 7 Series reimagined by seamlessly integrating a GM LS3 V8 into the grand tourer\'s engine bay, delivering effortless power while preserving the refined luxury character of the original platform. Custom engine mounts developed through comprehensive 3D scanning ensure factory-level fitment.',
@@ -40,20 +40,20 @@ const projects = [
   },
   {
     id: 'e30-s54-purist',
-    title: 'E30 S54 — The Purist\'s Build',
+    title: 'E30 S54  The Purist\'s Build',
     category: 'Heritage Performance Build',
     tags: ['BMW E30', 'S54 Inline-6', 'E46 M3 Engine', 'Manual', 'In-House'],
-    desc: 'The legendary S54 inline-six from the E46 M3, mated to a manual gearbox, installed into the lightweight and communicative E30 chassis. Every element — from engine mounts and gearbox adapters to wiring integration and ancillary relocation — was designed, prototyped, and manufactured entirely within D&O\'s facility.',
+    desc: 'The legendary S54 inline-six from the E46 M3, mated to a manual gearbox, installed into the lightweight and communicative E30 chassis. Every element  from engine mounts and gearbox adapters to wiring integration and ancillary relocation  was designed, prototyped, and manufactured entirely within D&O\'s facility.',
     highlights: ['S54 inline-six from E46 M3', 'Manual gearbox integration', 'In-house engine mounts & adapters', 'Complete wiring integration', 'Ancillary relocation', '100% in-house design & manufacture'],
     image: '/images/automotive/e30-s54.jpg',
     color: 'green',
   },
   {
     id: 'padmini-sr20',
-    title: 'Fiat Padmini SR20 — Lightweight Icon',
+    title: 'Fiat Padmini SR20  Lightweight Icon',
     category: 'Lightweight Performance Build',
     tags: ['Fiat Padmini', 'Nissan SR20', 'Engine Swap', 'Sleeper', 'Indian Classic'],
-    desc: 'The Fiat Padmini, an icon of Indian automotive history, receives a radical transformation with the installation of a Nissan SR20 engine. Custom subframes, engine mounts, and drivetrain components were engineered to integrate the SR20 into the compact engine bay without compromising the car\'s original proportions — a sleeper of the highest order.',
+    desc: 'The Fiat Padmini, an icon of Indian automotive history, receives a radical transformation with the installation of a Nissan SR20 engine. Custom subframes, engine mounts, and drivetrain components were engineered to integrate the SR20 into the compact engine bay without compromising the car\'s original proportions  a sleeper of the highest order.',
     highlights: ['Nissan SR20 engine swap', 'Custom subframes & engine mounts', 'Bespoke drivetrain integration', 'Power-to-weight optimised', 'Original proportions preserved', 'Heritage-performance balance'],
     image: '/images/automotive/padmini-sr20.jpg',
     color: 'orange',
@@ -70,7 +70,7 @@ const projects = [
   },
   {
     id: 'bmw-m2-fastest',
-    title: 'BMW M2 — Fastest in the Country',
+    title: 'BMW M2  Fastest in the Country',
     category: 'Track Performance',
     tags: ['BMW M2', 'Lap Record', 'CFD Aero', 'Fastest M2', 'BIC'],
     desc: 'A comprehensive development programme encompassing aerodynamic analysis, suspension kinematics, and precision manufacturing has produced the fastest M2 in the country. The aerodynamic package includes a CFD-informed front splitter manufactured via 3D printing. Suspension arms were manufactured with revised kinematics to optimise camber curves and anti-dive characteristics.',
@@ -80,7 +80,7 @@ const projects = [
   },
   {
     id: 'e46-2jz-restomod',
-    title: 'E46 2JZ-GTE — Street Resto-Mod',
+    title: 'E46 2JZ-GTE  Street Resto-Mod',
     category: 'Street Resto-Mod',
     tags: ['BMW E46', 'Toyota 2JZ-GTE', 'Engine Swap', 'Street Build', 'Turbo'],
     desc: 'The legendary Toyota 2JZ meets the balanced BMW E46 platform. The integration demanded bespoke engine mounts, a revised transmission tunnel, and complete ancillary relocation to maintain a clean, OEM-quality engine bay presentation. The 2JZ\'s renowned strength and tuning potential ensure serious performance credentials with headroom for future development.',
@@ -90,7 +90,7 @@ const projects = [
   },
   {
     id: 'e46-ls3-street',
-    title: 'E46 LS3 Street — Luxury Resto-Mod',
+    title: 'E46 LS3 Street  Luxury Resto-Mod',
     category: 'Street Resto-Mod',
     tags: ['BMW E46', 'LS3 Swap', 'Street', 'Daily Driver', 'Resto-Mod'],
     desc: 'Distinct from its competition-focused sibling, this E46 LS3 build is engineered for the street. The GM LS3 V8 delivers effortless, naturally aspirated torque calibrated for refinement and drivability. Custom headers and a bespoke exhaust system ensure V8 integration that is seamless both mechanically and aesthetically.',
@@ -100,7 +100,7 @@ const projects = [
   },
   {
     id: 'fortuner-suspension',
-    title: 'Toyota Fortuner — Custom Suspension System',
+    title: 'Toyota Fortuner  Custom Suspension System',
     category: 'Off-Road Suspension Engineering',
     tags: ['Toyota Fortuner', 'Custom Suspension', 'Off-Road', 'Long Travel', 'High-Speed'],
     desc: 'A fully custom suspension setup featuring revised bump stop geometry engineered for extended wheel travel and high-speed bump absorption. The system allows the Fortuner to maintain composure and traction over rough terrain at speeds that would overwhelm a factory suspension, with progressive bump stops preventing harsh bottoming.',
@@ -110,40 +110,40 @@ const projects = [
   },
   {
     id: 'jimny-artdeco',
-    title: 'Suzuki Jimny — Art Deco Resto-Mod',
+    title: 'Suzuki Jimny  Art Deco Resto-Mod',
     category: 'Art Deco Resto-Mod',
     tags: ['Suzuki Jimny', 'Art Deco', 'Resto-Mod', 'Custom Bodywork', 'Bespoke'],
-    desc: 'This Suzuki Jimny build transcends conventional modification, drawing inspiration from the Art Deco movement to create a vehicle that is as visually striking as it is mechanically capable. Bespoke bodywork details, curated interior appointments, and a design language referencing geometric elegance — beneath the artistry, the Jimny retains its rugged, go-anywhere character.',
+    desc: 'This Suzuki Jimny build transcends conventional modification, drawing inspiration from the Art Deco movement to create a vehicle that is as visually striking as it is mechanically capable. Bespoke bodywork details, curated interior appointments, and a design language referencing geometric elegance  beneath the artistry, the Jimny retains its rugged, go-anywhere character.',
     highlights: ['Art Deco design language', 'Bespoke bodywork details', 'Curated interior appointments', 'Geometric symmetry elements', 'Mechanical improvements', 'Off-road capability retained'],
     image: '/images/automotive/jimny-artdeco.jpg',
     color: 'orange',
   },
   {
     id: 'redbull-maruti-wall',
-    title: 'Red Bull Maruti 800 — Wall of Death',
-    category: 'Stunt Engineering — Red Bull India 2025',
+    title: 'Red Bull Maruti 800  Wall of Death',
+    category: 'Stunt Engineering  Red Bull India 2025',
     tags: ['Maruti 800', 'Red Bull', 'Wall of Death', 'India 2025', 'Stunt Build'],
-    desc: 'Developed specifically for the Red Bull Wall of Death stunt event in India 2025, this Maruti 800 is a purpose-built machine engineered to operate under extreme centripetal forces on a vertical surface. Every aspect — from chassis reinforcement and roll-over protection to engine reliability under sustained lateral G-loading and fuel system integrity at extreme angles — was analysed and addressed.',
+    desc: 'Developed specifically for the Red Bull Wall of Death stunt event in India 2025, this Maruti 800 is a purpose-built machine engineered to operate under extreme centripetal forces on a vertical surface. Every aspect  from chassis reinforcement and roll-over protection to engine reliability under sustained lateral G-loading and fuel system integrity at extreme angles  was analysed and addressed.',
     highlights: ['Centripetal force engineering', 'Roll-over protection system', 'Engine reliability under lateral G', 'Fuel system at extreme angles', 'Chassis reinforcement', 'Red Bull Wall of Death India 2025'],
     image: '/images/automotive/redbull-maruti.jpeg',
     color: 'red',
   },
   {
     id: 'brio-1-8tsi',
-    title: 'Honda Brio 1.8 TSI — Fastest Street Car',
+    title: 'Honda Brio 1.8 TSI  Fastest Street Car',
     category: 'Track Performance / Street Car',
     tags: ['Honda Brio', 'Skoda 1.8 TSI', 'Engine Swap', 'Traction Control', 'Fastest Street Car'],
-    desc: 'The Honda Brio receives a comprehensive powertrain transformation with the installation of a Skoda 1.8 TSI turbocharged engine, creating the fastest street-legal car in its class. A bespoke traction control system was developed and integrated to manage the significant power-to-weight ratio — a holistic engineering programme where powertrain, electronics, chassis, and tyres were developed as an integrated package.',
+    desc: 'The Honda Brio receives a comprehensive powertrain transformation with the installation of a Skoda 1.8 TSI turbocharged engine, creating the fastest street-legal car in its class. A bespoke traction control system was developed and integrated to manage the significant power-to-weight ratio  a holistic engineering programme where powertrain, electronics, chassis, and tyres were developed as an integrated package.',
     highlights: ['Skoda 1.8 TSI turbo swap', 'Bespoke traction control system', 'Powertrain-electronics integration', 'Fastest street car in class', 'Chassis calibrated for PTW ratio', 'Holistic performance package'],
     image: '/images/automotive/brio-1-8tsi.jpg',
     color: 'amber',
   },
   {
     id: 'nano-pocket-rocket',
-    title: 'Tata Nano 1.6L — Pocket Rocket',
+    title: 'Tata Nano 1.6L  Pocket Rocket',
     category: 'Pocket Rocket Performance Build',
     tags: ['Tata Nano', 'Baleno 1.6L', 'Engine Swap', 'Lightweight', 'Power-to-Weight'],
-    desc: 'The Tata Nano reimagined as a genuine pocket rocket through the installation of a Maruti Suzuki Baleno 1.6-litre engine. The power-to-weight ratio of this build is extraordinary — the Nano\'s minimal kerb weight combined with the Baleno\'s willing engine creates acceleration and agility that belie its humble origins. A testament to D&O\'s ingenuity: world-class engineering is not defined by the platform you start with.',
+    desc: 'The Tata Nano reimagined as a genuine pocket rocket through the installation of a Maruti Suzuki Baleno 1.6-litre engine. The power-to-weight ratio of this build is extraordinary  the Nano\'s minimal kerb weight combined with the Baleno\'s willing engine creates acceleration and agility that belie its humble origins. A testament to D&O\'s ingenuity: world-class engineering is not defined by the platform you start with.',
     highlights: ['Baleno 1.6L engine swap', 'Custom engine mounts', 'Revised cooling & fuelling systems', 'Maximum power-to-weight ratio', 'Compact drivetrain integration', 'Ingenuity-driven engineering'],
     image: '/images/automotive/nano-pocket-rocket.jpg',
     color: 'blue',
@@ -200,7 +200,7 @@ export default function AutomotiveProjects() {
               Automotive Projects Gallery
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              From 500HP drift builds to national lap records — D&O's motorsport division delivers engineering excellence for high-performance vehicles, custom fabrication, and competitive racing programs.
+              From 500HP drift builds to national lap records  D&O's motorsport division delivers engineering excellence for high-performance vehicles, custom fabrication, and competitive racing programs.
             </p>
           </motion.div>
         </div>
@@ -283,7 +283,7 @@ export default function AutomotiveProjects() {
             From the Shop Floor
           </h2>
           <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            Behind every build — fabrication, welding, tuning, and testing at D&O's Mumbai workshop.
+            Behind every build  fabrication, welding, tuning, and testing at D&O's Mumbai workshop.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -307,7 +307,7 @@ export default function AutomotiveProjects() {
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Commission a Build</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Want a Custom Build?</h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether it's a track car, drift machine, or bespoke exhaust system — D&O turns automotive dreams into engineering reality.
+            Whether it's a track car, drift machine, or bespoke exhaust system  D&O turns automotive dreams into engineering reality.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

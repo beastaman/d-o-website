@@ -19,9 +19,9 @@ const specs = [
 ];
 
 const features = [
-  { icon: BarChart2, title: 'LiDAR Point Cloud Mapping', desc: '3D road surface mapping at highway speeds — capturing IRI, rutting depth, and lane geometry with sub-centimetre accuracy.' },
+  { icon: BarChart2, title: 'LiDAR Point Cloud Mapping', desc: '3D road surface mapping at highway speeds  capturing IRI, rutting depth, and lane geometry with sub-centimetre accuracy.' },
   { icon: Camera, title: 'HD Pavement Imaging', desc: 'Stereo camera arrays capture high-resolution pavement imagery for automated crack detection, marking assessment, and signage inventory.' },
-  { icon: Cpu, title: 'Real-Time Data Processing', desc: 'Onboard computing processes raw sensor data into structured GIS output in real time — minimising post-processing bottlenecks.' },
+  { icon: Cpu, title: 'Real-Time Data Processing', desc: 'Onboard computing processes raw sensor data into structured GIS output in real time  minimising post-processing bottlenecks.' },
   { icon: MapPin, title: 'GNSS-Referenced Asset Data', desc: 'Every data point is tagged with GNSS coordinates, enabling direct integration with NHAI\'s highway asset management system.' },
 ];
 
@@ -61,7 +61,7 @@ export default function NHAIVehicles() {
               <h1 className="font-sora font-bold text-[clamp(34px,5vw,64px)] text-white leading-[1.05] mt-3 mb-5">NHAI Survey Vehicles</h1>
               <p className="text-green-400 font-semibold text-lg mb-4">Highway Road Survey & Inspection Platforms for NHAI</p>
               <p className="text-gray-400 leading-relaxed max-w-xl">
-                D&O developed a fleet of specialised road survey vehicles for the National Highways Authority of India's highway monitoring programme. The platforms integrate multi-sensor systems for high-speed pavement condition assessment, asset inventory, and infrastructure data collection — enabling NHAI to maintain and prioritise maintenance across India's national highway network.
+                D&O developed a fleet of specialised road survey vehicles for the National Highways Authority of India's highway monitoring programme. The platforms integrate multi-sensor systems for high-speed pavement condition assessment, asset inventory, and infrastructure data collection  enabling NHAI to maintain and prioritise maintenance across India's national highway network.
               </p>
               <div className="flex flex-wrap gap-4 mt-7">
                 <motion.button onClick={() => navigate('/contact')} whileHover={{ scale: 1.04 }} className="inline-flex items-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm">
@@ -75,7 +75,7 @@ export default function NHAIVehicles() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="font-mono text-[9px] tracking-[0.2em] text-green-400/70 uppercase">D&O Advanced Engineering × NHAI</div>
-                <div className="text-white font-semibold mt-1">NHAI Survey Vehicle — Highway Operations</div>
+                <div className="text-white font-semibold mt-1">NHAI Survey Vehicle  Highway Operations</div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-center">
@@ -143,7 +143,7 @@ export default function NHAIVehicles() {
             Visual Documentation
           </h2>
           <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            NHAI survey vehicles in the field — sensor integration, highway operations, and pavement data capture.
+            NHAI survey vehicles in the field  sensor integration, highway operations, and pavement data capture.
           </p>
         </div>
 
@@ -166,7 +166,7 @@ export default function NHAIVehicles() {
           ))}
         </div>
 
-        {/* Bottom row — 4 smaller images */}
+        {/* Bottom row  4 smaller images */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[3, 4, 5, 6].map((n) => (
             <div key={n} className="reveal-card relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] group">

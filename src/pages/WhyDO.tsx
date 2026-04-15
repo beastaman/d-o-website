@@ -12,9 +12,9 @@ const advantages = [
     icon: Zap,
     title: 'End-to-End in One Roof',
     color: 'amber',
-    headline: 'From concept to deployment — zero hand-offs.',
+    headline: 'From concept to deployment  zero hand-offs.',
     desc: 'D&O is the only workshop in Mumbai capable of taking a project from initial design through CAD, simulation, fabrication, assembly, and testing entirely in-house. No outsourcing delays. No quality gaps between vendors.',
-    proof: 'Demonstrated on the Indrajaal Ranger — CAD to field deployment within a single engineering team.',
+    proof: 'Demonstrated on the Indrajaal Ranger  CAD to field deployment within a single engineering team.',
   },
   {
     icon: Layers,
@@ -22,13 +22,13 @@ const advantages = [
     color: 'blue',
     headline: 'Mechanical + Electrical + Software + 3D Printing.',
     desc: 'Our team spans every engineering discipline under a single roof: structural design, electronics integration, embedded firmware, and industrial 3D printing. This multidisciplinary depth eliminates the coordination overhead of multi-vendor projects.',
-    proof: 'Applied in the Ashwarthama movie prop project — electronics, custom code, and fabrication in one place.',
+    proof: 'Applied in the Bade Miyan Chote Miyan movie prop project  electronics, custom code, and fabrication in one place.',
   },
   {
     icon: Shield,
     title: 'Proven Government Track Record',
     color: 'green',
-    headline: 'BSF, Maharashtra Govt, NHAI — delivered on time.',
+    headline: 'BSF, Maharashtra Govt, NHAI  delivered on time.',
     desc: 'Three major government projects delivered successfully. The Indrajaal Ranger (BSF), MINGO Airboat (Maharashtra), and NHAI Survey Vehicles represent a proven ability to navigate complex procurement, meet stringent specifications, and deliver field-ready platforms.',
     proof: '0 failed deployments across all government-contracted platforms.',
   },
@@ -37,15 +37,15 @@ const advantages = [
     title: 'Motorsport Precision Culture',
     color: 'red',
     headline: 'Where tolerance is measured in microns and seconds.',
-    desc: "Born from motorsport — where tiny margins decide race outcomes — D&O's engineering culture is built on precision. This discipline flows into everything we build, whether a race car suspension or a defence vehicle chassis.",
-    proof: 'Country record — fastest BMW at Buddh International Circuit, beating Narain Kartikeyan.',
+    desc: "Born from motorsport  where tiny margins decide race outcomes  D&O's engineering culture is built on precision. This discipline flows into everything we build, whether a race car suspension or a Government vehicle chassis.",
+    proof: 'Country record  fastest BMW M2 at Buddh International Circuit, beating Narain Kartikeyan.',
   },
   {
     icon: TrendingUp,
     title: 'Competitive Pricing vs Western Firms',
     color: 'purple',
     headline: 'Global quality. Indian cost structure.',
-    desc: 'D&O Studios consistently outcompetes established western prop makers on pricing, thanks to our locally sourced design and development capability. This advantage extends across all our services — premium quality without the import premium.',
+    desc: 'D&O Studios consistently outcompetes established western prop makers on pricing, thanks to our locally sourced design and development capability. This advantage extends across all our services  premium quality without the import premium.',
     proof: 'D&O Studios delivers Bollywood-grade engineering at a fraction of international prop house rates.',
   },
   {
@@ -53,7 +53,7 @@ const advantages = [
     title: 'Make in India First',
     color: 'orange',
     headline: 'Indigenously designed. Indigenously built.',
-    desc: 'Every product that leaves D&O is a testament to Indian engineering capability. We are committed to the indigenisation of critical technologies — from anti-drone systems to airboats — reducing India\'s dependency on imported defence and industrial equipment.',
+    desc: 'Every product that leaves D&O is a testament to Indian engineering capability. We are committed to the indigenisation of critical technologies  from anti-drone systems to airboats  reducing India\'s dependency on imported Government and industrial equipment.',
     proof: 'India\'s first indigenous airboat. India\'s first anti-drone vehicle. Built here.',
   },
   {
@@ -61,7 +61,7 @@ const advantages = [
     title: 'Seasoned Core Team',
     color: 'teal',
     headline: 'Masters-level engineers with motorsport DNA.',
-    desc: 'Led by Omkar Rane (Masters, Motorsport Engineering, Perth, Australia — 7 years field experience) and supported by Karan Shah (20+ years, owner of KS Motorsport — one of India\'s first tuner shops), our core team brings an exceptional blend of academic rigour and real-world execution.',
+    desc: 'Led by Omkar Rane (Masters, Motorsport Engineering, Perth, Australia  7 years field experience)  our core team brings an exceptional blend of academic rigour and real-world execution.',
     proof: 'Over 1000 high-end cars serviced. 800+ exhaust systems manufactured.',
   },
   {
@@ -69,8 +69,8 @@ const advantages = [
     title: 'Seamless Imagination to Production',
     color: 'pink',
     headline: 'Idea → CAD → Prototype → Production.',
-    desc: 'Our integrated capability means a client\'s vision moves seamlessly from sketch to SolidWorks model to machined prototype to production-ready component — all within a single accountable team. This compresses timelines and eliminates the loss of intent across vendor boundaries.',
-    proof: 'Applied across every major D&O project — no brief gets "lost in translation".',
+    desc: 'Our integrated capability means a client\'s vision moves seamlessly from sketch to SolidWorks model to machined prototype to production-ready component  all within a single accountable team. This compresses timelines and eliminates the loss of intent across vendor boundaries.',
+    proof: 'Applied across every major D&O project  no brief gets "lost in translation".',
   },
 ];
 
@@ -88,7 +88,7 @@ const colorMap: Record<string, { border: string; bg: string; text: string; tag: 
 const comparisons = [
   { factor: 'End-to-end in-house capability', do: true, typical: false },
   { factor: 'Motorsport-grade precision culture', do: true, typical: false },
-  { factor: 'Defence project experience', do: true, typical: false },
+  { factor: 'Government project experience', do: true, typical: false },
   { factor: 'Indigenous (Make in India) commitment', do: true, typical: false },
   { factor: 'Mechanical + Electronics + Software + 3D Print', do: true, typical: false },
   { factor: 'Government validated track record', do: true, typical: false },
@@ -139,7 +139,7 @@ export default function WhyDO() {
               Engineering Partner
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              Choosing an engineering partner is a strategic decision. Here's why India's most demanding clients — from BSF to Bollywood studios — choose D&O over the alternatives.
+              Choosing an engineering partner is a strategic decision. Here's why India's most demanding clients  from BSF to Bollywood studios  choose D&O over the alternatives.
             </p>
             <motion.button
               onClick={() => navigate('/contact')}
@@ -160,7 +160,7 @@ export default function WhyDO() {
             { val: '1000+', label: 'High-End Cars Serviced' },
             { val: '800+', label: 'Exhaust Systems Built' },
             { val: '3', label: 'Government Agencies' },
-            { val: '2019', label: 'Founded — 6+ Years' },
+            { val: '2019', label: 'Founded  6+ Years' },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div className="font-sora font-bold text-2xl text-amber-400">{s.val}</div>
@@ -233,7 +233,7 @@ export default function WhyDO() {
                 <div className="w-20 flex justify-center">
                   {row.do
                     ? <CheckCircle2 className="w-5 h-5 text-amber-500" />
-                    : <span className="w-5 h-5 flex items-center justify-center text-gray-700 text-lg">—</span>}
+                    : <span className="w-5 h-5 flex items-center justify-center text-gray-700 text-lg"></span>}
                 </div>
                 <div className="w-24 flex justify-center">
                   {row.typical
@@ -254,7 +254,7 @@ export default function WhyDO() {
             Let's Build Something Extraordinary
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether you're an HNI with a dream build, a government agency with a critical requirement, or a studio that needs props that actually work — D&O is your team.
+            Whether you're an HNI with a dream build, a government agency with a critical requirement, or a studio that needs props that actually work  D&O is your team.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

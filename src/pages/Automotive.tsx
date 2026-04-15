@@ -9,13 +9,13 @@ const capabilities = [
   {
     icon: Cpu,
     title: 'High-Performance Vehicle Engineering',
-    desc: 'End-to-end development of performance-oriented vehicles from concept to prototype, leveraging motorsport methodologies for road & defence applications.',
+    desc: 'End-to-end development of performance-oriented vehicles from concept to prototype, leveraging motorsport methodologies for road & Government applications.',
     tags: ['Drivetrain Design', 'Chassis Engineering', 'Powertrain'],
   },
   {
     icon: Settings,
     title: 'Custom Architecture & Fabrication',
-    desc: 'Purpose-built vehicle platforms designed from the ground up for unique operational requirements — from off-road survivability to urban mobility.',
+    desc: 'Purpose-built vehicle platforms designed from the ground up for unique operational requirements  from off-road survivability to urban mobility.',
     tags: ['Custom Frames', 'Suspension Systems', 'Roll Cages'],
   },
   {
@@ -33,7 +33,7 @@ const capabilities = [
   {
     icon: Wrench,
     title: 'Motorsport Engineering',
-    desc: 'Race-derived methodologies applied to every build — lightweight construction, rapid iteration, and performance benchmarking.',
+    desc: 'Race-derived methodologies applied to every build  lightweight construction, rapid iteration, and performance benchmarking.',
     tags: ['Race Prep', 'Lightweighting', 'Telemetry'],
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     label: 'Indrajaal Ranger Platform',
     desc: 'Anti-drone rapid-response vehicle combining tactical mobility with robust electronic warfare payload capacity.',
     href: '/projects/indrajaal-ranger',
-    badge: 'Defence',
+    badge: 'Government',
   },
   {
     label: 'NHAI Survey Vehicles',
@@ -59,7 +59,7 @@ const projects = [
   },
   {
     label: 'Motorsport Builds',
-    desc: 'High-performance drift and track cars built using full race engineering process — from setup sheets to data analysis.',
+    desc: 'High-performance drift and track cars built using full race engineering process  from setup sheets to data analysis.',
     href: '/projects/automotive',
     badge: 'Motorsport',
   },
@@ -155,7 +155,7 @@ export default function Automotive() {
           </h1>
 
           <p className="text-gray-300 text-lg max-w-xl leading-relaxed">
-            Race-proven engineering methodologies applied to defence platforms, survey vehicles, and custom performance builds. Built to move. Built to last.
+            Race-proven engineering methodologies applied to Government platforms, survey vehicles, and custom performance builds. Built to move. Built to last.
           </p>
         </div>
       </div>
@@ -185,7 +185,7 @@ export default function Automotive() {
             Engineering Capabilities
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl">
-            From motorsport-grade drivetrain engineering to field-ready government platforms — our automotive division covers the full spectrum.
+            From motorsport-grade drivetrain engineering to field-ready government platforms  our automotive division covers the full spectrum.
           </p>
         </div>
 
@@ -243,10 +243,10 @@ export default function Automotive() {
                 <span className="text-amber-400">Real-World Proof.</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Every vehicle D&O engineers carries the discipline of motorsport: relentless weight reduction, precision geometry, and validated under extreme conditions before deployment. Our Indrajaal Ranger's field performance at the BSF parade is the clearest testament — built fast, built right, built to operate.
+                Every vehicle D&O engineers carries the discipline of motorsport: relentless weight reduction, precision geometry, and validated under extreme conditions before deployment. Our Indrajaal Ranger's field performance at the BSF parade is the clearest testament  built fast, built right, built to operate.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                We apply simulation-first workflows that compress development timelines dramatically. CFD, FEA, and MBD analysis converge before metal is cut — so physical prototypes are first-article, not first-attempt.
+                We apply simulation-first workflows that compress development timelines dramatically. CFD, FEA, and MBD analysis converge before metal is cut  so physical prototypes are first-article, not first-attempt.
               </p>
             </div>
 
@@ -305,7 +305,7 @@ export default function Automotive() {
             Have an Automotive Challenge?
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10">
-            Whether it's a defence platform, survey vehicle, or motorsport build — let's engineer it together.
+            Whether it's a Government platform, survey vehicle, or motorsport build  let's engineer it together.
           </p>
           <a
             href="/contact"

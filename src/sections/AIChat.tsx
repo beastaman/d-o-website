@@ -26,17 +26,17 @@ Keep answers concise (2-4 sentences) unless the user asks for detail.
 Use a professional yet friendly tone.
 
 === COMPANY OVERVIEW ===
-D&O Advanced Engineering is an India-based engineering and technology company specialising in advanced automotive systems, defence-grade engineering solutions, and high-performance mobility platforms. Originally established as D&O Motorsports, the company has evolved into a comprehensive engineering firm capable of tackling complex challenges across multiple sectors. D&O operates at the intersection of R&D, manufacturing, integration, and real-world deployment, delivering solutions that meet both civilian and strategic requirements. The company functions as the parent engineering entity for United Motorsports Academy (UMA), ensuring that all education and talent development initiatives are backed by live engineering projects and operational experience.
+D&O Advanced Engineering is an India-based engineering and technology company specialising in advanced automotive systems, Government-grade engineering solutions, and high-performance mobility platforms. Originally established as D&O Motorsports, the company has evolved into a comprehensive engineering firm capable of tackling complex challenges across multiple sectors. D&O operates at the intersection of R&D, manufacturing, integration, and real-world deployment, delivering solutions that meet both civilian and strategic requirements. The company functions as the parent engineering entity for United Motorsports Academy (UMA), ensuring that all education and talent development initiatives are backed by live engineering projects and operational experience.
 
 === VISION ===
-To build indigenous, world-class engineering solutions that meet global performance standards while strengthening India's capabilities across defence, mobility, and advanced vehicle systems.
+To build indigenous, world-class engineering solutions that meet global performance standards while strengthening India's capabilities across Government, mobility, and advanced vehicle systems.
 
 === MISSION ===
 To design, develop, and deploy robust, scalable, and field-ready engineering systems through innovation, precision manufacturing, and interdisciplinary expertise.
 
 === CORE FOCUS AREAS ===
 1. Automotive & Mobility Engineering: High-performance vehicle development, custom vehicle architecture & integration, advanced drivetrain and chassis solutions, motorsport-derived engineering methodologies.
-2. Defence & Strategic Engineering: Indigenous defence mobility platforms, anti-drone and counter-UAS systems, surveillance/jamming/spoofing technologies, rapid-response and disaster management vehicles.
+2. Government & Strategic Engineering: Indigenous Government mobility platforms, anti-drone and counter-UAS systems, surveillance/jamming/spoofing technologies, rapid-response and disaster management vehicles.
 3. Advanced Engineering & Manufacturing: Reverse engineering & system replication, precision fabrication & production optimisation, rapid prototyping and validation, multi-material manufacturing (metals, composites, polymers).
 
 === KEY ENGINEERING CAPABILITIES ===
@@ -76,7 +76,7 @@ Delivering high-performance solutions through precision engineering and custom f
 === CUTTING-EDGE MATERIALS ===
 Leveraging advanced materials like PEEK and ULTEM for superior performance and durability: high-performance polymers, composite materials, material testing & validation, custom formulations.
 
-=== DEFENSE ENGINEERING ===
+=== Government ENGINEERING ===
 Developing specialized equipment and secure projects for national security applications: advanced mechanical systems, composite armor solutions, classified project development, military-grade fabrication.
 
 === PRODUCTION OPTIMIZATION ===
@@ -89,7 +89,7 @@ Utilizing advanced simulations to predict performance and optimize designs befor
 Proven partnership record with successful delivery of complex projects for key government agencies:
 01. Maharashtra Government – MINGO Airboat Project: Indigenous disaster management solution
 02. NHAI – Infrastructure Solutions: Specialized engineering for national highways
-03. Indian Army – Defence Technology: Classified projects and advanced equipment
+03. Indian Army – Government Technology: Classified projects and advanced equipment
 04. Track Record – Demonstrated ability to meet stringent requirements and security protocols
 
 === LEADERSHIP & TEAM ===
@@ -173,7 +173,7 @@ function fmtTime(d: Date) {
   return d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
 }
 
-const SUGGESTIONS = ['Projects', 'Defence Tech', 'Capabilities', 'Team', 'Get a Quote'];
+const SUGGESTIONS = ['Projects', 'Government Tech', 'Capabilities', 'Team', 'Get a Quote'];
 
 export default function AIChat() {
   const [isOpen, setIsOpen] = useState(false);
@@ -186,7 +186,7 @@ export default function AIChat() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   /* ─────────────────────────────────────────────────────────────────
-     SCROLL LOCK — capture-phase approach:
+     SCROLL LOCK  capture-phase approach:
      Lenis registers its wheel/touch listeners in the bubble phase.
      By intercepting in the capture phase first with
      stopImmediatePropagation(), Lenis never receives the event at
@@ -382,7 +382,7 @@ export default function AIChat() {
               </div>
             </div>
 
-            {/* ── Messages — native overflow-y scroll, Lenis is stopped so it works ── */}
+            {/* ── Messages  native overflow-y scroll, Lenis is stopped so it works ── */}
             <div
               ref={messagesBoxRef}
               className="flex-1 min-h-0 overflow-y-auto px-3 py-3 space-y-3"
@@ -460,7 +460,7 @@ export default function AIChat() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* ── Quick Suggestions — horizontal scroll row ── */}
+            {/* ── Quick Suggestions  horizontal scroll row ── */}
             <div
               className="px-3 pb-2 flex gap-1.5 flex-shrink-0 overflow-x-auto"
               style={{ scrollbarWidth: 'none' }}

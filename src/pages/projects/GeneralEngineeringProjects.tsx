@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 'pod-car',
-    title: 'Pod Car — Custom Engineering Build',
+    title: 'Pod Car  Custom Engineering Build',
     category: 'Custom Vehicle Engineering',
     tags: ['Pod Car', 'Custom Build', 'Chassis Design', 'Electric Powertrain', 'Bespoke'],
     desc: 'A purpose-engineered Pod Car built from the ground up for tight-radius maneuvering, exhibition use, and minimalist performance. D&O designed and fabricated the entire structural chassis, integrating electric powertrain mounts, bespoke composite body panels, and a fully custom suspension geometry tuned for low-speed agility and stability.',
@@ -20,20 +20,20 @@ const projects = [
   },
   {
     id: 'faux-snow-machine',
-    title: 'Faux Snow Machine — Movie Set Dressing',
+    title: 'Faux Snow Machine  Movie Set Dressing',
     category: 'Film Production Engineering',
     tags: ['Movie Set', 'Snow Machine', 'Film Production', 'Custom Mechanism', 'Practical Effects'],
-    desc: 'Engineered and fabricated for professional film and TV production sets, this faux snow machine delivers realistic, on-demand artificial snow effects at scale. The system was designed to produce consistent particle size, dispersion patterns, and density profiles to meet cinematographic requirements — with silent operation and precisely controllable output for director-grade creative control on set.',
+    desc: 'Engineered and fabricated for professional film and TV production sets, this faux snow machine delivers realistic, on-demand artificial snow effects at scale. The system was designed to produce consistent particle size, dispersion patterns, and density profiles to meet cinematographic requirements  with silent operation and precisely controllable output for director-grade creative control on set.',
     highlights: ['Consistent particle output control', 'Silent operating mechanism', 'Precise density & dispersion tuning', 'Compact, set-ready form factor', 'Rapid deployment & breakdown', 'Custom-fabricated housing'],
     image: '/images/engineering/faux-snow-machine.jpg',
     color: 'blue',
   },
   {
     id: 'netflix-akvs-pod-car',
-    title: 'Netflix AKVS — AK Series Pod Car',
+    title: 'Netflix AKVS  AK Series Pod Car',
     category: 'Film & Streaming Production',
     tags: ['Netflix', 'AKVS', 'AK Series', 'Pod Car', 'Production Vehicle'],
-    desc: 'Developed specifically for Netflix\'s AKVS AK Series production, this pod car was engineered to meet the unique demands of professional streaming content — combining camera-friendly aesthetics with functional performance. Every dimension, mounting point, and surface finish was coordinated with the production design team to ensure seamless integration with the visual language of the series.',
+    desc: 'Developed specifically for Netflix\'s AKVS AK Series production, this pod car was engineered to meet the unique demands of professional streaming content  combining camera-friendly aesthetics with functional performance. Every dimension, mounting point, and surface finish was coordinated with the production design team to ensure seamless integration with the visual language of the series.',
     highlights: ['Netflix AKVS AK Series production', 'Production-design coordinated', 'Camera-ready surface finishes', 'Custom mounting provisions', 'Structural engineering for on-set use', 'Rapid iteration prototyping'],
     image: '/images/engineering/netflix-akvs-pod.jpg',
     color: 'purple',
@@ -50,20 +50,20 @@ const projects = [
   },
   {
     id: 'bmcm-movie-prop',
-    title: 'BMCM — Movie Prop Design',
+    title: 'BMCM  Movie Prop Design',
     category: 'Feature Film Production',
     tags: ['BMCM', 'Feature Film', 'Movie Props', 'Bespoke Fabrication', 'Production Engineering'],
-    desc: 'Engineered for the BMCM feature film production, this prop programme delivered a suite of bespoke fabricated items that met the production\'s demanding visual and functional requirements. D&O\'s engineering approach ensured that each piece was not merely aesthetically convincing but mechanically sound — capable of camera-close hero use and the rigours of an active film set.',
+    desc: 'Engineered for the BMCM feature film production, this prop programme delivered a suite of bespoke fabricated items that met the production\'s demanding visual and functional requirements. D&O\'s engineering approach ensured that each piece was not merely aesthetically convincing but mechanically sound  capable of camera-close hero use and the rigours of an active film set.',
     highlights: ['Feature film BMCM production', 'Hero & stunt prop variants', 'Close-up camera-ready finishing', 'Mechanical function integration', 'Multi-unit production runs', 'On-set support capability'],
     image: '/images/engineering/bmcm-prop.jpg',
     color: 'orange',
   },
   {
     id: 'ashwatthama-props',
-    title: 'Ashwatthama — Bollywood Prop Engineering',
+    title: 'Ashwatthama  Bollywood Prop Engineering',
     category: 'Bollywood Production',
     tags: ['Ashwatthama', 'Bollywood', 'D&O Studios', 'Prop Engineering', 'Film'],
-    desc: 'D&O Studios\' work on the Bollywood production Ashwatthama showcases the depth of the team\'s prop fabrication and engineering capability. Weapons, vehicle-mounted systems, and set dressing components were designed, prototyped, and fabricated entirely in-house — setting a new benchmark for engineering credibility in Indian commercial film production.',
+    desc: 'D&O Studios\' work on the Bollywood production Ashwatthama showcases the depth of the team\'s prop fabrication and engineering capability. Weapons, vehicle-mounted systems, and set dressing components were designed, prototyped, and fabricated entirely in-house  setting a new benchmark for engineering credibility in Indian commercial film production.',
     highlights: ['Bollywood film production', 'Weapons & tactical props', 'Vehicle-mounted set dressing', 'Full in-house design & build', 'Authentic material finishes', 'D&O Studios division'],
     image: '/images/engineering/ashwatthama-props.jpg',
     color: 'red',
@@ -120,7 +120,7 @@ export default function GeneralEngineeringProjects() {
               General Engineering Projects
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              From custom pod cars to Netflix productions — D&O's general engineering division delivers precision fabrication, prop design, and bespoke mechanical solutions for the entertainment industry and beyond.
+              From custom pod cars to Netflix productions  D&O's general engineering division delivers precision fabrication, prop design, and bespoke mechanical solutions for the entertainment industry and beyond.
             </p>
           </motion.div>
         </div>
@@ -201,7 +201,7 @@ export default function GeneralEngineeringProjects() {
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Commission a Project</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Have a Custom Engineering Need?</h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether it's a film prop, a custom mechanism, or a bespoke fabrication challenge — D&O turns complex briefs into precision engineering reality.
+            Whether it's a film prop, a custom mechanism, or a bespoke fabrication challenge  D&O turns complex briefs into precision engineering reality.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

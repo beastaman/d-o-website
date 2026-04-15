@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 /* ────────────────────────────────────────────────────────────── */
 /*  Types & Data                                                   */
 /* ────────────────────────────────────────────────────────────── */
-type BlogCategory = 'All' | 'Defence' | 'Automotive' | 'Manufacturing' | 'Innovation' | 'Make in India';
+type BlogCategory = 'All' | 'Government' | 'Automotive' | 'Manufacturing' | 'Innovation' | 'Make in India';
 
 interface BlogPost {
   id: string;
@@ -36,7 +36,7 @@ const posts: BlogPost[] = [
     slug: 'indrajaal-ranger-development',
     title: 'Inside the Indrajaal Ranger: Engineering India\'s First Anti-Drone Vehicle',
     excerpt: 'A deep dive into the 18-month engineering journey that took the Indrajaal Ranger from initial concept through CAD, prototype, testing, and delivery to the Border Security Force at the 61st BSF Raising Day Parade.',
-    category: 'Defence',
+    category: 'Government',
     tags: ['Anti-Drone', 'BSF', 'C-UAV', 'Make in India', 'Indigenous'],
     readTime: '9 min read',
     date: 'January 2025',
@@ -49,7 +49,7 @@ const posts: BlogPost[] = [
     id: '2',
     slug: 'mingo-airboat-story',
     title: 'MINGO Airboat: How D&O Built India\'s First Indigenous Flood Rescue Platform',
-    excerpt: 'The challenge of designing a shallow-water rescue vessel with no Indian precedent — how D&O\'s engineering team reverse-engineered the problem, selected the right propulsion system, and delivered to Maharashtra Government.',
+    excerpt: 'The challenge of designing a shallow-water rescue vessel with no Indian precedent  how D&O\'s engineering team reverse-engineered the problem, selected the right propulsion system, and delivered to Maharashtra Government.',
     category: 'Make in India',
     tags: ['Airboat', 'Disaster Management', 'Maharashtra', 'Indigenous Design'],
     readTime: '7 min read',
@@ -63,8 +63,8 @@ const posts: BlogPost[] = [
     id: '3',
     slug: 'uhmwpe-composite-armour',
     title: 'UHMWPE vs Steel Armour: The Case for Composite Ballistic Protection',
-    excerpt: 'Why ultra-high molecular weight polyethylene composites are replacing traditional steel armour in modern platforms — a technical comparison of weight, ballistic performance, and system integration challenges.',
-    category: 'Defence',
+    excerpt: 'Why ultra-high molecular weight polyethylene composites are replacing traditional steel armour in modern platforms  a technical comparison of weight, ballistic performance, and system integration challenges.',
+    category: 'Government',
     tags: ['UHMWPE', 'Composite Armour', 'Ballistic', 'Materials', 'Lightweight'],
     readTime: '6 min read',
     date: 'December 2024',
@@ -76,7 +76,7 @@ const posts: BlogPost[] = [
     id: '4',
     slug: 'fastest-bmw-buddh-international',
     title: 'Setting the Record: D&O\'s BMW Build That Beat Narain Kartikeyan at BIC',
-    excerpt: 'The story behind the fastest BMW on record at Buddh International Circuit — the engineering decisions, power delivery tuning, suspension geometry, and the race day that put an Indian garage on the motorsport map.',
+    excerpt: 'The story behind the fastest BMW on record at Buddh International Circuit  the engineering decisions, power delivery tuning, suspension geometry, and the race day that put an Indian garage on the motorsport map.',
     category: 'Automotive',
     tags: ['BMW', 'Track Record', 'Buddh International', 'Motorsport', 'Tuning'],
     readTime: '8 min read',
@@ -89,7 +89,7 @@ const posts: BlogPost[] = [
     id: '5',
     slug: 'nhai-survey-vehicle-tech',
     title: 'LiDAR at 80 km/h: The Technology Behind NHAI\'s Road Survey Vehicles',
-    excerpt: 'How D&O engineered a multi-sensor mobile mapping platform capable of high-speed pavement condition assessment — covering the sensor fusion, GNSS integration, and real-time data processing pipeline.',
+    excerpt: 'How D&O engineered a multi-sensor mobile mapping platform capable of high-speed pavement condition assessment  covering the sensor fusion, GNSS integration, and real-time data processing pipeline.',
     category: 'Manufacturing',
     tags: ['LiDAR', 'NHAI', 'Survey Vehicle', 'Mobile Mapping', 'Sensor Fusion'],
     readTime: '5 min read',
@@ -100,11 +100,11 @@ const posts: BlogPost[] = [
   },
   {
     id: '6',
-    slug: 'peek-vs-aluminium-defence',
-    title: 'PEEK vs. Aluminium in Defence Applications: When Polymer Wins',
-    excerpt: 'A materials engineering perspective on when PEEK outperforms aluminium alloys in weight-critical defence applications — covering specific strength, chemical resistance, and manufacturing considerations.',
+    slug: 'peek-vs-aluminium-Government',
+    title: 'PEEK vs. Aluminium in Government Applications: When Polymer Wins',
+    excerpt: 'A materials engineering perspective on when PEEK outperforms aluminium alloys in weight-critical Government applications  covering specific strength, chemical resistance, and manufacturing considerations.',
     category: 'Innovation',
-    tags: ['PEEK', 'Materials', 'Defence', 'Lightweight', 'Polymers'],
+    tags: ['PEEK', 'Materials', 'Government', 'Lightweight', 'Polymers'],
     readTime: '5 min read',
     date: 'September 2024',
     imageSrc: '/blog/peek-materials.jpg',
@@ -115,7 +115,7 @@ const posts: BlogPost[] = [
     id: '7',
     slug: 'reverse-engineering-workflow',
     title: 'D&O\'s End-to-End Reverse Engineering Workflow: Scan to CAD to Part',
-    excerpt: 'A step-by-step walkthrough of how D&O takes a physical component from structured-light scanning through point cloud processing, surface reconstruction, CAD modelling, and final manufactured part — in-house, zero hand-offs.',
+    excerpt: 'A step-by-step walkthrough of how D&O takes a physical component from structured-light scanning through point cloud processing, surface reconstruction, CAD modelling, and final manufactured part  in-house, zero hand-offs.',
     category: 'Manufacturing',
     tags: ['Reverse Engineering', '3D Scanning', 'CAD', 'SolidWorks', 'Workflow'],
     readTime: '7 min read',
@@ -126,11 +126,11 @@ const posts: BlogPost[] = [
   },
   {
     id: '8',
-    slug: 'make-in-india-defence-opportunity',
-    title: 'Make in India: Why Private Engineering Firms Will Define India\'s Defence Future',
-    excerpt: 'An analysis of the policy shifts, budget allocations, and technology gaps that have created an unprecedented opportunity for domestic engineering companies to build India\'s next generation of defence platforms.',
+    slug: 'make-in-india-Government-opportunity',
+    title: 'Make in India: Why Private Engineering Firms Will Define India\'s Government Future',
+    excerpt: 'An analysis of the policy shifts, budget allocations, and technology gaps that have created an unprecedented opportunity for domestic engineering companies to build India\'s next generation of Government platforms.',
     category: 'Make in India',
-    tags: ['Defence Policy', 'Make in India', 'DRDO', 'Private Defence', 'Indigenisation'],
+    tags: ['Government Policy', 'Make in India', 'DRDO', 'Private Government', 'Indigenisation'],
     readTime: '6 min read',
     date: 'July 2024',
     imageSrc: '/blog/make-in-india.jpg',
@@ -141,7 +141,7 @@ const posts: BlogPost[] = [
     id: '9',
     slug: 'cfd-aerodynamics-motorsport',
     title: 'CFD in Motorsport: How Simulation Replaced the Wind Tunnel for Small Teams',
-    excerpt: 'How accessible computational fluid dynamics tools have democratised aerodynamic development — and how D&O applies CFD workflows to both motorsport builds and defence vehicle programmes.',
+    excerpt: 'How accessible computational fluid dynamics tools have democratised aerodynamic development  and how D&O applies CFD workflows to both motorsport builds and Government vehicle programmes.',
     category: 'Innovation',
     tags: ['CFD', 'Aerodynamics', 'Motorsport', 'Simulation', 'ANSYS'],
     readTime: '6 min read',
@@ -154,7 +154,7 @@ const posts: BlogPost[] = [
     id: '10',
     slug: 'titanium-exhaust-craft',
     title: 'The Craft of Custom Titanium Exhaust Systems: 800+ Units and What We Learned',
-    excerpt: 'Over 800 custom exhaust systems later — what D&O\'s fabrication team has learned about titanium TIG welding, mandrel bending, acoustic tuning, and the tolerances that separate a great exhaust from a great-sounding exhaust.',
+    excerpt: 'Over 800 custom exhaust systems later  what D&O\'s fabrication team has learned about titanium TIG welding, mandrel bending, acoustic tuning, and the tolerances that separate a great exhaust from a great-sounding exhaust.',
     category: 'Automotive',
     tags: ['Titanium', 'Exhaust', 'Fabrication', 'TIG Welding', 'Custom'],
     readTime: '5 min read',
@@ -167,8 +167,8 @@ const posts: BlogPost[] = [
     id: '11',
     slug: 'composite-armour-testing',
     title: 'Ballistic Testing in India: How D&O Validates Composite Armour Panels',
-    excerpt: 'A technical overview of D&O\'s ballistic validation process — from witness plate setup and V50 testing methodology through documentation and certification, all conducted within India.',
-    category: 'Defence',
+    excerpt: 'A technical overview of D&O\'s ballistic validation process  from witness plate setup and V50 testing methodology through documentation and certification, all conducted within India.',
+    category: 'Government',
     tags: ['Ballistic Testing', 'Composite Armour', 'V50', 'Certification', 'MIL-SPEC'],
     readTime: '8 min read',
     date: 'April 2024',
@@ -180,7 +180,7 @@ const posts: BlogPost[] = [
     id: '12',
     slug: 'mumbai-engineering-hub',
     title: 'Why Mumbai is Emerging as India\'s Advanced Engineering Hub',
-    excerpt: 'The talent density, industrial supply chain, and policy environment that make Mumbai the unexpected centre of gravity for high-technology defence and automotive engineering firms.',
+    excerpt: 'The talent density, industrial supply chain, and policy environment that make Mumbai the unexpected centre of gravity for high-technology Government and automotive engineering firms.',
     category: 'Make in India',
     tags: ['Mumbai', 'Engineering Ecosystem', 'Make in India', 'Policy', 'Startup'],
     readTime: '4 min read',
@@ -193,7 +193,7 @@ const posts: BlogPost[] = [
 
 const categoryConfig: Record<BlogCategory, { icon: React.ComponentType<{ className?: string }>; color: string }> = {
   All: { icon: BookOpen, color: 'amber' },
-  Defence: { icon: Shield, color: 'red' },
+  Government: { icon: Shield, color: 'red' },
   Automotive: { icon: Zap, color: 'amber' },
   Manufacturing: { icon: Wrench, color: 'blue' },
   Innovation: { icon: FlaskConical, color: 'purple' },
@@ -202,7 +202,7 @@ const categoryConfig: Record<BlogCategory, { icon: React.ComponentType<{ classNa
 
 const categoryBadge: Record<BlogCategory, string> = {
   All: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
-  Defence: 'bg-red-500/15 text-red-400 border-red-500/25',
+  Government: 'bg-red-500/15 text-red-400 border-red-500/25',
   Automotive: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
   Manufacturing: 'bg-blue-500/15 text-blue-400 border-blue-500/25',
   Innovation: 'bg-purple-500/15 text-purple-400 border-purple-500/25',
@@ -378,10 +378,10 @@ export default function Blog() {
   const showFeaturedHero = activeCategory === 'All' && !searchQuery;
 
   const comingSoonPosts = [
-    'FEA-Guided Chassis Design for Off-Road Defence Vehicles',
+    'FEA-Guided Chassis Design for Off-Road Government Vehicles',
     'The BSF Deployment: What We Learned from Field Testing',
     'Inside D&O Studio: Designing Movie Props That Actually Work',
-    'Motorsport DNA: How Race Engineering Discipline Applies to Defence',
+    'Motorsport DNA: How Race Engineering Discipline Applies to Government',
   ];
 
   return (
@@ -508,7 +508,7 @@ export default function Blog() {
                   <PostCard
                     key={post.id}
                     post={post}
-                    onRead={() => {/* navigate to individual post — coming soon */}}
+                    onRead={() => {/* navigate to individual post  coming soon */}}
                   />
                 ))}
               </AnimatePresence>
@@ -532,7 +532,7 @@ export default function Blog() {
                 </div>
                 <div>
                   <div className="text-gray-300 text-sm font-medium leading-snug">{title}</div>
-                  <div className="text-gray-700 text-xs font-mono mt-1">— Publishing soon</div>
+                  <div className="text-gray-700 text-xs font-mono mt-1"> Publishing soon</div>
                 </div>
               </div>
             ))}
@@ -551,7 +551,7 @@ export default function Blog() {
                 Engineering Insights, Direct to Your Inbox
               </h2>
               <p className="text-gray-400 max-w-md mx-auto mb-7">
-                Receive D&O's latest technical articles, project announcements, and engineering case studies — no noise, only substance.
+                Receive D&O's latest technical articles, project announcements, and engineering case studies  no noise, only substance.
               </p>
               <form
                 onSubmit={(e) => e.preventDefault()}
@@ -585,7 +585,7 @@ export default function Blog() {
             Want to Work with the Team Behind These Projects?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Every article here represents real engineering work — platforms delivered, records broken, government programs executed. If your project demands the same depth, let's talk.
+            Every article here represents real engineering work  platforms delivered, records broken, government programs executed. If your project demands the same depth, let's talk.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

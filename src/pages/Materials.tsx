@@ -14,8 +14,8 @@ const materials = [
     category: 'High-Performance Polymer',
     color: 'amber',
     properties: ['Temp resistance up to 260°C', 'Chemical resistant', 'FDA compliant', 'Exceptional strength-to-weight'],
-    applications: ['Aerospace brackets', 'Medical implants', 'Defence components', 'Motorsport parts'],
-    desc: 'Ultra-high performance semi-crystalline thermoplastic offering exceptional mechanical and thermal properties — our go-to for mission-critical components.',
+    applications: ['Aerospace brackets', 'Medical implants', 'Government components', 'Motorsport parts'],
+    desc: 'Ultra-high performance semi-crystalline thermoplastic offering exceptional mechanical and thermal properties  our go-to for mission-critical components.',
   },
   {
     icon: Layers,
@@ -41,8 +41,8 @@ const materials = [
     category: 'Aerospace Metal',
     color: 'purple',
     properties: ['High specific strength', 'Biocompatible', 'Corrosion resistant', 'Low thermal expansion'],
-    applications: ['Exhaust systems', 'Chassis components', 'Fasteners', 'Defence hardware'],
-    desc: 'The gold standard aerospace alloy combining exceptional strength, low weight, and outstanding corrosion resistance — used in our custom titanium exhaust systems.',
+    applications: ['Exhaust systems', 'Chassis components', 'Fasteners', 'Government hardware'],
+    desc: 'The gold standard aerospace alloy combining exceptional strength, low weight, and outstanding corrosion resistance  used in our custom titanium exhaust systems.',
   },
   {
     icon: Zap,
@@ -51,7 +51,7 @@ const materials = [
     color: 'green',
     properties: ['V50 ballistic protection', 'Extremely low friction', 'Impact absorbing', 'Lightweight armour'],
     applications: ['Ballistic panels', 'Armour plating', 'Vehicle protection', 'Personnel armour'],
-    desc: 'Ultra-High Molecular Weight Polyethylene — the backbone of our composite armour systems providing certified ballistic protection at minimal weight penalty.',
+    desc: 'Ultra-High Molecular Weight Polyethylene  the backbone of our composite armour systems providing certified ballistic protection at minimal weight penalty.',
   },
   {
     icon: FlaskConical,
@@ -59,8 +59,8 @@ const materials = [
     category: 'R&D Innovation',
     color: 'red',
     properties: ['Application-specific', 'Multi-material hybrid', 'Performance-optimised', 'Prototype validated'],
-    applications: ['Specialised defence', 'Motorsport extremes', 'R&D programs', 'Client-specific needs'],
-    desc: 'Beyond off-the-shelf — our materials R&D team develops custom hybrid formulations and composite layups tailored to the precise performance envelope of your application.',
+    applications: ['Specialised Government', 'Motorsport extremes', 'R&D programs', 'Client-specific needs'],
+    desc: 'Beyond off-the-shelf  our materials R&D team develops custom hybrid formulations and composite layups tailored to the precise performance envelope of your application.',
   },
 ];
 
@@ -132,7 +132,7 @@ export default function Materials() {
               Applications
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              From high-performance polymers to aerospace-grade composites — our materials science capability underpins every D&O product. We select, test, and validate every material for the specific demands of defence, automotive, and industrial environments.
+              From high-performance polymers to aerospace-grade composites  our materials science capability underpins every D&O product. We select, test, and validate every material for the specific demands of Government, automotive, and industrial environments.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -232,11 +232,11 @@ export default function Materials() {
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Materials R&D</span>
               <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-4 mb-6 leading-tight">
-                From Lab to Field —<br />
+                From Lab to Field <br />
                 <span className="text-gradient">Validated Every Step</span>
               </h2>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Our materials innovation pipeline ensures that every composition we use has been rigorously characterised, tested, and proven — long before it ever reaches a production vehicle or defence platform.
+                Our materials innovation pipeline ensures that every composition we use has been rigorously characterised, tested, and proven  long before it ever reaches a production vehicle or Government platform.
               </p>
               <ul className="space-y-3">
                 {rdHighlights.map((h) => (
@@ -274,7 +274,7 @@ export default function Materials() {
             Need a Specialised Material Solution?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Tell us your application, operating environment, and performance targets — our materials team will recommend the optimal solution.
+            Tell us your application, operating environment, and performance targets  our materials team will recommend the optimal solution.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

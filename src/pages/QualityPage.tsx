@@ -17,7 +17,7 @@ const qaFramework = [
   {
     icon: ScanLine,
     title: 'In-Process Quality Control',
-    desc: 'Stage-gate quality checkpoints embedded at every critical phase of fabrication — from first-article inspection to weld integrity verification and dimensional conformance at each production step.',
+    desc: 'Stage-gate quality checkpoints embedded at every critical phase of fabrication  from first-article inspection to weld integrity verification and dimensional conformance at each production step.',
     standards: ['SPC', 'APQP', 'PPAP'],
   },
   {
@@ -29,7 +29,7 @@ const qaFramework = [
   {
     icon: ShieldCheck,
     title: 'Structural & Performance Testing',
-    desc: 'Load testing, fatigue cycling, impact resistance, and ballistic validation conducted on representative test articles — with comprehensive test reports and traceability to analysis predictions.',
+    desc: 'Load testing, fatigue cycling, impact resistance, and ballistic validation conducted on representative test articles  with comprehensive test reports and traceability to analysis predictions.',
     standards: ['ASTM', 'ISO 6892', 'MIL-STD'],
   },
   {
@@ -41,7 +41,7 @@ const qaFramework = [
   {
     icon: Award,
     title: 'Certification & Documentation',
-    desc: 'Full traceability documentation, first-article inspection reports, material certificates, and test evidence packages delivered with every production batch — ready for regulatory submission.',
+    desc: 'Full traceability documentation, first-article inspection reports, material certificates, and test evidence packages delivered with every production batch  ready for regulatory submission.',
     standards: ['FAI', 'FAIR', 'COC'],
   },
 ];
@@ -49,7 +49,7 @@ const qaFramework = [
 const certifications = [
   { name: 'ISO 9001:2015', body: 'Quality Management System', status: 'In Progress' },
   { name: 'AS9100 Rev D', body: 'Aerospace Quality Standard', status: 'Roadmap 2026' },
-  { name: 'MIL-SPEC', body: 'Defence Material Standards', status: 'Project-Specific' },
+  { name: 'MIL-SPEC', body: 'Government Material Standards', status: 'Project-Specific' },
   { name: 'IATF 16949', body: 'Automotive Quality System', status: 'Roadmap 2026' },
 ];
 
@@ -104,7 +104,7 @@ export default function QualityPage() {
               <span className="text-gradient">Complete Traceability.</span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              In defence and safety-critical engineering, quality is not a department — it is a culture. Every D&O product is manufactured, tested, and documented to the highest standards of precision and accountability.
+              In Government and safety-critical engineering, quality is not a department  it is a culture. Every D&O product is manufactured, tested, and documented to the highest standards of precision and accountability.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -152,7 +152,7 @@ export default function QualityPage() {
             End-to-End Quality Control
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            Our quality framework spans the entire product lifecycle — from design validation to field performance feedback.
+            Our quality framework spans the entire product lifecycle  from design validation to field performance feedback.
           </p>
         </div>
 
@@ -236,7 +236,7 @@ export default function QualityPage() {
             Quality You Can Certify
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether you need a component with a full inspection package or a complete production program with SPC and traceability — our QA team is ready.
+            Whether you need a component with a full inspection package or a complete production program with SPC and traceability  our QA team is ready.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

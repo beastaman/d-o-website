@@ -2,6 +2,8 @@ import { useEffect, useLayoutEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Toaster from '@/components/ui/toast';
+import { globalToasterRef } from '@/lib/toaster';
 // import Lenis from '@studio-freight/lenis';
 
 import './App.css';
@@ -25,7 +27,7 @@ import Contact from '@/sections/Contact';
 // Pages
 import About from '@/pages/About';
 import Automotive from '@/pages/Automotive';
-import Defence from '@/pages/Defence';
+import Government from '@/pages/Defence';
 import ManufacturingPage from '@/pages/ManufacturingPage';
 import ContactPage from '@/pages/ContactPage';
 import Materials from '@/pages/Materials';
@@ -39,13 +41,13 @@ import IndrajaalRanger from '@/pages/projects/IndrajaalRanger';
 import MingoAirboat from '@/pages/projects/MingoAirboat';
 import NHAIVehicles from '@/pages/projects/NHAIVehicles';
 import AutomotiveProjects from '@/pages/projects/AutomotiveProjects';
-import DefenceProjects from '@/pages/projects/DefenceProjects';
+import GovernmentProjects from '@/pages/projects/DefenceProjects';
 import GeneralEngineeringProjects from '@/pages/projects/GeneralEngineeringProjects';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Lenis singleton — lives outside React so it persists across route changes
+// Lenis singleton  lives outside React so it persists across route changes
 // ─────────────────────────────────────────────────────────────────────────────
 // export let lenisInstance: Lenis | null = null;
 
@@ -70,7 +72,7 @@ gsap.registerPlugin(ScrollTrigger);
 // }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Homepage — all landing sections
+// Homepage  all landing sections
 // ─────────────────────────────────────────────────────────────────────────────
 function HomePage() {
   return (
@@ -130,7 +132,7 @@ function App() {
       {/* Film-grain noise */}
       <div className="fixed inset-0 pointer-events-none z-[100] noise-overlay opacity-40" />
 
-      {/* Navbar — always on top, fixed pill */}
+      {/* Navbar  always on top, fixed pill */}
       <Navbar1 />
 
       {/* Page routes */}
@@ -138,7 +140,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/automotive" element={<Automotive />} />
-        <Route path="/defence" element={<Defence />} />
+        <Route path="/Government" element={<Government />} />
         <Route path="/manufacturing" element={<ManufacturingPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/materials" element={<Materials />} />
@@ -152,15 +154,18 @@ function App() {
         <Route path="/projects/mingo-airboat" element={<MingoAirboat />} />
         <Route path="/projects/nhai-vehicles" element={<NHAIVehicles />} />
         <Route path="/projects/automotive" element={<AutomotiveProjects />} />
-        <Route path="/projects/defence" element={<DefenceProjects />} />
+        <Route path="/projects/Government" element={<GovernmentProjects />} />
         <Route path="/projects/engineering" element={<GeneralEngineeringProjects />} />
       </Routes>
 
-      {/* Footer — all pages */}
+      {/* Footer  all pages */}
       <Footer />
 
       {/* AI chat bubble */}
       <AIChat />
+
+      {/* Global toast notifications */}
+      <Toaster ref={globalToasterRef} defaultPosition="bottom-right" />
     </div>
   );
 }

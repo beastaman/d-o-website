@@ -22,8 +22,8 @@ const features = [
   },
   {
     id: '02',
-    title: 'Defence & Strategic',
-    description: 'Indigenous defence mobility platforms, anti-drone systems, surveillance technologies, and rapid-response disaster management vehicles.',
+    title: 'Government & Strategic',
+    description: 'Indigenous Government mobility platforms, anti-drone systems, surveillance technologies, and rapid-response disaster management vehicles.',
     icon: Shield,
     area: 'md:[grid-area:1/5/2/9] xl:[grid-area:1/5/2/9]',
   },

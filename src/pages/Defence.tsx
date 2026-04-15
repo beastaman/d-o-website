@@ -8,8 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 const capabilities = [
   {
     icon: Shield,
-    title: 'Indigenous Defence Platforms',
-    desc: 'End-to-end design and manufacturing of tactical vehicles and platforms — conceived, engineered, and built entirely in India under the Make in India initiative.',
+    title: 'Indigenous Government Platforms',
+    desc: 'End-to-end design and manufacturing of tactical vehicles and platforms  conceived, engineered, and built entirely in India under the Make in India initiative.',
     tags: ['Tactical Vehicles', 'Rapid Deployment', 'Field-Ready'],
   },
   {
@@ -27,7 +27,7 @@ const capabilities = [
   {
     icon: Zap,
     title: 'Rapid-Response Vehicles',
-    desc: 'High-speed tactical platforms designed for immediate threat response — combining off-road agility with mission-critical payload capacity.',
+    desc: 'High-speed tactical platforms designed for immediate threat response  combining off-road agility with mission-critical payload capacity.',
     tags: ['QRF Vehicles', 'Mobility', 'Survivability'],
   },
   {
@@ -38,8 +38,8 @@ const capabilities = [
   },
   {
     icon: AlertTriangle,
-    title: 'Classified Defence Projects',
-    desc: 'Confidential engineering programs for strategic defence applications — conducted under strict security protocols in collaboration with Indian defence agencies.',
+    title: 'Classified Government Projects',
+    desc: 'Confidential engineering programs for strategic Government applications  conducted under strict security protocols in collaboration with Indian Government agencies.',
     tags: ['Classified', 'Strategic', 'Secure Development'],
   },
 ];
@@ -49,18 +49,18 @@ const milestones = [
     year: '2024',
     title: 'Indrajaal Ranger',
     desc: "India's first indigenous anti-drone rapid-response vehicle. Designed and built end-to-end by D&O.",
-    badge: 'Defence Breakthrough',
+    badge: 'Government Breakthrough',
   },
   {
     year: '2025',
     title: 'BSF Republic Day Parade',
-    desc: 'Indrajaal Ranger displayed at the Border Security Force Republic Day parade — formal defence sector validation.',
+    desc: 'Indrajaal Ranger displayed at the Border Security Force Republic Day parade  formal Government sector validation.',
     badge: 'National Recognition',
   },
   {
     year: 'Ongoing',
     title: 'Indian Army Collaboration',
-    desc: 'Classified defence technology programs supporting Indian Army strategic requirements.',
+    desc: 'Classified Government technology programs supporting Indian Army strategic requirements.',
     badge: 'Active Program',
   },
 ];
@@ -72,7 +72,7 @@ const stats = [
   { value: '100%', label: 'Indigenous' },
 ];
 
-export default function Defence() {
+export default function Government() {
   const headRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const capRef = useRef<HTMLDivElement>(null);
@@ -109,7 +109,7 @@ export default function Defence() {
       <div className="relative w-full h-[70vh] min-h-[520px] flex items-end overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/defence-hero.jpg)' }}
+          style={{ backgroundImage: 'url(/Government-hero.jpg)' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-[#0B0C0E]/65 to-[#0B0C0E]/15" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0B0C0E]/85 via-transparent to-transparent" />
@@ -128,7 +128,7 @@ export default function Defence() {
             <ChevronRight className="w-3 h-3" />
             <span>Capabilities</span>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-amber-500">Defence & Strategic</span>
+            <span className="text-amber-500">Government & Strategic</span>
           </div>
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-amber-500/10 border border-amber-500/20 rounded-full mb-5">
@@ -137,12 +137,12 @@ export default function Defence() {
           </div>
 
           <h1 className="font-sora font-black text-[clamp(36px,6vw,80px)] text-white leading-[1.0] mb-4">
-            DEFENCE &<br />
+            Government &<br />
             <span className="text-amber-400">STRATEGIC</span>
           </h1>
 
           <p className="text-gray-300 text-lg max-w-xl leading-relaxed">
-            Indigenous defence engineering for India's security forces — from anti-drone platforms to composite armour and classified strategic programs.
+            Indigenous Government engineering for India's security forces  from anti-drone platforms to composite armour and classified strategic programs.
           </p>
         </div>
       </div>
@@ -153,7 +153,7 @@ export default function Defence() {
           <div className="flex items-center gap-3">
             <Lock className="w-4 h-4 text-amber-500 shrink-0" />
             <p className="font-mono text-xs text-amber-500/80 tracking-wider">
-              Some D&O defence programs involve classified content. Public disclosures are limited to approved project information only.
+              Some D&O Government programs involve classified content. Public disclosures are limited to approved project information only.
             </p>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function Defence() {
             Strategic Engineering Services
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl">
-            D&O's defence division delivers end-to-end engineering for India's most demanding security applications — built entirely indigenous.
+            D&O's Government division delivers end-to-end engineering for India's most demanding security applications  built entirely indigenous.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function Defence() {
           <div className="mb-14">
             <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Track Record</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">
-              Defence Milestones
+              Government Milestones
             </h2>
           </div>
 
@@ -262,9 +262,9 @@ export default function Defence() {
         </span>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { name: 'Border Security Force', desc: 'Indrajaal Ranger anti-drone platform — Republic Day parade validation', href: '/govt-collaborations' },
-            { name: 'Indian Army', desc: 'Classified strategic defence technology programs', href: '/govt-collaborations' },
-            { name: 'Maharashtra Government', desc: 'MINGO Airboat disaster management fleet — state emergency services', href: '/govt-collaborations' },
+            { name: 'Border Security Force', desc: 'Indrajaal Ranger anti-drone platform  Republic Day parade validation', href: '/govt-collaborations' },
+            { name: 'Indian Army', desc: 'Classified strategic Government technology programs', href: '/govt-collaborations' },
+            { name: 'Maharashtra Government', desc: 'MINGO Airboat disaster management fleet  state emergency services', href: '/govt-collaborations' },
           ].map((partner) => (
             <a
               key={partner.name}
@@ -289,7 +289,7 @@ export default function Defence() {
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,52px)] text-white mb-4">
-            Defence Partnership Inquiry
+            Government Partnership Inquiry
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10">
             For classified program discussions, please reach out directly. All communication is treated with strict confidentiality.

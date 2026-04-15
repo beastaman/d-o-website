@@ -2,12 +2,14 @@ import { useRef, useLayoutEffect, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Send, Linkedin, Instagram, ArrowRight, ExternalLink, ChevronRight } from 'lucide-react';
+import { submitContactInquiry } from '@/lib/airtable';
+import { showToast } from '@/lib/toaster';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const inquiryTypes = [
   'Project Collaboration',
-  'Defence Partnership',
+  'Government Partnership',
   'Manufacturing Inquiry',
   'Government Program',
   'Career / Internship',
@@ -50,9 +52,21 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1600));
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      await submitContactInquiry({
+        name: formData.name,
+        email: formData.email,
+        organization: formData.organization,
+        inquiryType: formData.inquiryType || 'General Inquiry',
+        message: formData.message,
+      });
+      setSubmitted(true);
+      showToast({ title: 'Message Sent!', message: "We'll respond within 2 business days.", variant: 'success' });
+    } catch {
+      showToast({ title: 'Submission Failed', message: 'Please try again or email us directly.', variant: 'error' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

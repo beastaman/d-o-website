@@ -10,21 +10,17 @@ interface HeroProps {
 // ── D&O project images for the marquee ────────────────────────────────────────
 // User will drop real photos into these paths; placeholder.svg shown until then.
 const MARQUEE_IMAGES = [
-  '/images/indrajaal/hero.png',
   '/images/mingo/hero.png',
   '/images/nhai/hero.png',
   '/images/automotive/bmw-m2-bic.jpg',
   '/images/automotive/e30-s54.jpg',
   '/images/automotive/hd-titanium-exhaust.jpg',
   '/images/automotive/m4-ero-disc.jpg',
-  '/images/media-pics/gallery-01.jpg',
   '/images/media-pics/gallery-02.jpg',
   '/images/media-pics/gallery-03.jpg',
   '/images/media-pics/gallery-04.jpg',
-  '/images/media-pics/gallery-05.jpg',
   '/images/media-pics/gallery-06.jpg',
   '/images/media-pics/gallery-07.jpg',
-  '/images/media-pics/gallery-08.jpg',
   '/images/media-pics/gallery-09.jpg',
   '/images/media-pics/gallery-10.jpg',
 ];
@@ -101,7 +97,7 @@ export default function Hero({ className = '' }: HeroProps) {
         SYS.STATUS : ACTIVE
       </span> */}
 
-      {/* ── Text content — shifted up to sit above the marquee ───────────────── */}
+      {/* ── Text content  shifted up to sit above the marquee ───────────────── */}
       <div
         className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto"
         style={{ transform: 'translateY(-8vh)' }}
@@ -122,7 +118,7 @@ export default function Hero({ className = '' }: HeroProps) {
           </span>
         </div>
 
-        {/* Title — two lines, GSAP entrance */}
+        {/* Title  two lines, GSAP entrance */}
         <h1
           className="font-sora font-black leading-[0.88] tracking-tighter mb-5 sm:mb-6 px-2"
           style={{ fontSize: 'clamp(42px, 8vw, 116px)' }}
@@ -151,7 +147,7 @@ export default function Hero({ className = '' }: HeroProps) {
             text-sm sm:text-base md:text-lg lg:text-xl
             tracking-tight text-gray-400 px-2"
         >
-          Advanced indigenous systems for defence, mobility, and strategic
+          Advanced indigenous systems for Government, mobility, and strategic
           infrastructure.{' '}
           <span className="text-amber-400 font-medium">Proudly Made in India.</span>
         </p>
@@ -195,7 +191,7 @@ export default function Hero({ className = '' }: HeroProps) {
        *   Positioned absolute at the bottom third of the viewport.               *
        *   Masked top+bottom so images fade in/out gracefully.                    *
        *   Seamless loop: duplicate images + shift by exactly –50%.               *
-       *   loading="lazy" + decoding="async" — don't block first paint.           */}
+       *   loading="lazy" + decoding="async"  don't block first paint.           */}
       <div
         className="absolute bottom-0 left-0 w-full h-[34%] sm:h-[36%] md:h-[40%]
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_72%,transparent_100%)]"

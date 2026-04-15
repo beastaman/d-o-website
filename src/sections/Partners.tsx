@@ -18,14 +18,14 @@ const partners = [
   },
   {
     id: '02',
-    title: 'NHAI',
+    title: 'National Highway Authority of India (NHAI)',
     description: 'Infrastructure Solutions: Specialized engineering for national highways.',
     icon: Route,
   },
   {
     id: '03',
-    title: 'Indian Army',
-    description: 'Defense Technology: Classified projects and advanced equipment.',
+    title: 'Indian Government Forces',
+    description: 'Government Technology: Classified projects and advanced equipment.',
     icon: Shield,
   },
   {

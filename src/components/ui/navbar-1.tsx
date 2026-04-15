@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
     href: "#capabilities",
     children: [
       { label: "Automotive & Mobility", href: "/automotive", icon: Cpu, desc: "High-performance vehicle engineering" },
-      { label: "Defence & Strategic", href: "/defence", icon: Shield, desc: "Anti-drone & indigenous platforms" },
+      { label: "Government & Strategic", href: "/Government", icon: Shield, desc: "Anti-drone & indigenous platforms" },
       { label: "Advanced Manufacturing", href: "/manufacturing", icon: Cog, desc: "Reverse engineering & fabrication" },
       { label: "Materials & Innovation", href: "/materials", icon: Layers, desc: "PEEK, composites & cutting-edge R&D" },
       { label: "Computational Analysis", href: "/analysis", icon: BarChart2, desc: "CFD, FEA & multi-physics modeling" },
@@ -48,7 +48,7 @@ const navItems: NavItem[] = [
     href: "#projects",
     children: [
       { label: "Automotive Projects", href: "/projects/automotive", icon: Cpu, desc: "Drift builds, track records & resto-mods" },
-      { label: "Defence Projects", href: "/projects/defence", icon: Shield, desc: "Indrajaal, MINGO, NHAI & classified programs" },
+      { label: "Government Projects", href: "/projects/Government", icon: Shield, desc: "Indrajaal, MINGO, NHAI & classified programs" },
       { label: "General Engineering", href: "/projects/engineering", icon: Wrench, desc: "Pod cars, film props, Netflix & Bollywood builds" },
     ],
   },
@@ -90,7 +90,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
     setActiveDropdown(null)
 
     if (href.startsWith('#')) {
-      // Hash link — scroll to section on homepage
+      // Hash link  scroll to section on homepage
       if (location.pathname !== '/') {
         navigate('/')
         // Wait for homepage to mount then scroll
@@ -101,7 +101,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
         document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
       }
     } else {
-      // ✅ Use React Router navigate — no full page reload
+      // ✅ Use React Router navigate  no full page reload
       navigate(href)
     }
   }
@@ -136,7 +136,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* ✅ Logo — uses navigate('/') for SPA routing, no page reload */}
+          {/* ✅ Logo  uses navigate('/') for SPA routing, no page reload */}
           <div
             className="flex items-center gap-3 cursor-pointer shrink-0"
             onClick={() => handleNavClick("/")}

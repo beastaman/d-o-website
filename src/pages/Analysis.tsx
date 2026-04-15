@@ -12,7 +12,7 @@ const analysisCapabilities = [
     icon: Wind,
     title: 'Computational Fluid Dynamics (CFD)',
     color: 'blue',
-    desc: 'Full-vehicle and component-level aerodynamic analysis. We simulate airflow, drag coefficients, downforce, and thermal management for automotive, motorsport, and defence platforms.',
+    desc: 'Full-vehicle and component-level aerodynamic analysis. We simulate airflow, drag coefficients, downforce, and thermal management for automotive, motorsport, and Government platforms.',
     tools: ['ANSYS Fluent', 'OpenFOAM', 'Star-CCM+'],
     useCases: ['Race car aero', 'Cooling systems', 'Exhaust flow', 'Missile aerodynamics'],
   },
@@ -20,7 +20,7 @@ const analysisCapabilities = [
     icon: Activity,
     title: 'Finite Element Analysis (FEA)',
     color: 'amber',
-    desc: 'Structural integrity assessment of components and assemblies under static, dynamic, and fatigue loading conditions — ensuring every part performs safely at its design limits.',
+    desc: 'Structural integrity assessment of components and assemblies under static, dynamic, and fatigue loading conditions  ensuring every part performs safely at its design limits.',
     tools: ['ANSYS Structural', 'Abaqus', 'MSC Nastran'],
     useCases: ['Chassis stress', 'Crash simulation', 'Fatigue life', 'Composite layup'],
   },
@@ -28,7 +28,7 @@ const analysisCapabilities = [
     icon: GitBranch,
     title: 'Multi-Physics Modelling',
     color: 'purple',
-    desc: 'Coupled simulations that bridge thermal, structural, electromagnetic, and fluid domains — critical for defence electronics, EV powertrains, and complex aerospace components.',
+    desc: 'Coupled simulations that bridge thermal, structural, electromagnetic, and fluid domains critical for Government electronics, EV powertrains, and complex aerospace components.',
     tools: ['ANSYS Multiphysics', 'COMSOL', 'MATLAB/Simulink'],
     useCases: ['Thermal-structural', 'Fluid-structure interaction', 'EMC analysis', 'Battery thermal'],
   },
@@ -36,7 +36,7 @@ const analysisCapabilities = [
     icon: Settings,
     title: 'Design Optimisation',
     color: 'green',
-    desc: 'Topology optimisation, parametric studies, and Design of Experiments (DoE) to arrive at the lightest, strongest, and most cost-effective design — before the first prototype is machined.',
+    desc: 'Topology optimisation, parametric studies, and Design of Experiments (DoE) to arrive at the lightest, strongest, and most cost-effective design  before the first prototype is machined.',
     tools: ['Altair OptiStruct', 'ANSYS Workbench', 'MATLAB'],
     useCases: ['Weight reduction', 'Part consolidation', 'Stiffness tuning', 'Manufacturing optimisation'],
   },
@@ -44,7 +44,7 @@ const analysisCapabilities = [
     icon: Cpu,
     title: 'Kinematics & Dynamics',
     color: 'orange',
-    desc: 'Multi-body dynamics (MBD) simulations for suspension geometry, drivetrain behaviour, vehicle ride & handling, and mechanism design — particularly valuable for motorsport and tactical vehicles.',
+    desc: 'Multi-body dynamics (MBD) simulations for suspension geometry, drivetrain behaviour, vehicle ride & handling, and mechanism design  particularly valuable for motorsport and tactical vehicles.',
     tools: ['ADAMS', 'CarSim', 'Simscape'],
     useCases: ['Suspension geometry', 'Ride & handling', 'Drivetrain NVH', 'Mechanism design'],
   },
@@ -52,9 +52,9 @@ const analysisCapabilities = [
     icon: BarChart2,
     title: 'Structural Analysis & Validation',
     color: 'red',
-    desc: 'Comprehensive certification-grade structural analysis reports supporting regulatory approvals, government tenders, and client sign-off — complete with methodology documentation.',
+    desc: 'Comprehensive certification-grade structural analysis reports supporting regulatory approvals, government tenders, and client sign-off  complete with methodology documentation.',
     tools: ['ANSYS', 'Abaqus', 'NX Nastran'],
-    useCases: ['Defence certification', 'NHAI approval', 'Vehicle homologation', 'Armour validation'],
+    useCases: ['Government certification', 'NHAI approval', 'Vehicle homologation', 'Armour validation'],
   },
 ];
 
@@ -68,7 +68,7 @@ const colorMap: Record<string, { border: string; bg: string; tag: string; icon: 
 };
 
 const tools = [
-  { name: 'ANSYS', desc: 'Full suite — Fluent, Mechanical, Maxwell' },
+  { name: 'ANSYS', desc: 'Full suite  Fluent, Mechanical, Maxwell' },
   { name: 'SolidWorks', desc: 'CAD & integrated simulation' },
   { name: 'CATIA', desc: 'Aerospace-grade surface modelling' },
   { name: 'Abaqus / FEA', desc: 'Non-linear structural analysis' },
@@ -120,7 +120,7 @@ export default function Analysis() {
               <span className="text-gradient">Build.</span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              Our computational engineering team deploys industry-leading simulation tools to predict performance, identify failure modes, and optimise designs — eliminating costly physical iterations and accelerating time-to-field.
+              Our computational engineering team deploys industry-leading simulation tools to predict performance, identify failure modes, and optimise designs  eliminating costly physical iterations and accelerating time-to-field.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -168,7 +168,7 @@ export default function Analysis() {
             Analysis Capabilities
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Spanning fluid dynamics to structural integrity — our simulation portfolio covers every critical engineering discipline.
+            Spanning fluid dynamics to structural integrity  our simulation portfolio covers every critical engineering discipline.
           </p>
         </div>
 
@@ -262,7 +262,7 @@ export default function Analysis() {
             Ready to Simulate Your Design?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Share your CAD files or design brief — our simulation engineers will scope the analysis and deliver results with full methodology documentation.
+            Share your CAD files or design brief  our simulation engineers will scope the analysis and deliver results with full methodology documentation.
           </p>
           <motion.button
             onClick={() => navigate('/contact')}

@@ -293,7 +293,7 @@ export default function InfiniteHero() {
 						ref={pRef}
 						className="mx-auto mt-6 max-w-2xl md:text-balance text-base md:text-lg font-light tracking-wide text-white/60"
 					>
-						Advanced systems for defence, mobility, and strategic infrastructure.
+						Advanced systems for Government, mobility, and strategic infrastructure.
 						<br />
 						<span className="text-amber-500/80">Proudly Made in India.</span>
 					</p>

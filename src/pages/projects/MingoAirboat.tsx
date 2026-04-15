@@ -12,7 +12,7 @@ const specs = [
   { label: 'Hull Material', value: 'Marine-Grade Aluminium' },
   { label: 'Propulsion', value: 'Aircraft-Type Pusher Engine + Propeller' },
   { label: 'Max Speed', value: '60+ km/h on water' },
-  { label: 'Draft', value: 'Ultra-shallow — operates in 15cm water' },
+  { label: 'Draft', value: 'Ultra-shallow  operates in 15cm water' },
   { label: 'Capacity', value: '8–10 Persons (Rescue Configuration)' },
   { label: 'Design Tool', value: 'SolidWorks + ANSYS FEA' },
   { label: 'Client', value: 'Maharashtra State Government' },
@@ -22,12 +22,12 @@ const features = [
   {
     icon: Waves,
     title: 'Shallow Water Mastery',
-    desc: 'Designed to operate in water depths as low as 15 cm — critical for flooded urban areas and rice fields where conventional boats become useless.',
+    desc: 'Designed to operate in water depths as low as 15 cm  critical for flooded urban areas and rice fields where conventional boats become useless.',
   },
   {
     icon: Zap,
     title: 'Rapid Deployment',
-    desc: 'Trailer-mounted for fast transport, the MINGO can be operational on water within minutes of arrival — vital during the golden hour of flood rescue operations.',
+    desc: 'Trailer-mounted for fast transport, the MINGO can be operational on water within minutes of arrival  vital during the golden hour of flood rescue operations.',
   },
   {
     icon: Settings,
@@ -37,7 +37,7 @@ const features = [
   {
     icon: Shield,
     title: 'Full Indigenous Design',
-    desc: 'Every component — hull, frame, propulsion mount, seating, and safety systems — was designed in-house by D&O\'s engineering team. No imported platform. 100% Make in India.',
+    desc: 'Every component  hull, frame, propulsion mount, seating, and safety systems  was designed in-house by D&O\'s engineering team. No imported platform. 100% Make in India.',
   },
   {
     icon: CheckCircle2,
@@ -52,7 +52,7 @@ const timeline = [
   { phase: 'FEA & CFD Analysis', period: '2022 Q3', desc: 'Structural analysis of hull under load, hydrodynamic resistance modelling and propulsion efficiency calculations.' },
   { phase: 'Hull Fabrication', period: '2022 Q3–Q4', desc: 'Marine-grade aluminium hull plates cut, formed and welded in-house. Frame structure assembled and inspected.' },
   { phase: 'Propulsion Integration', period: '2022 Q4', desc: 'Aircraft engine installation, propeller balancing, steering system integration and fuel system commissioning.' },
-  { phase: 'Water Trials & Delivery', period: '2023', desc: 'Extensive water trials conducted at reservoir — speed, maneuverability and load testing completed. Platform delivered to Maharashtra Govt.' },
+  { phase: 'Water Trials & Delivery', period: '2023', desc: 'Extensive water trials conducted at reservoir  speed, maneuverability and load testing completed. Platform delivered to Maharashtra Govt.' },
 ];
 
 export default function MingoAirboat() {
@@ -95,7 +95,7 @@ export default function MingoAirboat() {
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 font-medium border border-blue-500/25">
-                  <Star className="w-3 h-3" /> Delivered — Maharashtra Govt.
+                  <Star className="w-3 h-3" /> Delivered  Maharashtra Govt.
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-green-500/10 text-green-400 font-mono border border-green-500/20">
                   INDIA'S FIRST INDIGENOUS AIRBOAT
@@ -109,7 +109,7 @@ export default function MingoAirboat() {
                 India's First Indigenously Designed & Manufactured Airboat
               </p>
               <p className="text-gray-400 leading-relaxed max-w-xl">
-                The MINGO is India's first completely indigenous airboat — designed from the ground up by D&O's engineering team and delivered to the Maharashtra State Government for disaster management and flood rescue operations. Capable of navigating in as little as 15 cm of water, the MINGO redefines rapid-response flood rescue capability for India's emergency services.
+                The MINGO is India's first completely indigenous airboat  designed from the ground up by D&O's engineering team and delivered to the Maharashtra State Government for disaster management and flood rescue operations. Capable of navigating in as little as 15 cm of water, the MINGO redefines rapid-response flood rescue capability for India's emergency services.
               </p>
               <div className="flex flex-wrap gap-4 mt-7">
                 <motion.button
@@ -144,7 +144,7 @@ export default function MingoAirboat() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E]/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
                 <div className="font-mono text-[9px] tracking-[0.2em] text-blue-400/70 uppercase">D&O Advanced Engineering × Maharashtra Govt.</div>
-                <div className="text-white font-semibold mt-1">MINGO Airboat — Field Operations</div>
+                <div className="text-white font-semibold mt-1">MINGO Airboat  Field Operations</div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="text-center">
@@ -248,7 +248,7 @@ export default function MingoAirboat() {
             Visual Documentation
           </h2>
           <p className="text-gray-500 text-sm mt-3 max-w-xl mx-auto">
-            MINGO in action — from hull fabrication and propulsion integration to field water trials and Maharashtra Government delivery.
+            MINGO in action  from hull fabrication and propulsion integration to field water trials and Maharashtra Government delivery.
           </p>
         </div>
 
@@ -256,7 +256,7 @@ export default function MingoAirboat() {
         <div className="reveal-card relative rounded-2xl overflow-hidden border border-blue-500/20 aspect-[16/7] mb-4 group">
           <img
             src="/images/mingo/gallery-hero.png"
-            alt="MINGO Airboat — Feature Shot"
+            alt="MINGO Airboat  Feature Shot"
             className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
             onError={(e) => { (e.target as HTMLImageElement).src = '/images/placeholder.svg'; }}
           />
@@ -264,13 +264,13 @@ export default function MingoAirboat() {
           <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
             <div>
               <div className="font-mono text-[9px] tracking-[0.2em] text-blue-400/70 uppercase mb-1">D&O × Maharashtra Govt.</div>
-              <div className="text-white font-semibold text-sm">MINGO Airboat — Water Trials</div>
+              <div className="text-white font-semibold text-sm">MINGO Airboat  Water Trials</div>
             </div>
             <span className="font-mono text-[9px] px-2.5 py-1 rounded-full bg-blue-500/15 border border-blue-500/25 text-blue-400">01 / 08</span>
           </div>
         </div>
 
-        {/* Grid — 5 images */}
+        {/* Grid  5 images */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {[2, 3, 4, 5, 6,7,8].map((n) => (
             <div key={n} className="reveal-card relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] group">
@@ -297,7 +297,7 @@ export default function MingoAirboat() {
             Need a Custom Platform?
           </h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">
-            Whether it's a rescue watercraft, survey vehicle, or specialised tactical platform — D&O will design, build, and deliver it.
+            Whether it's a rescue watercraft, survey vehicle, or specialised tactical platform  D&O will design, build, and deliver it.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.button
