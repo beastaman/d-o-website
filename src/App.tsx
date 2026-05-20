@@ -12,6 +12,7 @@ import './App.css';
 import { Navbar1 } from '@/components/ui/navbar-1';
 import Footer from '@/sections/Footer';
 import AIChat from '@/sections/AIChat';
+import SocialSticky from '@/components/ui/SocialSticky';
 
 // Homepage sections
 import Hero from '@/sections/Hero';
@@ -128,7 +129,9 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <div className="relative bg-[#0B0C0E] min-h-screen overflow-x-hidden">
+    <div className="relative bg-[#0B0C0E] min-h-screen overflow-x-hidden pb-0 sm:pb-0">
+      {/* spacer so footer doesn't hide behind mobile bottom bar */}
+      <style>{`@media (max-width: 639px) { body { padding-bottom: 64px; } }`}</style>
       {/* Film-grain noise */}
       <div className="fixed inset-0 pointer-events-none z-[100] noise-overlay opacity-40" />
 
@@ -163,6 +166,9 @@ function App() {
 
       {/* AI chat bubble */}
       <AIChat />
+
+      {/* Sticky social buttons (IG / WA / Call / YT) */}
+      <SocialSticky />
 
       {/* Global toast notifications */}
       <Toaster ref={globalToasterRef} defaultPosition="bottom-right" />

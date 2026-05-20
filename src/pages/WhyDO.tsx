@@ -122,7 +122,7 @@ export default function WhyDO() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(246,168,0,0.08) 0%, transparent 65%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -155,7 +155,7 @@ export default function WhyDO() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: '1000+', label: 'High-End Cars Serviced' },
             { val: '800+', label: 'Exhaust Systems Built' },
@@ -171,7 +171,7 @@ export default function WhyDO() {
       </section>
 
       {/* ── Advantages Grid ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Competitive Advantages</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,50px)] text-white mt-3 mb-4">
@@ -186,9 +186,9 @@ export default function WhyDO() {
             return (
               <div
                 key={adv.title}
-                className={`reveal-card p-7 rounded-2xl border ${c.border} ${c.bg} group hover:border-opacity-50 transition-all duration-300`}
+                className={`reveal-card p-5 sm:p-7 rounded-2xl border ${c.border} ${c.bg} group hover:border-opacity-50 transition-all duration-300`}
               >
-                <div className="flex items-start gap-5">
+                <div className="flex items-start gap-4 sm:gap-5">
                   <div className={`shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl border ${c.border} group-hover:scale-110 transition-transform`}>
                     <Icon className={`w-5 h-5 ${c.text}`} />
                   </div>
@@ -210,16 +210,16 @@ export default function WhyDO() {
       </section>
 
       {/* ── Comparison Table ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Comparison</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-3">
               D&O vs. Typical Engineering Contractors
             </h2>
           </div>
-          <div className="rounded-2xl border border-white/[0.08] overflow-hidden">
-            <div className="grid grid-cols-[1fr_auto_auto] bg-white/[0.03] px-6 py-3 border-b border-white/[0.08]">
+          <div className="rounded-2xl border border-white/[0.08] overflow-hidden overflow-x-auto">
+            <div className="grid grid-cols-[1fr_auto_auto] bg-white/[0.03] px-4 sm:px-6 py-3 border-b border-white/[0.08] min-w-[420px]">
               <span className="font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase">Capability / Factor</span>
               <span className="font-mono text-[9px] tracking-[0.2em] text-amber-500 uppercase text-center w-20">D&O</span>
               <span className="font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase text-center w-24">Typical</span>
@@ -227,7 +227,7 @@ export default function WhyDO() {
             {comparisons.map((row, i) => (
               <div
                 key={row.factor}
-                className={`grid grid-cols-[1fr_auto_auto] px-6 py-4 items-center ${i % 2 === 0 ? '' : 'bg-white/[0.015]'} border-b border-white/[0.05] last:border-0`}
+                className={`grid grid-cols-[1fr_auto_auto] px-4 sm:px-6 py-4 items-center ${i % 2 === 0 ? '' : 'bg-white/[0.015]'} border-b border-white/[0.05] last:border-0 min-w-[420px]`}
               >
                 <span className="text-gray-300 text-sm">{row.factor}</span>
                 <div className="w-20 flex justify-center">
@@ -247,8 +247,8 @@ export default function WhyDO() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Ready to Partner?</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Let's Build Something Extraordinary

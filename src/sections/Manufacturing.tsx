@@ -43,12 +43,13 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: true,
+          pin: isDesktop,
           scrub: 0.6,
         },
       });
@@ -133,7 +134,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
+      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -142,7 +143,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-6 lg:px-16 xl:px-24">
+      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-24">
         {/* Top Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
           {/* Left - Headline */}

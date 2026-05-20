@@ -105,7 +105,7 @@ export default function GovernmentProjects() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#0B0C0E] pt-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8">
         <button onClick={() => navigate(-1)} className="inline-flex items-center gap-2 text-gray-500 hover:text-amber-400 text-sm font-mono tracking-wide transition-colors">
           <ChevronLeft className="w-4 h-4" /> Back
         </button>
@@ -115,7 +115,7 @@ export default function GovernmentProjects() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(246,168,0,0.07) 0%, transparent 65%)' }} />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 lg:py-20">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
             <div className="flex items-center gap-3 mb-5">
               <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-red-500/10 text-red-400 font-mono border border-red-500/20">
@@ -135,24 +135,24 @@ export default function GovernmentProjects() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
             { val: '3', label: 'Govt. Agencies Served' },
             { val: '100%', label: 'Indigenous Platforms' },
-            { val: '0', label: 'Failed Deployments' },
+            { val: '0%', label: 'Failed Deployments' },
             { val: 'BSF+', label: 'Security Clearance Level' },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-sora font-bold text-2xl text-amber-400">{s.val}</div>
-              <div className="text-gray-500 text-xs font-mono tracking-wide mt-1">{s.label}</div>
+              <div className="font-sora font-bold text-xl sm:text-2xl text-amber-400">{s.val}</div>
+              <div className="text-gray-500 text-[10px] sm:text-xs font-mono tracking-wide mt-1">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── Projects ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
-        <div className="grid md:grid-cols-2 gap-5">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
+        <div className="grid sm:grid-cols-2 gap-5">
           {projects.map((project) => {
             const c = colorMap[project.statusColor];
             const isClassified = project.classification.includes('CLASSIFIED') || project.classification.includes('RESTRICTED');
@@ -180,7 +180,7 @@ export default function GovernmentProjects() {
                   </div>
                 )}
 
-                <div className="p-7">
+                <div className="p-5 sm:p-7">
                   <div className="flex items-start justify-between gap-3 mb-4">
                     <div>
                       <div className={`font-mono text-[9px] tracking-[0.22em] ${c.text} uppercase mb-1`}>{project.category}</div>
@@ -242,8 +242,8 @@ export default function GovernmentProjects() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <Shield className="w-10 h-10 text-amber-500/40 mx-auto mb-5" />
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Need an Indigenous Government Platform?</h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">

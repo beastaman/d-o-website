@@ -20,11 +20,11 @@ const projects = [
   },
   {
     id: 'e46-lt1-drift',
-    title: 'E46 LT1  Competition Drift Car',
+    title: 'E46 LT 1  Competition Drift Car',
     category: 'Competition Drift Build',
-    tags: ['BMW E46', 'LT1 Camaro Swap', 'Drift', 'CNC Fabrication'],
-    desc: 'This E46 receives the potent GM LT1 engine sourced from the Chevrolet Camaro, delivering a distinct powerband ideally suited for drift applications. The swap demanded bespoke engine mounts designed through 3D scanning of the chassis, CNC-machined adapter plates, and a fully revised wiring harness integration.',
-    highlights: ['GM LT1 Camaro engine swap', 'CNC-machined adapter plates', '3D-scanned engine mounts', 'Full roll cage to factory hard points', 'Reinforced subframes & diff mounting', 'Adjustable suspension package'],
+    tags: ['BMW E46', 'LT 1 Camaro Swap', 'Drift', 'CNC Fabrication'],
+    desc: 'This E46 receives the potent GM LT 1 engine sourced from the Chevrolet Camaro, delivering a distinct powerband ideally suited for drift applications. The swap demanded bespoke engine mounts designed through 3D scanning of the chassis, CNC-machined adapter plates, and a fully revised wiring harness integration.',
+    highlights: ['GM LT 1 Camaro engine swap', 'CNC-machined adapter plates', '3D-scanned engine mounts', 'Full roll cage to factory hard points', 'Reinforced subframes & diff mounting', 'Adjustable suspension package'],
     image: '/images/automotive/e46-lt1-drift.jpg',
     color: 'blue',
   },
@@ -181,7 +181,7 @@ export default function AutomotiveProjects() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-[#0B0C0E] pt-28">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8">
         <button onClick={() => navigate(-1)} className="inline-flex items-center gap-2 text-gray-500 hover:text-amber-400 text-sm font-mono tracking-wide transition-colors">
           <ChevronLeft className="w-4 h-4" /> Back
         </button>
@@ -191,7 +191,7 @@ export default function AutomotiveProjects() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(246,168,0,0.08) 0%, transparent 70%)' }} />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 lg:py-20">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-5">
               <span className="w-8 h-px bg-amber-500" /> Automotive & Motorsport
@@ -208,14 +208,14 @@ export default function AutomotiveProjects() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((s) => {
             const Icon = s.icon;
             return (
               <div key={s.label} className="text-center">
                 <div className="flex justify-center mb-1"><Icon className="w-5 h-5 text-amber-500/50" /></div>
-                <div className="font-sora font-bold text-2xl text-amber-400">{s.val}</div>
-                <div className="text-gray-500 text-xs font-mono tracking-wide mt-1">{s.label}</div>
+                <div className="font-sora font-bold text-xl sm:text-2xl text-amber-400">{s.val}</div>
+                <div className="text-gray-500 text-[10px] sm:text-xs font-mono tracking-wide mt-1">{s.label}</div>
               </div>
             );
           })}
@@ -223,18 +223,18 @@ export default function AutomotiveProjects() {
       </section>
 
       {/* ── Projects Grid ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="space-y-6">
           {projects.map((project) => {
             const c = colorMap[project.color];
             return (
               <div key={project.id} className={`reveal-card rounded-2xl border ${c.border} ${c.bg} overflow-hidden group`}>
                 <div className="grid lg:grid-cols-[1fr_300px] gap-0">
-                  <div className="p-7 lg:p-8">
+                  <div className="p-5 sm:p-7 lg:p-8 order-2 lg:order-1">
                     <div className="flex flex-wrap items-center gap-2 mb-4">
                       <span className={`font-mono text-[9px] tracking-[0.22em] ${c.text} uppercase`}>{project.category}</span>
                     </div>
-                    <h2 className="font-sora font-bold text-white text-[22px] mb-3 leading-snug">{project.title}</h2>
+                    <h2 className="font-sora font-bold text-white text-[18px] sm:text-[22px] mb-3 leading-snug">{project.title}</h2>
                     <p className="text-gray-400 text-sm leading-relaxed mb-5">{project.desc}</p>
                     <div className="flex flex-wrap gap-1.5 mb-5">
                       {project.tags.map((t) => (
@@ -243,7 +243,7 @@ export default function AutomotiveProjects() {
                     </div>
                     <div>
                       <div className="font-mono text-[9px] tracking-[0.2em] text-gray-600 uppercase mb-2">Highlights</div>
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
                         {project.highlights.map((h) => (
                           <div key={h} className="flex items-center gap-2 text-xs text-gray-400">
                             <span className={`w-1 h-1 rounded-full shrink-0 ${c.text.replace('text-', 'bg-')}`} />
@@ -254,7 +254,7 @@ export default function AutomotiveProjects() {
                     </div>
                   </div>
 
-                  <div className={`relative border-l ${c.border} bg-black/20 flex items-center justify-center min-h-[240px] lg:min-h-0 overflow-hidden`}>
+                  <div className={`relative border-b lg:border-b-0 lg:border-l ${c.border} bg-black/20 flex items-center justify-center min-h-[200px] sm:min-h-[240px] lg:min-h-0 overflow-hidden order-1 lg:order-2`}>
                     <img
                       src={project.image}
                       alt={project.title}
@@ -276,7 +276,7 @@ export default function AutomotiveProjects() {
       </section>
 
       {/* ── Workshop Gallery ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-24">
         <div className="text-center mb-12">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Workshop Gallery</span>
           <h2 className="font-sora font-bold text-[clamp(24px,3.5vw,42px)] text-white mt-3">
@@ -302,8 +302,8 @@ export default function AutomotiveProjects() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Commission a Build</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">Want a Custom Build?</h2>
           <p className="text-gray-400 leading-relaxed mb-8 max-w-xl mx-auto">

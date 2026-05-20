@@ -75,7 +75,7 @@ export default function IndrajaalRanger() {
     <div ref={containerRef} className="min-h-screen bg-[#0B0C0E] pt-28">
 
       {/* ── Back ── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8">
         <button
           onClick={() => navigate(-1)}
           className="inline-flex items-center gap-2 text-gray-500 hover:text-amber-400 text-sm font-mono tracking-wide transition-colors"
@@ -90,8 +90,8 @@ export default function IndrajaalRanger() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(246,168,0,0.09) 0%, transparent 70%)' }}
         />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center py-12 lg:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8 sm:py-12 lg:py-16">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 font-medium border border-amber-500/25">
@@ -158,9 +158,41 @@ export default function IndrajaalRanger() {
         </div>
       </section>
 
+      {/* ── Video Showcase ── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-12 lg:pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-6"
+        >
+          <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Video Showcase</span>
+          <h2 className="font-sora font-bold text-[clamp(24px,3.5vw,40px)] text-white mt-2">
+            Indrajaal Ranger in Action
+          </h2>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-2xl overflow-hidden border border-amber-500/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] aspect-video bg-black/40"
+        >
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/TJOmFvMfJgo?si=XApTE5pJCZ5Q5oLZ"
+            title="Indrajaal Ranger  Anti-Drone Vehicle"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </motion.div>
+      </section>
+
       {/* ── Key Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
             { val: '2024–25', label: 'Development Period' },
             { val: 'BSF', label: 'Primary Client' },
@@ -168,22 +200,22 @@ export default function IndrajaalRanger() {
             { val: '61st', label: 'BSF Parade Showcased' },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="font-sora font-bold text-2xl text-amber-400">{s.val}</div>
-              <div className="text-gray-500 text-xs font-mono tracking-wide mt-1">{s.label}</div>
+              <div className="font-sora font-bold text-xl sm:text-2xl text-amber-400">{s.val}</div>
+              <div className="text-gray-500 text-[10px] sm:text-xs font-mono tracking-wide mt-1">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── Features ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">System Features</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-3">
             Platform Capabilities
           </h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {features.map((f) => {
             const Icon = f.icon;
             return (
@@ -200,9 +232,9 @@ export default function IndrajaalRanger() {
       </section>
 
       {/* ── Technical Specs ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Specifications</span>
               <h2 className="font-sora font-bold text-[clamp(26px,3.5vw,40px)] text-white mt-4 mb-8">
@@ -251,7 +283,7 @@ export default function IndrajaalRanger() {
       </section>
 
       {/* ── Project Gallery ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-24">
         <div className="text-center mb-12">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Project Gallery</span>
           <h2 className="font-sora font-bold text-[clamp(24px,3.5vw,42px)] text-white mt-3">
@@ -281,7 +313,7 @@ export default function IndrajaalRanger() {
         </div>
 
         {/* Secondary grid  3 images */}
-        <div className="grid grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-4">
           {[2, 3, 4].map((n) => (
             <div key={n} className="reveal-card relative aspect-[4/3] rounded-xl overflow-hidden border border-white/[0.07] group">
               <img
@@ -318,8 +350,8 @@ export default function IndrajaalRanger() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Partner With D&O</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Need an Indigenous Government Platform?

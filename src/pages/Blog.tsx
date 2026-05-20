@@ -308,7 +308,7 @@ function FeaturedHeroCard({ post }: { post: BlogPost }) {
         </div>
 
         {/* Content panel */}
-        <div className="p-8 lg:p-10 flex flex-col justify-center">
+        <div className="p-5 sm:p-8 lg:p-10 flex flex-col justify-center">
           <div className="flex items-center gap-3 mb-4 text-gray-600 text-xs font-mono">
             <span>{post.date}</span>
             <span>·</span>
@@ -391,7 +391,7 @@ export default function Blog() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-25" />
         <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(246,168,0,0.07) 0%, transparent 65%)' }} />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-24">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
             <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-5">
               <span className="w-8 h-px bg-amber-500" /> Engineering Insights
@@ -409,7 +409,7 @@ export default function Blog() {
 
       {/* ── Stats bar ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-7 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: `${posts.length}+`, label: 'Articles Published' },
             { val: '5', label: 'Engineering Topics' },
@@ -426,7 +426,7 @@ export default function Blog() {
 
       {/* ── Featured Posts ── */}
       {showFeaturedHero && (
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 py-14 lg:py-20">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-14 lg:py-20">
           <div className="mb-8">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Featured Articles</span>
           </div>
@@ -439,8 +439,8 @@ export default function Blog() {
       )}
 
       {/* ── All Posts with filter ── */}
-      <section className={`border-t border-white/[0.06] py-14 lg:py-20 ${showFeaturedHero ? '' : 'pt-14'}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className={`border-t border-white/[0.06] py-12 sm:py-14 lg:py-20 ${showFeaturedHero ? '' : 'pt-14'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">
@@ -502,7 +502,7 @@ export default function Blog() {
               </button>
             </div>
           ) : (
-            <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               <AnimatePresence mode="popLayout">
                 {gridPosts.map((post) => (
                   <PostCard
@@ -518,8 +518,8 @@ export default function Blog() {
       </section>
 
       {/* ── Coming Soon ── */}
-      <section className="border-t border-white/[0.06] py-14 lg:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-12 sm:py-14 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-10">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Coming Soon</span>
             <h2 className="font-sora font-bold text-[clamp(24px,3.5vw,40px)] text-white mt-3">Next on the Blog</h2>
@@ -541,9 +541,9 @@ export default function Blog() {
       </section>
 
       {/* ── Newsletter / Subscribe CTA ── */}
-      <section className="border-t border-white/[0.06] py-14 lg:py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
-          <div className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.03] p-8 lg:p-12 text-center overflow-hidden relative">
+      <section className="border-t border-white/[0.06] py-12 sm:py-14 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.03] p-6 sm:p-8 lg:p-12 text-center overflow-hidden relative">
             <div className="absolute inset-0 bg-grid-pattern opacity-20" />
             <div className="relative">
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Stay Updated</span>
@@ -578,8 +578,8 @@ export default function Blog() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-14 lg:py-20 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-14 lg:py-20 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <BookOpen className="w-10 h-10 text-amber-500/40 mx-auto mb-5" />
           <h2 className="font-sora font-bold text-[clamp(26px,4vw,44px)] text-white mt-4 mb-5">
             Want to Work with the Team Behind These Projects?

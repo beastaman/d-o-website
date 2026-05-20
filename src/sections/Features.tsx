@@ -105,14 +105,14 @@ export default function Features({ className = '' }: FeaturesProps) {
     <section
       ref={sectionRef}
       id="features"
-      className={`relative w-full py-24 lg:py-32 bg-[#0B0C0E] ${className}`}
+      className={`relative w-full py-16 sm:py-24 lg:py-32 bg-[#0B0C0E] ${className}`}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Headline */}
-        <div ref={headlineRef} className="text-center mb-16">
+        <div ref={headlineRef} className="text-center mb-12 sm:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export default function Features({ className = '' }: FeaturesProps) {
             End-to-End Engineering,{' '}
             <span className="text-gradient">Built for Extremes</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-4">
+          <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto mt-4 px-2">
             From concept to deployment, we deliver robust, scalable, and field-ready engineering systems.
           </p>
         </div>

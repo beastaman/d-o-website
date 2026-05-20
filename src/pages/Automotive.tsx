@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, Cpu, Zap, Settings, BarChart2, Wrench, ChevronRight } from 'lucide-react';
+import { ArrowRight, Cpu, Zap, Settings, BarChart2, Wrench, ChevronRight, Cog } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,7 +37,7 @@ const capabilities = [
     tags: ['Race Prep', 'Lightweighting', 'Telemetry'],
   },
   {
-    icon: ArrowRight,
+    icon: Cog,
     title: 'Drivetrain Solutions',
     desc: 'Custom differential systems, transmission selection, driveshaft engineering, and EV powertrain integration for bespoke vehicle programs.',
     tags: ['4WD Systems', 'EV Integration', 'Differential Design'],
@@ -131,10 +131,10 @@ export default function Automotive() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-amber-500/8 blur-[100px] rounded-full pointer-events-none" />
 
         {/* Corner brackets */}
-        <div className="absolute top-28 left-8 w-10 h-10 border-t-2 border-l-2 border-amber-500/40" />
-        <div className="absolute top-28 right-8 w-10 h-10 border-t-2 border-r-2 border-amber-500/40" />
+        <div className="hidden sm:block absolute top-28 left-8 w-10 h-10 border-t-2 border-l-2 border-amber-500/40" />
+        <div className="hidden sm:block absolute top-28 right-8 w-10 h-10 border-t-2 border-r-2 border-amber-500/40" />
 
-        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full">
+        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-16 w-full">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs font-mono text-gray-500 mb-6">
             <span>D&O</span>
@@ -165,12 +165,12 @@ export default function Automotive() {
         ref={statsRef}
         className="border-y border-white/5 bg-white/[0.02]"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="stat-item text-center">
-                <div className="font-sora font-black text-4xl text-amber-400 mb-1">{s.value}</div>
-                <div className="font-mono text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
+                <div className="font-sora font-black text-2xl sm:text-4xl text-amber-400 mb-1">{s.value}</div>
+                <div className="font-mono text-[10px] sm:text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
               </div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export default function Automotive() {
       </div>
 
       {/* ── Capabilities Grid ──────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
         <div className="mb-14">
           <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">What We Do</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">
@@ -234,8 +234,8 @@ export default function Automotive() {
             backgroundSize: '50px 50px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Our Approach</span>
               <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3 mb-6">
@@ -269,7 +269,7 @@ export default function Automotive() {
       </div>
 
       {/* ── Related Projects ───────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
         <div className="mb-12">
           <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">In Action</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,44px)] text-white mt-3">Related Projects</h2>
@@ -300,7 +300,7 @@ export default function Automotive() {
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <div className="relative border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20 text-center">
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,52px)] text-white mb-4">
             Have an Automotive Challenge?
           </h2>

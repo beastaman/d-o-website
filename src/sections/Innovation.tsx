@@ -36,12 +36,13 @@ export default function Innovation({ className = '' }: InnovationProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: true,
+          pin: isDesktop,
           scrub: 0.6,
         },
       });
@@ -112,7 +113,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
+      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -121,7 +122,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6">
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-4 sm:px-6">
         {/* Label */}
         <span
           ref={labelRef}

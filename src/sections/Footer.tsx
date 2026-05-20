@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Mail, Phone, MapPin, Linkedin, Instagram, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Mail, Phone, MapPin, Linkedin, Instagram, ExternalLink, Youtube } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,14 +20,17 @@ const socialLinks = [
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/company/united-motorsports-academy/',
     icon: Linkedin,
-    handle: 'United Motorsports Academy',
   },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/unitedmotorsportsacademy',
     icon: Instagram,
-    handle: '@unitedmotorsportsacademy',
   },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@unitedmotorsportsacademy',
+    icon: Youtube,
+  }
 ];
 
 export default function Footer() {
@@ -95,7 +98,7 @@ export default function Footer() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-12 sm:pt-16 pb-8">
 
         {/* Top: Brand + CTA */}
         <div ref={logoRef} className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-16 pb-12 border-b border-white/8">
@@ -119,7 +122,7 @@ export default function Footer() {
               Indigenous engineering excellence for Government, mobility & advanced manufacturing. Proudly made in India.
             </p>
             {/* Parent company */}
-            <a
+            {/* <a
               href="https://www.unitedmotorsportsacademy.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -128,7 +131,7 @@ export default function Footer() {
               <span className="font-mono tracking-widest uppercase">A unit of</span>
               <span className="font-sora font-semibold text-gray-300 group-hover:text-amber-400 transition-colors">United Motorsports Academy</span>
               <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity" />
-            </a>
+            </a> */}
           </div>
 
           {/* CTA + Tagline */}
@@ -205,7 +208,6 @@ export default function Footer() {
                   </div>
                   <div>
                     <div className="text-xs text-gray-300 group-hover:text-amber-400 transition-colors font-medium">{social.label}</div>
-                    <div className="text-[10px] text-gray-600">{social.handle}</div>
                   </div>
                 </a>
               ))}
@@ -215,7 +217,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div ref={bottomRef} className="pt-6 border-t border-white/5">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             {/* Parent company badge */}
             <div className="flex items-center gap-3">
               <a
@@ -234,7 +236,7 @@ export default function Footer() {
               © {new Date().getFullYear()} D&O Advanced Engineering. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center flex-wrap gap-4 sm:gap-6">
               <button
                 onClick={() => handleNavClick('#')}
                 className="text-xs text-gray-600 hover:text-amber-400 transition-colors font-mono tracking-wider uppercase"
@@ -262,7 +264,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-[10px] font-mono text-gray-700 tracking-[0.3em] uppercase">
               <span className="w-8 h-[1px] bg-gray-700" />
               Proudly Made in India
-              <span className="text-orange-600">🇮🇳</span>
+              {/* <span className="text-orange-600">🇮🇳</span> */}
               <span className="w-8 h-[1px] bg-gray-700" />
             </div>
           </div>

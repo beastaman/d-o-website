@@ -53,8 +53,8 @@ export default function Hero({ className = '' }: HeroProps) {
   return (
     <section
       id="hero"
-      className={`relative w-full h-[100dvh] overflow-hidden bg-[#0B0C0E]
-        flex flex-col items-center justify-center text-center px-4 ${className}`}
+      className={`relative w-full min-h-[100dvh] overflow-hidden bg-[#0B0C0E]
+        flex flex-col items-center justify-center text-center px-4 pt-24 sm:pt-20 lg:pt-0 ${className}`}
     >
       {/* ── Inline scan keyframe ─────────────────────────────────────────────── */}
       <style>{`
@@ -99,8 +99,7 @@ export default function Hero({ className = '' }: HeroProps) {
 
       {/* ── Text content  shifted up to sit above the marquee ───────────────── */}
       <div
-        className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto"
-        style={{ transform: 'translateY(-8vh)' }}
+        className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto -translate-y-[4vh] sm:-translate-y-[6vh] lg:-translate-y-[8vh]"
       >
 
         {/* Eyebrow */}
@@ -120,8 +119,8 @@ export default function Hero({ className = '' }: HeroProps) {
 
         {/* Title  two lines, GSAP entrance */}
         <h1
-          className="font-sora font-black leading-[0.88] tracking-tighter mb-5 sm:mb-6 px-2"
-          style={{ fontSize: 'clamp(42px, 8vw, 116px)' }}
+          className="font-sora font-black leading-[0.92] sm:leading-[0.88] tracking-tighter mb-5 sm:mb-6 px-2"
+          style={{ fontSize: 'clamp(34px, 8vw, 116px)' }}
         >
           <span
             ref={line1Ref}
@@ -136,7 +135,7 @@ export default function Hero({ className = '' }: HeroProps) {
               bg-clip-text text-transparent"
             style={{ filter: 'drop-shadow(0 0 32px rgba(246,168,0,0.32))' }}
           >
-            Engineered for Battle.
+            Engineered for the Extreme.
           </span>
         </h1>
 
@@ -147,9 +146,8 @@ export default function Hero({ className = '' }: HeroProps) {
             text-sm sm:text-base md:text-lg lg:text-xl
             tracking-tight text-gray-400 px-2"
         >
-          Advanced indigenous systems for Government, mobility, and strategic
+          Advanced development of indigenous systems for Government, mobility, and strategic
           infrastructure.{' '}
-          <span className="text-amber-400 font-medium">Proudly Made in India.</span>
         </p>
 
         {/* CTAs */}
@@ -193,7 +191,7 @@ export default function Hero({ className = '' }: HeroProps) {
        *   Seamless loop: duplicate images + shift by exactly –50%.               *
        *   loading="lazy" + decoding="async"  don't block first paint.           */}
       <div
-        className="absolute bottom-0 left-0 w-full h-[34%] sm:h-[36%] md:h-[40%]
+        className="absolute bottom-0 left-0 w-full h-[26%] sm:h-[32%] md:h-[40%]
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_72%,transparent_100%)]"
       >
         <motion.div

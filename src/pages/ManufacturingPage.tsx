@@ -104,12 +104,12 @@ export default function ManufacturingPage() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[180px] bg-amber-500/7 blur-[100px] rounded-full pointer-events-none" />
 
         {/* Blueprint corner marks */}
-        <div className="absolute top-28 left-8 w-12 h-12 border-t-2 border-l-2 border-amber-500/30" />
-        <div className="absolute top-28 right-8 w-12 h-12 border-t-2 border-r-2 border-amber-500/30" />
-        <div className="absolute bottom-16 left-8 w-8 h-8 border-b border-l border-amber-500/20" />
-        <div className="absolute bottom-16 right-8 w-8 h-8 border-b border-r border-amber-500/20" />
+        <div className="hidden sm:block absolute top-28 left-8 w-12 h-12 border-t-2 border-l-2 border-amber-500/30" />
+        <div className="hidden sm:block absolute top-28 right-8 w-12 h-12 border-t-2 border-r-2 border-amber-500/30" />
+        <div className="hidden sm:block absolute bottom-16 left-8 w-8 h-8 border-b border-l border-amber-500/20" />
+        <div className="hidden sm:block absolute bottom-16 right-8 w-8 h-8 border-b border-r border-amber-500/20" />
 
-        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full">
+        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-16 w-full">
           <div className="flex items-center gap-2 text-xs font-mono text-gray-500 mb-6">
             <span>D&O</span><ChevronRight className="w-3 h-3" />
             <span>Capabilities</span><ChevronRight className="w-3 h-3" />
@@ -134,12 +134,12 @@ export default function ManufacturingPage() {
 
       {/* ── Stats ─────────────────────────────────────────────────────────── */}
       <div ref={statsRef} className="border-y border-white/5 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="stat-item text-center">
-                <div className="font-sora font-black text-4xl text-amber-400 mb-1">{s.value}</div>
-                <div className="font-mono text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
+                <div className="font-sora font-black text-2xl sm:text-4xl text-amber-400 mb-1">{s.value}</div>
+                <div className="font-mono text-[10px] sm:text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
               </div>
             ))}
           </div>
@@ -147,7 +147,7 @@ export default function ManufacturingPage() {
       </div>
 
       {/* ── Capabilities ──────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
         <div className="mb-14">
           <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Services</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">Manufacturing Capabilities</h2>
@@ -183,7 +183,7 @@ export default function ManufacturingPage() {
           backgroundImage: `linear-gradient(rgba(246,168,0,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(246,168,0,0.6) 1px, transparent 1px)`,
           backgroundSize: '50px 50px',
         }} />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
           <div className="mb-14">
             <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">How We Work</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">
@@ -197,7 +197,9 @@ export default function ManufacturingPage() {
           <div ref={processRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {process.map((p) => (
               <div key={p.step} className="process-step relative bg-white/[0.02] border border-white/8 rounded-2xl p-6 hover:border-amber-500/20 transition-colors group">
-                <div className="font-mono text-5xl font-black text-white/5 group-hover:text-amber-500/10 mb-4 leading-none transition-colors">{p.step}</div>
+                <div className="font-mono text-5xl font-black bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent opacity-40 group-hover:opacity-80 mb-4 leading-none transition-all duration-300">
+                    {p.step}
+                  </div>
                 <h3 className="font-sora font-semibold text-white mb-2">{p.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{p.desc}</p>
                 <div className="absolute top-5 right-5 w-6 h-6 rounded-full border border-amber-500/20 flex items-center justify-center">
@@ -210,7 +212,7 @@ export default function ManufacturingPage() {
       </div>
 
       {/* ── Tools & Software ──────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
         <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase block mb-8">Engineering Tools</span>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {['SolidWorks', 'ANSYS', 'AutoCAD', 'Siemens NX', 'CATIA', 'MSC Nastran', 'MATLAB', 'Abaqus'].map((tool) => (
@@ -224,7 +226,7 @@ export default function ManufacturingPage() {
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <div className="relative border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20 text-center">
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,52px)] text-white mb-4">
             Have a Manufacturing Requirement?
           </h2>

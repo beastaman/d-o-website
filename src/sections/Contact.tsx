@@ -104,12 +104,12 @@ export default function Contact({ className = '' }: ContactProps) {
     <section
       ref={sectionRef}
       id="contact"
-      className={`relative w-full bg-[#12131A] py-20 lg:py-32 ${className}`}
+      className={`relative w-full bg-[#12131A] py-16 sm:py-20 lg:py-32 ${className}`}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Headline */}
         <h2
           ref={headlineRef}
@@ -118,11 +118,11 @@ export default function Contact({ className = '' }: ContactProps) {
           Start a <span className="text-gradient">Project.</span>
         </h2>
 
-        <p className="text-center text-gray-400 text-lg max-w-xl mx-auto mb-16">
+        <p className="text-center text-gray-400 text-base sm:text-lg max-w-xl mx-auto mb-12 sm:mb-16 px-2">
           Tell us what you're building. We'll respond within 2 business days.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 mb-12 sm:mb-16">
           {/* Left Column  Contact Info */}
           <div ref={contentRef} className="space-y-8">
             <div>
@@ -191,7 +191,7 @@ export default function Contact({ className = '' }: ContactProps) {
           {/* Right Column  Form */}
           <div
             ref={formRef}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-8"
           >
             {submitted ? (
               <div className="text-center py-12">

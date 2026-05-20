@@ -56,12 +56,13 @@ export default function Partners({ className = '' }: PartnersProps) {
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: true,
+          pin: isDesktop,
           scrub: 0.6,
         },
       });
@@ -139,7 +140,7 @@ export default function Partners({ className = '' }: PartnersProps) {
     <section
       ref={sectionRef}
       id="partners"
-      className={`relative w-full h-screen overflow-hidden bg-[#0B0C0E] ${className}`}
+      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -148,7 +149,7 @@ export default function Partners({ className = '' }: PartnersProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center px-6 lg:px-16 xl:px-24">
+      <div className="relative z-10 h-full flex items-center px-4 sm:px-6 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Headline */}
           <div className="max-w-xl">
@@ -171,11 +172,11 @@ export default function Partners({ className = '' }: PartnersProps) {
             </p>
 
             {/* Stats */}
-            <div ref={statsRef} className="flex gap-8 mt-8">
+            <div ref={statsRef} className="flex flex-wrap gap-6 sm:gap-8 mt-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-sora font-bold text-3xl text-amber-500">{stat.value}</div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
+                  <div className="font-sora font-bold text-2xl sm:text-3xl text-amber-500">{stat.value}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
                 </div>
               ))}
             </div>

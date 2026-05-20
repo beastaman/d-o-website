@@ -115,7 +115,7 @@ export default function Materials() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(246,168,0,0.08) 0%, transparent 70%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function Materials() {
               Applications
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              From high-performance polymers to aerospace-grade composites  our materials science capability underpins every D&O product. We select, test, and validate every material for the specific demands of Government, automotive, and industrial environments.
+              From high-performance polymers to aerospace-grade composites  our materials science capability underpins every D&O Motorsports product. We select, test, and validate every material for the specific demands of Government, automotive, and industrial environments.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -158,7 +158,7 @@ export default function Materials() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: '6+', label: 'Material Families' },
             { val: '±0.05mm', label: 'Scan Accuracy' },
@@ -174,7 +174,7 @@ export default function Materials() {
       </section>
 
       {/* ── Materials Grid ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Material Catalogue</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,50px)] text-white mt-3 mb-4">
@@ -185,7 +185,7 @@ export default function Materials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {materials.map((mat) => {
             const c = colorMap[mat.color];
             const Icon = mat.icon;
@@ -226,9 +226,9 @@ export default function Materials() {
       </section>
 
       {/* ── R&D Highlights ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Materials R&D</span>
               <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-4 mb-6 leading-tight">
@@ -267,8 +267,8 @@ export default function Materials() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Partner With Us</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Need a Specialised Material Solution?

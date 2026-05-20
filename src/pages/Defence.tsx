@@ -7,13 +7,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 const capabilities = [
   {
-    icon: Shield,
+    icon: Target,
     title: 'Indigenous Government Platforms',
     desc: 'End-to-end design and manufacturing of tactical vehicles and platforms  conceived, engineered, and built entirely in India under the Make in India initiative.',
     tags: ['Tactical Vehicles', 'Rapid Deployment', 'Field-Ready'],
   },
   {
-    icon: Target,
+    icon: Shield,
     title: 'Anti-Drone Systems',
     desc: 'Mobile counter-UAV platforms integrating electronic warfare payloads with robust vehicle architecture for operational deployment by paramilitary and armed forces.',
     tags: ['C-UAV', 'EW Integration', 'Mobile Platforms'],
@@ -45,8 +45,14 @@ const capabilities = [
 ];
 
 const milestones = [
-  {
+    {
     year: '2024',
+    title: 'National Highway Authority of India (NHAI)',
+    desc: "Partnership to develop a fleet of specialised road survey vehicles for the NHAI's highway monitoring programme.",
+    badge: 'Government Breakthrough',
+  },
+      {
+    year: '2025',
     title: 'Indrajaal Ranger',
     desc: "India's first indigenous anti-drone rapid-response vehicle. Designed and built end-to-end by D&O.",
     badge: 'Government Breakthrough',
@@ -116,13 +122,13 @@ export default function Government() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-amber-500/6 blur-[100px] rounded-full pointer-events-none" />
 
         {/* Tactical crosshair decoration */}
-        <div className="absolute top-28 right-12 w-16 h-16 opacity-20">
+        <div className="hidden sm:block absolute top-28 right-12 w-16 h-16 opacity-20">
           <div className="absolute inset-0 border border-amber-500/60 rounded-full" />
           <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-amber-500/60 -translate-y-1/2" />
           <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-amber-500/60 -translate-x-1/2" />
         </div>
 
-        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-16 w-full">
+        <div ref={headRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pb-16 w-full">
           <div className="flex items-center gap-2 text-xs font-mono text-gray-500 mb-6">
             <span>D&O</span>
             <ChevronRight className="w-3 h-3" />
@@ -149,11 +155,11 @@ export default function Government() {
 
       {/* ── Classified Notice Banner ───────────────────────────────────────── */}
       <div className="border-y border-amber-500/15 bg-amber-500/5">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4">
           <div className="flex items-center gap-3">
             <Lock className="w-4 h-4 text-amber-500 shrink-0" />
             <p className="font-mono text-xs text-amber-500/80 tracking-wider">
-              Some D&O Government programs involve classified content. Public disclosures are limited to approved project information only.
+              Some D&O Motorsports Government programs involve classified content. Public disclosures are limited to approved project information only.
             </p>
           </div>
         </div>
@@ -161,12 +167,12 @@ export default function Government() {
 
       {/* ── Stats Bar ─────────────────────────────────────────────────────── */}
       <div ref={statsRef} className="border-b border-white/5 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((s) => (
               <div key={s.label} className="stat-item text-center">
-                <div className="font-sora font-black text-4xl text-amber-400 mb-1">{s.value}</div>
-                <div className="font-mono text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
+                <div className="font-sora font-black text-2xl sm:text-4xl text-amber-400 mb-1">{s.value}</div>
+                <div className="font-mono text-[10px] sm:text-xs text-gray-500 tracking-widest uppercase">{s.label}</div>
               </div>
             ))}
           </div>
@@ -174,14 +180,14 @@ export default function Government() {
       </div>
 
       {/* ── Capabilities ──────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
         <div className="mb-14">
           <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Capabilities</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">
             Strategic Engineering Services
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl">
-            D&O's Government division delivers end-to-end engineering for India's most demanding security applications  built entirely indigenous.
+            D&O Motorsports' Government division delivers end-to-end engineering for India's most demanding security applications  built entirely indigenous.
           </p>
         </div>
 
@@ -220,7 +226,7 @@ export default function Government() {
             backgroundSize: '50px 50px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-24">
           <div className="mb-14">
             <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase">Track Record</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-3">
@@ -232,21 +238,21 @@ export default function Government() {
             {milestones.map((m, i) => (
               <div
                 key={m.title}
-                className="milestone-item flex gap-6 p-6 bg-white/[0.02] border border-white/8 rounded-2xl hover:border-amber-500/20 transition-colors"
+                className="milestone-item flex gap-4 sm:gap-6 p-4 sm:p-6 bg-white/[0.02] border border-white/8 rounded-2xl hover:border-amber-500/20 transition-colors"
               >
                 <div className="shrink-0 text-center">
-                  <div className="font-sora font-black text-2xl text-amber-400">{m.year}</div>
+                  <div className="font-sora font-black text-xl sm:text-2xl text-amber-400">{m.year}</div>
                   <div className="w-[1px] h-8 bg-amber-500/20 mx-auto mt-2" />
                   <div className="w-3 h-3 rounded-full border-2 border-amber-500/40 mx-auto mt-2" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <div className="inline-flex items-center px-2.5 py-1 bg-amber-500/10 border border-amber-500/15 rounded-full mb-3">
                     <span className="font-mono text-[9px] text-amber-500 tracking-widest uppercase">{m.badge}</span>
                   </div>
-                  <h3 className="font-sora font-semibold text-white text-xl mb-2">{m.title}</h3>
+                  <h3 className="font-sora font-semibold text-white text-lg sm:text-xl mb-2">{m.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{m.desc}</p>
                 </div>
-                <div className="shrink-0 text-gray-700 font-mono text-2xl font-bold self-center">
+                <div className="hidden sm:block shrink-0 text-gray-700 font-mono text-2xl font-bold self-center">
                   0{i + 1}
                 </div>
               </div>
@@ -256,7 +262,7 @@ export default function Government() {
       </div>
 
       {/* ── Govt. Partners ────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20">
         <span className="font-mono text-xs text-amber-500 tracking-[0.3em] uppercase block mb-8">
           Government Partners
         </span>
@@ -287,7 +293,7 @@ export default function Government() {
       {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <div className="relative border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-amber-500/5 via-transparent to-amber-500/5" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-16 sm:py-20 text-center">
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,52px)] text-white mb-4">
             Government Partnership Inquiry
           </h2>

@@ -29,7 +29,7 @@ const analysisCapabilities = [
     title: 'Multi-Physics Modelling',
     color: 'purple',
     desc: 'Coupled simulations that bridge thermal, structural, electromagnetic, and fluid domains critical for Government electronics, EV powertrains, and complex aerospace components.',
-    tools: ['ANSYS Multiphysics', 'COMSOL', 'MATLAB/Simulink'],
+    tools: ['ANSYS Multiphysics', 'MATLAB', 'Simulink'],
     useCases: ['Thermal-structural', 'Fluid-structure interaction', 'EMC analysis', 'Battery thermal'],
   },
   {
@@ -45,7 +45,7 @@ const analysisCapabilities = [
     title: 'Kinematics & Dynamics',
     color: 'orange',
     desc: 'Multi-body dynamics (MBD) simulations for suspension geometry, drivetrain behaviour, vehicle ride & handling, and mechanism design  particularly valuable for motorsport and tactical vehicles.',
-    tools: ['ADAMS', 'CarSim', 'Simscape'],
+    tools: ['ADAMS', 'Optimum Kinematics', 'Simscape'],
     useCases: ['Suspension geometry', 'Ride & handling', 'Drivetrain NVH', 'Mechanism design'],
   },
   {
@@ -53,7 +53,7 @@ const analysisCapabilities = [
     title: 'Structural Analysis & Validation',
     color: 'red',
     desc: 'Comprehensive certification-grade structural analysis reports supporting regulatory approvals, government tenders, and client sign-off  complete with methodology documentation.',
-    tools: ['ANSYS', 'Abaqus', 'NX Nastran'],
+    tools: ['ANSYS', 'Creo', 'SolidWorks'],
     useCases: ['Government certification', 'NHAI approval', 'Vehicle homologation', 'Armour validation'],
   },
 ];
@@ -104,7 +104,7 @@ export default function Analysis() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 70% 55% at 60% 0%, rgba(59,130,246,0.07) 0%, transparent 70%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export default function Analysis() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: '6', label: 'Simulation Disciplines' },
             { val: '8+', label: 'Industry Tools' },
@@ -161,7 +161,7 @@ export default function Analysis() {
       </section>
 
       {/* ── Capabilities ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Simulation Services</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,50px)] text-white mt-3 mb-4">
@@ -172,7 +172,7 @@ export default function Analysis() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {analysisCapabilities.map((cap) => {
             const c = colorMap[cap.color];
             const Icon = cap.icon;
@@ -211,8 +211,8 @@ export default function Analysis() {
       </section>
 
       {/* ── Tools Showcase ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Software & Tools</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-3">
@@ -236,7 +236,7 @@ export default function Analysis() {
 
       {/* ── Visual placeholder ── */}
       <section className="py-12 lg:py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] aspect-[21/9] bg-white/[0.02] flex items-center justify-center">
             <img
               src="/simulation_cfd.jpg"
@@ -255,8 +255,8 @@ export default function Analysis() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Start a Study</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Ready to Simulate Your Design?

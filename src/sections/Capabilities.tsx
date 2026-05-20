@@ -155,7 +155,7 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
     <section
       ref={sectionRef}
       id="capabilities"
-      className={`relative w-full min-h-screen flex items-center overflow-hidden py-20 bg-[#0B0C0E] ${className}`}
+      className={`relative w-full min-h-screen flex items-center overflow-hidden py-16 sm:py-20 bg-[#0B0C0E] ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -164,7 +164,7 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full px-6 lg:px-16 xl:px-24">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column */}
           <div className="max-w-xl">

@@ -105,52 +105,72 @@ export default function GovtCollaborations() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 80% 55% at 50% 0%, rgba(246,168,0,0.07) 0%, transparent 70%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-5">
-              <span className="w-8 h-px bg-amber-500" />
-              Government Collaborations
-            </span>
-            <h1 className="font-sora font-bold text-[clamp(36px,5.5vw,72px)] text-white leading-[1.05] mb-6">
-              Trusted by India's{' '}
-              <span className="text-gradient">Critical Agencies</span>
-            </h1>
-            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              D&O Advanced Engineering has delivered mission-critical platforms for India's border security, state disaster management, and national highway infrastructure  establishing a proven track record with the government agencies that matter most.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <motion.button
-                onClick={() => navigate('/contact')}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.97 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm transition-colors"
-              >
-                Explore a Partnership <ArrowRight className="w-4 h-4" />
-              </motion.button>
-              <motion.button
-                onClick={() => navigate('/projects/indrajaal-ranger')}
-                whileHover={{ scale: 1.04 }}
-                className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 hover:border-amber-500/40 text-white font-medium rounded-full text-sm transition-colors"
-              >
-                View Projects <ChevronRight className="w-4 h-4" />
-              </motion.button>
-            </div>
-          </motion.div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-3xl"
+            >
+              <span className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.3em] text-amber-500 uppercase mb-5">
+                <span className="w-8 h-px bg-amber-500" />
+                Government Collaborations
+              </span>
+              <h1 className="font-sora font-bold text-[clamp(36px,5.5vw,72px)] text-white leading-[1.05] mb-6">
+                Trusted by India's{' '}
+                <span className="text-gradient">Critical Agencies</span>
+              </h1>
+              <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+                D&O Advanced Engineering has delivered mission-critical platforms for India's border security, state disaster management, and national highway infrastructure  establishing a proven track record with the government agencies that matter most.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <motion.button
+                  onClick={() => navigate('/contact')}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full text-sm transition-colors"
+                >
+                  Explore a Partnership <ArrowRight className="w-4 h-4" />
+                </motion.button>
+                <motion.button
+                  onClick={() => navigate('/projects/indrajaal-ranger')}
+                  whileHover={{ scale: 1.04 }}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 hover:border-amber-500/40 text-white font-medium rounded-full text-sm transition-colors"
+                >
+                  View Projects <ChevronRight className="w-4 h-4" />
+                </motion.button>
+              </div>
+            </motion.div>
+
+            {/* ── YouTube embed (beside hero copy on desktop, stacked on mobile) ── */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="relative w-full rounded-2xl overflow-hidden border border-amber-500/20 shadow-[0_20px_60px_rgba(0,0,0,0.5)] aspect-video bg-black/40"
+            >
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/TJOmFvMfJgo?si=XApTE5pJCZ5Q5oLZ"
+                title="D&O Government Collaborations"
+                frameBorder={0}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: '3', label: 'Govt. Agencies Served' },
             { val: '3', label: 'Flagship Deliverables' },
-            { val: '0', label: 'Failed Deployments' },
+            { val: '0%', label: 'Failed Deployments' },
             { val: '100%', label: 'On-Time Delivery' },
           ].map((s) => (
             <div key={s.label} className="text-center">
@@ -162,7 +182,7 @@ export default function GovtCollaborations() {
       </section>
 
       {/* ── Collaborations ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28 space-y-8">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Case Studies</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,50px)] text-white mt-3 mb-4">
@@ -176,7 +196,7 @@ export default function GovtCollaborations() {
           return (
             <div
               key={collab.partner}
-              className={`reveal-card p-8 lg:p-10 rounded-2xl border ${c.border} ${c.bg} group`}
+              className={`reveal-card p-5 sm:p-8 lg:p-10 rounded-2xl border ${c.border} ${c.bg} group`}
             >
               <div className="grid lg:grid-cols-[1fr_auto] gap-6 items-start">
                 <div>
@@ -222,9 +242,9 @@ export default function GovtCollaborations() {
       </section>
 
       {/* ── Trust Credentials ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Why Agencies Choose D&O</span>
               <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-4 mb-6 leading-tight">
@@ -262,8 +282,8 @@ export default function GovtCollaborations() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Government Partnerships</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Ready to Build Something Indigenous?

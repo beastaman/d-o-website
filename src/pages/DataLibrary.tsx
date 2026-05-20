@@ -576,7 +576,7 @@ function CustomScanForm() {
   return (
     <div className="rounded-3xl border border-amber-500/20 bg-amber-500/[0.03] overflow-hidden">
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-amber-500/60 to-transparent" />
-      <div className="p-8 lg:p-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="p-5 sm:p-8 lg:p-10 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div>
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Bespoke Service</span>
           <h3 className="font-sora font-bold text-white text-[clamp(26px,3.5vw,40px)] leading-tight mt-3 mb-4">
@@ -936,7 +936,7 @@ export default function DataLibrary() {
       )}
 
       {/* Back */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8">
         <button onClick={() => navigate(-1)} className="inline-flex items-center gap-2 text-gray-500 hover:text-amber-400 text-sm font-mono tracking-wide transition-colors">
           <ChevronLeft className="w-4 h-4" /> Back
         </button>
@@ -950,7 +950,7 @@ export default function DataLibrary() {
         <div className="absolute top-20 right-0 w-1/2 h-px bg-gradient-to-l from-transparent via-amber-500/20 to-transparent pointer-events-none" />
         <div className="absolute top-32 right-0 w-1/3 h-px bg-gradient-to-l from-transparent via-amber-500/10 to-transparent pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-24">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
             <div className="flex items-center gap-3 mb-5">
               <span className="inline-flex items-center gap-1.5 text-xs px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 font-mono border border-amber-500/20">
@@ -995,7 +995,7 @@ export default function DataLibrary() {
 
       {/* ── Stats bar ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-7 grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {[
             { val: `${products.length}+`, label: 'Datasets Available' },
             { val: '±0.03mm', label: 'Best-in-Class Accuracy' },
@@ -1012,12 +1012,12 @@ export default function DataLibrary() {
       </section>
 
       {/* ── What you get ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-12">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">What's Included</span>
           <h2 className="font-sora font-bold text-[clamp(26px,4vw,46px)] text-white mt-3">Professional-Grade Scan Data</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             { icon: ScanLine, title: 'Raw Point Cloud', desc: 'Full resolution .pts/.e57 point cloud for maximum flexibility', color: 'amber' },
             { icon: FileCode2, title: 'CAD-Ready Surface', desc: 'Cleaned mesh in STL, STEP, IGES, OBJ, or native CAD formats', color: 'blue' },
@@ -1045,8 +1045,8 @@ export default function DataLibrary() {
       </section>
 
       {/* ── License Tiers ── */}
-      <section className="border-t border-white/[0.06] py-16 lg:py-20 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-12 sm:py-16 lg:py-20 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Access Tiers</span>
             <h2 className="font-sora font-bold text-[clamp(26px,4vw,46px)] text-white mt-3">Choose Your License</h2>
@@ -1055,7 +1055,7 @@ export default function DataLibrary() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
             {licenseTiers.map((t) => (
               <div
                 key={t.tier}
@@ -1112,8 +1112,8 @@ export default function DataLibrary() {
       </section>
 
       {/* ── Catalogue ── */}
-      <section id="catalogue" className="border-t border-white/[0.06] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section id="catalogue" className="border-t border-white/[0.06] py-12 sm:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8">
             <div>
               <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Data Catalogue</span>
@@ -1216,7 +1216,7 @@ export default function DataLibrary() {
               </button>
             </div>
           ) : (
-            <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               <AnimatePresence mode="popLayout">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} onInquire={setSelectedProduct} />
@@ -1228,13 +1228,13 @@ export default function DataLibrary() {
       </section>
 
       {/* ── How It Works ── */}
-      <section className="border-t border-white/[0.06] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-12 sm:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Process</span>
             <h2 className="font-sora font-bold text-[clamp(26px,4vw,46px)] text-white mt-3">How to Access Data</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
             {[
               { n: '01', icon: Search, title: 'Browse & Select', desc: 'Find your vehicle from the catalogue. Filter by format, category, or search by name.' },
               { n: '02', icon: FileCheck, title: 'Submit Request', desc: 'Complete the access form with your vehicle requirement, use case, and contact details.' },
@@ -1259,7 +1259,7 @@ export default function DataLibrary() {
 
       {/* ── Security & IP Notice ── */}
       <section className="border-t border-white/[0.06] py-12 lg:py-16">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="p-7 rounded-2xl border border-amber-500/20 bg-amber-500/[0.03]">
             <div className="flex items-start gap-4">
               <div className="shrink-0 w-12 h-12 rounded-xl border border-amber-500/25 bg-amber-500/[0.08] flex items-center justify-center">
@@ -1301,7 +1301,7 @@ export default function DataLibrary() {
 
       {/* ── Technical Disclaimer ── */}
       <section className="py-8">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="p-5 rounded-xl border border-white/[0.06] bg-white/[0.01] flex items-start gap-3">
             <AlertTriangle className="w-5 h-5 text-yellow-600/70 mt-0.5 shrink-0" />
             <div className="text-gray-600 text-xs leading-relaxed">
@@ -1313,15 +1313,15 @@ export default function DataLibrary() {
       </section>
 
       {/* ── Custom Scan CTA ── */}
-      <section id="custom-scan" className="border-t border-white/[0.06] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section id="custom-scan" className="border-t border-white/[0.06] py-12 sm:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <CustomScanForm />
         </div>
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-16 lg:py-24 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-12 sm:py-16 lg:py-24 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <Car className="w-8 h-8 text-amber-500/40" />
             <Cpu className="w-8 h-8 text-amber-500/40" />

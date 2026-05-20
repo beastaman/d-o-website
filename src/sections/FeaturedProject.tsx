@@ -12,9 +12,9 @@ interface FeaturedProjectProps {
 
 const features = [
   { icon: Shield, label: 'Multi-functional Design' },
-  { icon: Radio, label: 'Advanced Jamming System' },
-  { icon: Eye, label: 'Spoofing Technology' },
-  { icon: Zap, label: 'Rapid Deployment' },
+  { icon: Radio, label: 'Precision Manufacturing' },
+  { icon: Eye, label: 'Vehicle Integration' },
+  { icon: Zap, label: 'Prototype Development' },
 ];
 
 export default function FeaturedProject({ className = '' }: FeaturedProjectProps) {
@@ -32,12 +32,13 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
     if (!section) return;
 
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: true,
+          pin: isDesktop,
           scrub: 0.6,
         },
       });
@@ -136,7 +137,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
     <section
       ref={sectionRef}
       id="projects"
-      className={`relative w-full h-screen overflow-hidden ${className}`}
+      className={`relative w-full min-h-screen lg:h-screen overflow-hidden ${className}`}
     >
       {/* Background  left opaque, right semi-transparent for 3D model peek */}
       <div className="absolute inset-0 z-0 bg-[#0B0C0E]">
@@ -153,7 +154,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
       {/* Content Grid */}
       <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2">
         {/* Left - Text Content */}
-        <div className="flex flex-col justify-center px-6 lg:px-16 xl:px-24 py-20">
+        <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-24 py-16 sm:py-20">
           {/* Label */}
           <span
             ref={labelRef}
@@ -187,7 +188,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
             ref={microcopyRef}
             className="text-gray-300 text-lg max-w-lg mb-6"
           >
-            Helped create India's first indigenously developed anti-drone vehicle 
+            Helped in the development of India's first indigenously developed anti-drone vehicle 
             for emergency response. Displayed at 61st BSF Parade 2025.
           </p>
 

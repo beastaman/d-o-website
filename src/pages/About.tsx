@@ -46,7 +46,7 @@ const teamRoles = [
 ];
 
 const milestones = [
-  { year: '2019', title: 'Founded', desc: 'D&O established with roots in motorsport and advanced vehicle engineering.' },
+  { year: '2019', title: 'Founded', desc: 'D&O Motorsports established with roots in motorsport and advanced vehicle engineering.' },
   { year: '2022', title: 'MINGO Airboat', desc: 'Flagship indigenous disaster management vehicle delivered to Maharashtra Government.' },
   { year: '2024', title: 'NHAI Partnership', desc: 'Developed specialized road survey and inspection vehicles for national highways.' },
   { year: '2025', title: 'Government Breakthrough', desc: 'Contributed to India\'s first indigenously developed anti-drone vehicle the Indrajaal Ranger.' },
@@ -140,7 +140,7 @@ export default function About() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
           <motion.div
             initial={{ y: 40, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -162,8 +162,8 @@ export default function About() {
       </section>
 
       {/* ── COMPANY OVERVIEW ─────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-16 sm:py-24 lg:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text */}
           <div className="reveal">
             <SectionLabel>Company Overview</SectionLabel>
@@ -201,16 +201,16 @@ export default function About() {
           </div>
 
           {/* Stats grid */}
-          <div className="reveal-stagger grid grid-cols-2 gap-4">
+          <div className="reveal-stagger grid grid-cols-2 gap-3 sm:gap-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="stagger-item group relative bg-white/3 border border-white/8 rounded-2xl p-7 hover:border-amber-500/30 hover:bg-white/5 transition-all duration-500 overflow-hidden"
+                className="stagger-item group relative bg-white/3 border border-white/8 rounded-2xl p-5 sm:p-7 hover:border-amber-500/30 hover:bg-white/5 transition-all duration-500 overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/4 rounded-full blur-2xl group-hover:bg-amber-500/8 transition-all" />
-                <stat.icon className="w-6 h-6 text-amber-500/60 mb-4" />
-                <div className="font-sora font-black text-4xl text-white mb-1">{stat.value}</div>
-                <div className="font-mono text-[10px] tracking-[0.2em] text-gray-500 uppercase">{stat.label}</div>
+                <stat.icon className="w-6 h-6 text-amber-500/60 mb-3 sm:mb-4" />
+                <div className="font-sora font-black text-2xl sm:text-4xl text-white mb-1">{stat.value}</div>
+                <div className="font-mono text-[9px] sm:text-[10px] tracking-[0.2em] text-gray-500 uppercase">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -218,13 +218,13 @@ export default function About() {
       </section>
 
       {/* ── VISION & MISSION ─────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-[#0D0E12] relative overflow-hidden">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#0D0E12] relative overflow-hidden">
         {/* Ambient bg */}
         <div className="absolute inset-0" style={{
           background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(246,168,0,0.04) 0%, transparent 70%)',
         }} />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-16 reveal">
             <SectionLabel>Our Direction</SectionLabel>
             <SectionHeading>Vision & <span className="text-gradient">Mission</span></SectionHeading>
@@ -232,7 +232,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-stagger">
             {/* Vision */}
-            <div className="stagger-item relative group rounded-3xl border border-white/8 bg-white/3 p-10 hover:border-amber-500/25 transition-all duration-500 overflow-hidden">
+            <div className="stagger-item relative group rounded-3xl border border-white/8 bg-white/3 p-6 sm:p-10 hover:border-amber-500/25 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute top-0 left-8 w-32 h-[1px] bg-gradient-to-r from-amber-500/60 to-transparent" />
               <div className="relative">
@@ -245,7 +245,7 @@ export default function About() {
             </div>
 
             {/* Mission */}
-            <div className="stagger-item relative group rounded-3xl border border-white/8 bg-white/3 p-10 hover:border-amber-500/25 transition-all duration-500 overflow-hidden">
+            <div className="stagger-item relative group rounded-3xl border border-white/8 bg-white/3 p-6 sm:p-10 hover:border-amber-500/25 transition-all duration-500 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute top-0 left-8 w-32 h-[1px] bg-gradient-to-r from-amber-500/60 to-transparent" />
               <div className="relative">
@@ -261,7 +261,7 @@ export default function About() {
       </section>
 
       {/* ── CORE VALUES ──────────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-24 lg:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 reveal">
           <SectionLabel>What We Stand For</SectionLabel>
           <SectionHeading>Our Core <span className="text-gradient">Values</span></SectionHeading>
@@ -274,7 +274,7 @@ export default function About() {
           {coreValues.map((value) => (
             <div
               key={value.title}
-              className={`stagger-item group relative rounded-2xl border ${value.border} bg-gradient-to-br ${value.color} p-8 hover:scale-[1.01] transition-all duration-400 overflow-hidden`}
+              className={`stagger-item group relative rounded-2xl border ${value.border} bg-gradient-to-br ${value.color} p-6 sm:p-8 hover:scale-[1.01] transition-all duration-400 overflow-hidden`}
             >
               <div className="absolute inset-0 bg-[#0B0C0E]/70 rounded-2xl" />
               <div className="relative">
@@ -290,8 +290,8 @@ export default function About() {
       </section>
 {/* 
       {/* ── LEADERSHIP & TEAM ────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 bg-[#0D0E12]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-24 lg:py-32 bg-[#0D0E12]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-16 reveal">
             <SectionLabel>The People Behind the Mission</SectionLabel>
             <SectionHeading>Leadership & <span className="text-gradient">Expertise</span></SectionHeading>
@@ -317,12 +317,12 @@ export default function About() {
           </div>
 
           {/* UMA connection */}
-          <div className="reveal mt-12 rounded-2xl border border-amber-500/15 bg-amber-500/5 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="reveal mt-12 rounded-2xl border border-amber-500/15 bg-amber-500/5 p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <div className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-2">Parent Organization</div>
               <h3 className="font-sora font-bold text-xl text-white mb-1">United Motorsports Academy</h3>
               <p className="text-gray-400 text-sm max-w-lg">
-                D&O functions as the engineering backbone of UMA, ensuring all education and talent development programs are powered by real-world, live projects.
+                D&O Motorsports functions as the engineering backbone of UMA, ensuring all education and talent development programs are powered by real-world, live projects.
               </p>
             </div>
             <a
@@ -339,7 +339,7 @@ export default function About() {
       </section> 
 
       {/* ── TEAM SECTION ─────────────────────────────────────────────── */}
-<section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
+<section className="py-16 sm:py-24 lg:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
   <div className="text-center mb-16 reveal">
     <SectionLabel>Our People</SectionLabel>
     <SectionHeading>Leadership <span className="text-gradient">Team</span></SectionHeading>
@@ -403,7 +403,7 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
           <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
-            KS
+            VP
           </div>
         </div>
       </div>
@@ -443,7 +443,7 @@ export default function About() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
           <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
-            NS
+            SK
           </div>
         </div>
       </div>
@@ -469,50 +469,11 @@ export default function About() {
       </div>
     </div>
 
-        {/* Nimish Sawant */}
-    <div className="stagger-item group relative rounded-3xl border border-white/8 bg-white/3 overflow-hidden hover:border-amber-500/25 transition-all duration-400">
-      {/* Image placeholder */}
-      <div className="relative w-full h-64 bg-gradient-to-br from-amber-500/20 to-amber-500/5 overflow-hidden flex items-center justify-center border-b border-white/8">
-        <img
-          src="/team-nimish.jpg"
-          alt="Nimish Sawant"
-          className="w-full h-full object-cover object-top"
-          onError={(e) => {
-            (e.target as HTMLImageElement).style.display = 'none';
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0C0E] via-transparent flex items-end p-4">
-          <div className="w-20 h-20 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-2xl">
-            NS
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="p-8 relative">
-        <div className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase mb-2">
-          CEO & CMO
-        </div>
-        <h3 className="font-sora font-bold text-xl text-white mb-4 group-hover:text-amber-400 transition-colors">
-          Nimish Sawant
-        </h3>
-        <ul className="space-y-3 text-sm text-gray-400">
-          <li className="flex items-start gap-3">
-            <span className="text-amber-500/60 mt-1">•</span>
-            <span>MBA from NMIMS, Mumbai</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="text-amber-500/60 mt-1">•</span>
-            <span>4+ years of strategic business consulting experience</span>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
 </section>
 
       {/* ── MILESTONES TIMELINE ──────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="py-16 sm:py-24 lg:py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-16 reveal">
           <SectionLabel>Journey</SectionLabel>
           <SectionHeading>Key <span className="text-gradient">Milestones</span></SectionHeading>
@@ -525,7 +486,7 @@ export default function About() {
           <div className="space-y-10">
             {milestones.map((m, i) => (
               <div
-                key={m.year}
+                key={`${m.year}-${i}`}
                 className={`stagger-item relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
               >
                 {/* Dot */}
@@ -553,7 +514,7 @@ export default function About() {
       {/* ── CTA BANNER ───────────────────────────────────────────────────── */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto text-center reveal">
-          <div className="relative rounded-3xl border border-white/10 bg-white/3 p-14 overflow-hidden">
+          <div className="relative rounded-3xl border border-white/10 bg-white/3 p-8 sm:p-14 overflow-hidden">
             {/* Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-amber-500/8 via-transparent to-amber-500/4" />
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-[1px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />

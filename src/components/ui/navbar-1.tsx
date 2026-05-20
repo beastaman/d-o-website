@@ -127,7 +127,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
       {/* ── Pill Navbar ─────────────────────────────────────────────────── */}
       <div className="fixed top-0 left-0 right-0 z-[300] flex justify-center w-full pt-4 px-4">
         <motion.div
-          className={`flex items-center justify-between px-6 py-3 rounded-full w-full max-w-5xl transition-all duration-500 ${
+          className={`flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-full w-full max-w-5xl transition-all duration-500 ${
             isScrolled
               ? 'bg-[#0B0C0E]/96 backdrop-blur-xl border border-amber-500/20 shadow-[0_8px_40px_rgba(0,0,0,0.7),0_0_24px_rgba(246,168,0,0.06)]'
               : 'bg-[#0B0C0E]/72 backdrop-blur-lg border border-white/10 shadow-[0_4px_24px_rgba(0,0,0,0.4)]'
@@ -256,7 +256,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
               onClick={() => handleNavClick("/contact")}
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full hover:translate-x-full transition-transform duration-500 pointer-events-none" />
-              Get Started
+              Build with Us
             </motion.button>
 
             <motion.button

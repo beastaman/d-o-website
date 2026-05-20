@@ -88,7 +88,7 @@ export default function QualityPage() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse 70% 55% at 30% 0%, rgba(16,185,129,0.06) 0%, transparent 70%)' }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function QualityPage() {
               <span className="text-gradient">Complete Traceability.</span>
             </h1>
             <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-              In Government and safety-critical engineering, quality is not a department  it is a culture. Every D&O product is manufactured, tested, and documented to the highest standards of precision and accountability.
+              In Government and safety-critical engineering, quality is not a department  it is a culture. Every D&O Motorsports product is manufactured, tested, and documented to the highest standards of precision and accountability.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <motion.button
@@ -129,7 +129,7 @@ export default function QualityPage() {
 
       {/* ── Stats ── */}
       <section className="border-y border-white/[0.06] bg-white/[0.015]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { val: '±0.05mm', label: 'Dimensional Tolerance' },
             { val: '6', label: 'QA Disciplines' },
@@ -145,7 +145,7 @@ export default function QualityPage() {
       </section>
 
       {/* ── QA Framework ── */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-14 sm:py-20 lg:py-28">
         <div className="text-center mb-14">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">QA Framework</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,50px)] text-white mt-3 mb-4">
@@ -156,7 +156,7 @@ export default function QualityPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {qaFramework.map((item) => {
             const Icon = item.icon;
             return (
@@ -181,15 +181,15 @@ export default function QualityPage() {
       </section>
 
       {/* ── Process Steps ── */}
-      <section className="border-t border-white/[0.06] py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="border-t border-white/[0.06] py-14 sm:py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-14">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Quality Process</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,46px)] text-white mt-3">
               Our 6-Gate QA Pipeline
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {qaProcess.map((step) => (
               <div
                 key={step.step}
@@ -206,7 +206,7 @@ export default function QualityPage() {
 
       {/* ── Certifications ── */}
       <section className="border-t border-white/[0.06] py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Standards & Compliance</span>
             <h2 className="font-sora font-bold text-[clamp(28px,4vw,42px)] text-white mt-3">
@@ -229,8 +229,8 @@ export default function QualityPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 lg:py-28 border-t border-white/[0.06]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-20 lg:py-28 border-t border-white/[0.06]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <span className="font-mono text-[10px] tracking-[0.28em] text-amber-500 uppercase">Work with Us</span>
           <h2 className="font-sora font-bold text-[clamp(28px,4vw,48px)] text-white mt-4 mb-5">
             Quality You Can Certify

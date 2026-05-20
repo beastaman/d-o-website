@@ -150,7 +150,7 @@ export default function Quality({ className = '' }: QualityProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 px-6 lg:px-16 xl:px-24">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-16 xl:px-24">
         {/* Top Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
           {/* Left - Headline */}
