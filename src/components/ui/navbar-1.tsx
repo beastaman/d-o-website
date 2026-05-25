@@ -275,7 +275,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/65 backdrop-blur-sm z-[390] lg:hidden"
+              className="fixed inset-0 bg-black/65 backdrop-blur-sm z-[440] lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -283,7 +283,7 @@ const Navbar1 = ({ logoSrc = "/do-logo.png" }: Navbar1Props) => {
             />
 
             <motion.aside
-              className="fixed top-0 right-0 bottom-0 w-full max-w-[340px] z-[400] lg:hidden flex flex-col overflow-hidden"
+              className="fixed top-0 right-0 bottom-0 w-full max-w-[340px] z-[450] lg:hidden flex flex-col overflow-hidden"
               style={{
                 background: '#0D0E12',
                 borderLeft: '1px solid rgba(255,255,255,0.07)',
