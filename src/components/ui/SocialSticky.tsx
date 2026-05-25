@@ -105,11 +105,13 @@ export default function SocialSticky() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.35, ease: 'easeOut' }}
-        className="sm:hidden fixed bottom-0 inset-x-0 z-[350] flex items-center justify-between px-3"
+        className="sm:hidden fixed bottom-0 inset-x-0 z-[350] flex items-center justify-between px-3 rounded-t-[28px]"
         style={{
-          height: '64px',
+          height: '66px',
           background: 'linear-gradient(to top, #0a0b0e, #111218)',
           borderTop: '1px solid rgba(255,255,255,0.08)',
+          borderLeft: '1px solid rgba(255,255,255,0.05)',
+          borderRight: '1px solid rgba(255,255,255,0.05)',
           boxShadow: '0 -8px 32px rgba(0,0,0,0.6)',
         }}
       >
