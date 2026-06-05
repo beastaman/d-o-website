@@ -104,7 +104,7 @@ export default function Contact({ className = '' }: ContactProps) {
     <section
       ref={sectionRef}
       id="contact"
-      className={`relative w-full bg-[#12131A] py-16 sm:py-20 lg:py-32 ${className}`}
+      className={`relative w-full bg-[#12131A] pt-12 sm:pt-20 lg:pt-32 pb-24 sm:pb-20 lg:pb-32 ${className}`}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
@@ -113,7 +113,7 @@ export default function Contact({ className = '' }: ContactProps) {
         {/* Headline */}
         <h2
           ref={headlineRef}
-          className="font-sora font-bold text-[clamp(40px,6vw,72px)] text-white text-center mb-4"
+          className="font-sora font-bold text-[clamp(32px,6vw,72px)] text-white text-center mb-4 px-2"
         >
           Start a <span className="text-gradient">Project.</span>
         </h2>
@@ -170,7 +170,7 @@ export default function Contact({ className = '' }: ContactProps) {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.instagram.com/unitedmotorsportsacademy"
+                  href="https://www.instagram.com/d.o.motorsports"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-amber-500 hover:border-amber-500/30 transition-colors"
@@ -256,7 +256,7 @@ export default function Contact({ className = '' }: ContactProps) {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-6 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(246,168,0,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-4 sm:py-6 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(246,168,0,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">

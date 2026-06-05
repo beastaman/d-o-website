@@ -178,7 +178,7 @@ export default function ContactPage() {
                 <ExternalLink className="w-3 h-3 text-gray-700 ml-auto group-hover:text-amber-500 transition-colors" />
               </a>
 
-              <a href="https://www.instagram.com/unitedmotorsportsacademy" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/d.o.motorsports" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 group"
               >
                 <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-amber-500/10 group-hover:border-amber-500/20 transition-all">

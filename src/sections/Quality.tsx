@@ -141,7 +141,7 @@ export default function Quality({ className = '' }: QualityProps) {
     <section
       ref={sectionRef}
       id="quality"
-      className={`relative w-full min-h-screen flex flex-col justify-center overflow-hidden py-20 bg-[#0B0C0E] ${className}`}
+      className={`relative w-full lg:min-h-screen flex flex-col justify-center overflow-hidden py-12 sm:py-16 lg:py-20 bg-[#0B0C0E] ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -174,7 +174,7 @@ export default function Quality({ className = '' }: QualityProps) {
           <div className="flex items-end">
             <p
               ref={paragraphRef}
-              className="text-gray-300 text-lg leading-relaxed max-w-lg will-change-transform"
+              className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg will-change-transform"
             >
               A comprehensive quality control framework ensuring reliability and performance.
               Upholding the highest standards of engineering integrity and safety in every project.
@@ -194,7 +194,7 @@ export default function Quality({ className = '' }: QualityProps) {
             <div
               key={step.id}
               ref={(el) => { itemsRef.current[index] = el; }}
-              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300 will-change-transform"
+              className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-5 hover:bg-white/10 hover:border-amber-500/30 transition-all duration-300 will-change-transform"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">

@@ -140,7 +140,7 @@ export default function Partners({ className = '' }: PartnersProps) {
     <section
       ref={sectionRef}
       id="partners"
-      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
+      className={`relative w-full lg:h-screen overflow-hidden bg-[#0B0C0E] py-12 sm:py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -166,7 +166,7 @@ export default function Partners({ className = '' }: PartnersProps) {
               Trusted by Government.{' '}
               <span className="text-gradient">Built for the Nation.</span>
             </h2>
-            <p ref={descRef} className="text-gray-400 text-lg">
+            <p ref={descRef} className="text-gray-400 text-base sm:text-lg">
               Successful delivery of complex projects for key government agencies 
               with demonstrated ability to meet stringent requirements and security protocols.
             </p>

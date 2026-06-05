@@ -54,7 +54,7 @@ export default function Hero({ className = '' }: HeroProps) {
     <section
       id="hero"
       className={`relative w-full min-h-[100dvh] overflow-hidden bg-[#0B0C0E]
-        flex flex-col items-center justify-center text-center px-4 pt-24 sm:pt-20 lg:pt-0 ${className}`}
+        flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 lg:pt-0 ${className}`}
     >
       {/* ── Inline scan keyframe ─────────────────────────────────────────────── */}
       <style>{`
@@ -120,7 +120,7 @@ export default function Hero({ className = '' }: HeroProps) {
         {/* Title  two lines, GSAP entrance */}
         <h1
           className="font-sora font-black leading-[0.92] sm:leading-[0.88] tracking-tighter mb-5 sm:mb-6 px-2"
-          style={{ fontSize: 'clamp(34px, 8vw, 116px)' }}
+          style={{ fontSize: 'clamp(28px, 8vw, 116px)' }}
         >
           <span
             ref={line1Ref}
@@ -191,7 +191,7 @@ export default function Hero({ className = '' }: HeroProps) {
        *   Seamless loop: duplicate images + shift by exactly –50%.               *
        *   loading="lazy" + decoding="async"  don't block first paint.           */}
       <div
-        className="absolute bottom-0 left-0 w-full h-[26%] sm:h-[32%] md:h-[40%]
+        className="absolute bottom-0 left-0 w-full h-[22%] sm:h-[32%] md:h-[40%]
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_72%,transparent_100%)]"
       >
         <motion.div

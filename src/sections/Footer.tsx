@@ -23,7 +23,7 @@ const socialLinks = [
   },
   {
     label: 'Instagram',
-    href: 'https://www.instagram.com/unitedmotorsportsacademy',
+    href: 'https://www.instagram.com/d.o.motorsports',
     icon: Instagram,
   },
   {

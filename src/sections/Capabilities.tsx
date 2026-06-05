@@ -155,7 +155,7 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
     <section
       ref={sectionRef}
       id="capabilities"
-      className={`relative w-full min-h-screen flex items-center overflow-hidden py-16 sm:py-20 bg-[#0B0C0E] ${className}`}
+      className={`relative w-full lg:min-h-screen flex items-center overflow-hidden py-12 sm:py-16 lg:py-20 bg-[#0B0C0E] ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -180,7 +180,7 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
             >
               What We <span className="text-gradient">Deliver</span>
             </h2>
-            <p ref={descRef} className="text-gray-400 text-lg leading-relaxed will-change-transform">
+            <p ref={descRef} className="text-gray-400 text-base sm:text-lg leading-relaxed will-change-transform">
               End-to-end product development from concept to deployment.
               Reverse engineering, multi-dynamic simulations, structural analysis,
               and integrated testing & validation.

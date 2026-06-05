@@ -113,7 +113,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
+      className={`relative w-full lg:h-screen overflow-hidden bg-[#0B0C0E] py-12 sm:py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -134,7 +134,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
         {/* Headline */}
         <h2
           ref={headlineRef}
-          className="font-sora font-bold text-[clamp(40px,6vw,80px)] text-white text-center leading-[1.05] mb-4 text-shadow-glow"
+          className="font-sora font-bold text-[clamp(34px,6vw,80px)] text-white text-center leading-[1.05] mb-4 text-shadow-glow px-2"
         >
           Continuous{' '}
           <span className="text-gradient">Innovation</span>
@@ -143,21 +143,21 @@ export default function Innovation({ className = '' }: InnovationProps) {
         {/* Subheadline */}
         <p
           ref={subheadlineRef}
-          className="text-center text-gray-300 text-lg max-w-2xl mb-8"
+          className="text-center text-gray-300 text-base sm:text-lg max-w-2xl mb-8 px-2"
         >
           Investing in advanced research and development to maintain technological leadership. 
           Materials, design, and process researchbuilt into every program.
         </p>
 
         {/* Innovation Areas */}
-        <div ref={innovationsRef} className="flex flex-wrap justify-center gap-4 mb-12">
+        <div ref={innovationsRef} className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10 sm:mb-12">
           {innovations.map((item) => (
             <div
               key={item.label}
-              className="flex items-center gap-2 px-4 py-3 bg-white/5 border border-white/10 rounded-full text-gray-300 hover:border-amber-500/30 hover:text-amber-400 transition-colors"
+              className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-full text-gray-300 hover:border-amber-500/30 hover:text-amber-400 transition-colors"
             >
               <item.icon className="w-4 h-4 text-amber-500" />
-              <span className="text-sm">{item.label}</span>
+              <span className="text-xs sm:text-sm">{item.label}</span>
             </div>
           ))}
         </div>

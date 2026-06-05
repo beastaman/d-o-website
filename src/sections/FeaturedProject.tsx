@@ -137,7 +137,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
     <section
       ref={sectionRef}
       id="projects"
-      className={`relative w-full min-h-screen lg:h-screen overflow-hidden ${className}`}
+      className={`relative w-full lg:h-screen overflow-hidden ${className}`}
     >
       {/* Background  left opaque, right semi-transparent for 3D model peek */}
       <div className="absolute inset-0 z-0 bg-[#0B0C0E]">
@@ -154,7 +154,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
       {/* Content Grid */}
       <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2">
         {/* Left - Text Content */}
-        <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-24 py-16 sm:py-20">
+        <div className="flex flex-col justify-center px-4 sm:px-6 lg:px-16 xl:px-24 py-12 sm:py-16 lg:py-20">
           {/* Label */}
           <span
             ref={labelRef}
@@ -177,8 +177,8 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
 
           {/* Badge */}
           <div ref={badgeRef} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-sm text-amber-400">
-              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs sm:text-sm text-amber-400">
+              <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse shrink-0" />
               India's 1st Indigenous Anti-Drone Vehicle
             </span>
           </div>
@@ -186,7 +186,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
           {/* Microcopy */}
           <p
             ref={microcopyRef}
-            className="text-gray-300 text-lg max-w-lg mb-6"
+            className="text-gray-300 text-base sm:text-lg max-w-lg mb-6"
           >
             Helped in the development of India's first indigenously developed anti-drone vehicle 
             for emergency response. Displayed at 61st BSF Parade 2025.
@@ -212,7 +212,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
               >
             <Button
               size="lg"
-              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(246,168,0,0.4)] group"
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold px-5 sm:px-8 py-4 sm:py-6 text-sm sm:text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(246,168,0,0.4)] group"
             >
               View Project Details
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

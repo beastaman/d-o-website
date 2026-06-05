@@ -29,7 +29,7 @@ const socialButtons = [
   {
     name: 'Instagram',
     label: 'Instagram',
-    href: 'https://www.instagram.com/unitedmotorsportsacademy',
+    href: 'https://www.instagram.com/d.o.motorsports',
     Icon: InstagramSVG,
     bg: 'bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]',
     shadow: 'shadow-[0_4px_14px_rgba(221,42,123,0.45)]',

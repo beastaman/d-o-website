@@ -134,7 +134,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full min-h-screen lg:h-screen overflow-hidden bg-[#0B0C0E] py-16 lg:py-0 ${className}`}
+      className={`relative w-full lg:h-screen overflow-hidden bg-[#0B0C0E] py-12 sm:py-16 lg:py-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -167,7 +167,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
           <div className="flex items-end">
             <p
               ref={paragraphRef}
-              className="text-gray-300 text-lg leading-relaxed max-w-lg"
+              className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg"
             >
               From advanced polymers to multi-material assembliesengineered with
               repeatability and built to perform in the most demanding environments.
@@ -183,7 +183,7 @@ export default function Manufacturing({ className = '' }: ManufacturingProps) {
         />
 
         {/* Bottom Row - Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8">
           {features.map((feature, index) => (
             <div
               key={feature.title}
