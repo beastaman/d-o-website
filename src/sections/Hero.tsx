@@ -54,7 +54,8 @@ export default function Hero({ className = '' }: HeroProps) {
     <section
       id="hero"
       className={`relative w-full min-h-[100dvh] overflow-hidden bg-[#0B0C0E]
-        flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 lg:pt-0 ${className}`}
+        flex flex-col items-center justify-start sm:justify-center text-center
+        px-4 pt-24 sm:pt-20 lg:pt-0 ${className}`}
     >
       {/* ── Inline scan keyframe ─────────────────────────────────────────────── */}
       <style>{`
@@ -99,7 +100,7 @@ export default function Hero({ className = '' }: HeroProps) {
 
       {/* ── Text content  shifted up to sit above the marquee ───────────────── */}
       <div
-        className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto -translate-y-[4vh] sm:-translate-y-[6vh] lg:-translate-y-[8vh]"
+        className="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto translate-y-0 sm:-translate-y-[6vh] lg:-translate-y-[8vh]"
       >
 
         {/* Eyebrow */}

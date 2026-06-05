@@ -163,3 +163,29 @@
 canvas {
   display: block;
 }
+
+/* ── MOBILE: disable scroll-driven animations to fix jank & layout issues ── */
+@media (max-width: 1023px) {
+  /* Force GSAP-animated elements to their final state on mobile.
+     reveal-card, stagger-item are the conventions used across sections. */
+  .reveal-card,
+  .stagger-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* Disable framer-motion whileInView / heavy transforms on cards */
+  .no-mobile-anim {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Honor reduced-motion users globally */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
