@@ -35,6 +35,8 @@ export default function Hero({ className = '' }: HeroProps) {
   const ctaRef      = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) return; // mobile: no animations, static content
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.fromTo(eyebrowRef.current,  { y: -22, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 })
       .fromTo(line1Ref.current,    { y: 80,  opacity: 0 }, { y: 0, opacity: 1, duration: 1.0 }, '-=0.3')
@@ -53,9 +55,9 @@ export default function Hero({ className = '' }: HeroProps) {
   return (
     <section
       id="hero"
-      className={`relative w-full min-h-[100dvh] overflow-hidden bg-[#0B0C0E]
+      className={`relative w-full min-h-fit sm:min-h-[100dvh] overflow-hidden bg-[#0B0C0E]
         flex flex-col items-center justify-start sm:justify-center text-center
-        px-4 pt-24 sm:pt-20 lg:pt-0 ${className}`}
+        px-4 pt-24 pb-12 sm:pt-20 sm:pb-20 lg:pt-0 lg:pb-0 ${className}`}
     >
       {/* ── Inline scan keyframe ─────────────────────────────────────────────── */}
       <style>{`
@@ -152,7 +154,7 @@ export default function Hero({ className = '' }: HeroProps) {
         </p>
 
         {/* CTAs */}
-        <div ref={ctaRef} className="flex flex-wrap gap-3 sm:gap-4 justify-center px-2">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row w-full sm:w-auto sm:flex-wrap gap-3 sm:gap-4 justify-center items-stretch sm:items-center px-2">
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: '0 0 44px rgba(246,168,0,0.45)' }}
             whileTap={{ scale: 0.97 }}
@@ -192,7 +194,7 @@ export default function Hero({ className = '' }: HeroProps) {
        *   Seamless loop: duplicate images + shift by exactly –50%.               *
        *   loading="lazy" + decoding="async"  don't block first paint.           */}
       <div
-        className="absolute bottom-0 left-0 w-full h-[22%] sm:h-[32%] md:h-[40%]
+        className="relative mt-10 h-[180px] sm:absolute sm:bottom-0 sm:left-0 sm:mt-0 w-full sm:h-[32%] md:h-[40%]
           [mask-image:linear-gradient(to_bottom,transparent_0%,black_28%,black_72%,transparent_100%)]"
       >
         <motion.div

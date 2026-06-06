@@ -58,6 +58,8 @@ export default function Features({ className = '' }: FeaturesProps) {
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) return; // mobile: no animations, static content
 
     const ctx = gsap.context(() => {
       // Headline animation with reveal
@@ -113,9 +115,10 @@ export default function Features({ className = '' }: FeaturesProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Headline */}
         <div ref={headlineRef} className="text-center mb-12 sm:mb-16">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
+          <motion.span
+            initial={{ opacity: 1, y: 0 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0 }}
             transition={{ duration: 0.6 }}
             className="font-mono text-xs tracking-[0.2em] text-amber-500 uppercase mb-4 block"
           >

@@ -30,15 +30,16 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) return; // mobile: no animations, static content
 
     const ctx = gsap.context(() => {
-      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: isDesktop,
+          pin: true,
           scrub: 0.6,
         },
       });
@@ -137,7 +138,7 @@ export default function FeaturedProject({ className = '' }: FeaturedProjectProps
     <section
       ref={sectionRef}
       id="projects"
-      className={`relative w-full lg:h-screen overflow-hidden ${className}`}
+      className={`relative w-full min-h-fit lg:h-screen overflow-hidden pb-12 sm:pb-20 lg:pb-0 ${className}`}
     >
       {/* Background  left opaque, right semi-transparent for 3D model peek */}
       <div className="absolute inset-0 z-0 bg-[#0B0C0E]">

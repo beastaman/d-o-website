@@ -169,15 +169,27 @@ canvas {
   /* Force GSAP-animated elements to their final state on mobile.
      reveal-card, stagger-item are the conventions used across sections. */
   .reveal-card,
-  .stagger-item {
+  .stagger-item,
+  [data-gsap-hidden] {
     opacity: 1 !important;
     transform: none !important;
+    visibility: visible !important;
   }
   /* Disable framer-motion whileInView / heavy transforms on cards */
   .no-mobile-anim {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
+  }
+  /* Sections must never overlap on mobile */
+  section {
+    position: relative;
+    scroll-snap-align: none;
+  }
+  /* Disable scroll-snap on mobile — causes jumpy/overlapping behaviour
+     when section heights vary without pin. */
+  html {
+    scroll-snap-type: none;
   }
 }
 

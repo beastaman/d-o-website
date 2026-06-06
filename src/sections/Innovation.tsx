@@ -34,15 +34,16 @@ export default function Innovation({ className = '' }: InnovationProps) {
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) return; // mobile: no animations, static content
 
     const ctx = gsap.context(() => {
-      const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
       const scrollTl = gsap.timeline({
         scrollTrigger: {
           trigger: section,
           start: 'top top',
           end: '+=130%',
-          pin: isDesktop,
+          pin: true,
           scrub: 0.6,
         },
       });
@@ -113,7 +114,7 @@ export default function Innovation({ className = '' }: InnovationProps) {
   return (
     <section
       ref={sectionRef}
-      className={`relative w-full lg:h-screen overflow-hidden bg-[#0B0C0E] py-12 sm:py-16 lg:py-0 ${className}`}
+      className={`relative w-full min-h-fit lg:h-screen overflow-hidden bg-[#0B0C0E] py-12 sm:py-16 lg:py-0 pb-16 sm:pb-24 lg:pb-0 ${className}`}
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">

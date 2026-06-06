@@ -43,6 +43,8 @@ export default function Capabilities({ className = '' }: CapabilitiesProps) {
   useLayoutEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) return; // mobile: no animations, static content
 
     const ctx = gsap.context(() => {
       // Label entrance
