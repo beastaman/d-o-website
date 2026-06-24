@@ -166,8 +166,10 @@ Investing in advanced research and development: materials innovation, design & e
 
 === CONTACT INFORMATION ===
 - Email: design.dnomotorsports@gmail.com
-- Phone: +91 98201 54567
-- Location: TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710
+- Email (Engineering): dnomotorsportsengineering@gmail.com
+- Phone: +91 98201 54567, +91 98215 36060
+- Operational / Branch Address: TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710
+- Registered Office Address: 9th Floor, 902, Madhurima CHS LTD, DN Nagar, Azad Nagar, Mumbai, Mumbai Suburban, Maharashtra 400053
 - Next Steps: Technical Consultation, Facility Visit, Pilot Proposal
 - Tagline: "Engineering the Future, Together."
 `;
@@ -193,6 +195,7 @@ const INTENT_MAP: Array<{
   { regex: /team|founder|omkar|about/i, label: 'About Us', icon: Users, to: '/about' },
   { regex: /blog|article|news/i, label: 'Blog', icon: Newspaper, to: '/blog' },
   { regex: /phone|call/i, label: 'Call +91 98201 54567', icon: PhoneIcon, href: 'tel:+919820154567' },
+  { regex: /phone|call/i, label: 'Call +91 98215 36060', icon: PhoneIcon, href: 'tel:+919821536060' },
   { regex: /email|mail/i, label: 'Email D&O', icon: MailIcon, href: 'mailto:design.dnomotorsports@gmail.com' },
 ];
 

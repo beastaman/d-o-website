@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Mail, Phone, MapPin, Linkedin, Instagram, ExternalLink, Youtube } from 'lucide-react';
@@ -34,6 +35,7 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const navigate = useNavigate();
   const footerRef = useRef<HTMLElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const columnsRef = useRef<HTMLDivElement>(null);
@@ -73,7 +75,8 @@ export default function Footer() {
     if (href.startsWith('#')) {
       document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      window.location.href = href;
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
     }
   };
 
@@ -173,23 +176,34 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="font-mono text-[10px] tracking-[0.25em] text-amber-500 uppercase mb-5">Connect</h4>
             <div className="space-y-4 mb-6">
-              <a
-                href="mailto:design.dnomotorsports@gmail.com"
-                className="flex items-start gap-3 group"
-              >
-                <Mail className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className="text-sm text-gray-400 group-hover:text-white transition-colors break-all">design.dnomotorsports@gmail.com</span>
-              </a>
-              <a
-                href="tel:+919820154567"
-                className="flex items-center gap-3 group"
-              >
-                <Phone className="w-4 h-4 text-amber-500/60 shrink-0 group-hover:text-amber-500 transition-colors" />
-                <span className="text-sm text-gray-400 group-hover:text-white transition-colors">+91 98201 54567</span>
-              </a>
+              <div className="flex items-start gap-3">
+                <Mail className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0" />
+                <div className="text-sm text-gray-400 break-all leading-relaxed">
+                  <a href="mailto:design.dnomotorsports@gmail.com" className="hover:text-amber-400 transition-colors">design.dnomotorsports@gmail.com</a>
+                  <span className="text-gray-600">, </span>
+                  <a href="mailto:dnomotorsportsengineering@gmail.com" className="hover:text-amber-400 transition-colors">dnomotorsportsengineering@gmail.com</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0" />
+                <span className="text-sm text-gray-400">
+                  <a href="tel:+919820154567" className="hover:text-amber-400 transition-colors">+91 98201 54567</a>
+                  <span className="text-gray-600">, </span>
+                  <a href="tel:+919821536060" className="hover:text-amber-400 transition-colors">+91 98215 36060</a>
+                </span>
+              </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-amber-500/60 mt-0.5 shrink-0" />
-                <span className="text-sm text-gray-400">TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710</span>
+                <div className="text-sm text-gray-400 space-y-2">
+                  <div>
+                    <div className="font-mono text-[9px] tracking-[0.22em] text-amber-500/70 uppercase mb-0.5">Operational / Branch</div>
+                    TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710
+                  </div>
+                  <div>
+                    <div className="font-mono text-[9px] tracking-[0.22em] text-amber-500/70 uppercase mb-0.5">Registered Office</div>
+                    9th Floor, 902, Madhurima CHS LTD, DN Nagar, Azad Nagar, Mumbai, Mumbai Suburban, Maharashtra 400053
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -236,18 +250,30 @@ export default function Footer() {
               © {new Date().getFullYear()} D&O Advanced Engineering. All rights reserved.
             </p>
 
-            <div className="flex items-center flex-wrap gap-4 sm:gap-6">
+            <div className="flex items-center flex-wrap gap-x-4 gap-y-2 sm:gap-x-5">
               <button
-                onClick={() => handleNavClick('#')}
+                onClick={() => handleNavClick('/privacy')}
                 className="text-xs text-gray-600 hover:text-amber-400 transition-colors font-mono tracking-wider uppercase"
               >
                 Privacy Policy
               </button>
               <button
-                onClick={() => handleNavClick('#')}
+                onClick={() => handleNavClick('/terms')}
                 className="text-xs text-gray-600 hover:text-amber-400 transition-colors font-mono tracking-wider uppercase"
               >
                 Terms
+              </button>
+              <button
+                onClick={() => handleNavClick('/refund-policy')}
+                className="text-xs text-gray-600 hover:text-amber-400 transition-colors font-mono tracking-wider uppercase"
+              >
+                Cancellation & Refund
+              </button>
+              <button
+                onClick={() => handleNavClick('/shipping-delivery')}
+                className="text-xs text-gray-600 hover:text-amber-400 transition-colors font-mono tracking-wider uppercase"
+              >
+                Shipping & Delivery
               </button>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

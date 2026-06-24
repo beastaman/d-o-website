@@ -23,6 +23,7 @@ import Manufacturing from '@/sections/Manufacturing';
 import Partners from '@/sections/Partners';
 import Quality from '@/sections/Quality';
 import Innovation from '@/sections/Innovation';
+import Pricing from '@/sections/Pricing';
 import Contact from '@/sections/Contact';
 
 // Pages
@@ -38,6 +39,10 @@ import GovtCollaborations from '@/pages/GovtCollaborations';
 import WhyDO from '@/pages/WhyDO';
 import DataLibrary from '@/pages/DataLibrary';
 import Blog from '@/pages/Blog';
+import Privacy from '@/pages/Privacy';
+import Terms from '@/pages/Terms';
+import Refund from '@/pages/Refund';
+import Shipping from '@/pages/Shipping';
 import IndrajaalRanger from '@/pages/projects/IndrajaalRanger';
 import MingoAirboat from '@/pages/projects/MingoAirboat';
 import NHAIVehicles from '@/pages/projects/NHAIVehicles';
@@ -86,6 +91,7 @@ function HomePage() {
       <Partners />
       <Quality />
       <Innovation />
+      <Pricing />
       <Contact />
     </main>
   );
@@ -153,6 +159,10 @@ function App() {
         <Route path="/why-do" element={<WhyDO />} />
         <Route path="/data-library" element={<DataLibrary />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund-policy" element={<Refund />} />
+        <Route path="/shipping-delivery" element={<Shipping />} />
         <Route path="/projects/indrajaal-ranger" element={<IndrajaalRanger />} />
         <Route path="/projects/mingo-airboat" element={<MingoAirboat />} />
         <Route path="/projects/nhai-vehicles" element={<NHAIVehicles />} />

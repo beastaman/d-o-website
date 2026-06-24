@@ -130,31 +130,42 @@ export default function Contact({ className = '' }: ContactProps) {
             <div>
               <h3 className="font-sora font-semibold text-xl text-white mb-6">Get in touch</h3>
               <div className="space-y-4">
-                <a
-                  href="mailto:design.dnomotorsports@gmail.com"
-                  className="flex items-center gap-4 text-gray-300 hover:text-amber-400 transition-colors group"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
+                <div className="flex items-center gap-4 text-gray-300">
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-amber-500" />
                   </div>
-                  <span>design.dnomotorsports@gmail.com</span>
-                </a>
-
-                <a
-                  href="tel:+919820154567"
-                  className="flex items-center gap-4 text-gray-300 hover:text-amber-400 transition-colors group"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-                    <Phone className="w-5 h-5 text-amber-500" />
+                  <div className="flex flex-wrap gap-x-1 break-all">
+                    <a href="mailto:design.dnomotorsports@gmail.com" className="hover:text-amber-400 transition-colors">design.dnomotorsports@gmail.com</a>
+                    <span className="text-gray-500">,</span>
+                    <a href="mailto:dnomotorsportsengineering@gmail.com" className="hover:text-amber-400 transition-colors">dnomotorsportsengineering@gmail.com</a>
                   </div>
-                  <span>+91 98201 54567</span>
-                </a>
+                </div>
 
                 <div className="flex items-center gap-4 text-gray-300">
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-amber-500" />
+                  </div>
+                  <span className="flex flex-wrap gap-x-1">
+                    <a href="tel:+919820154567" className="hover:text-amber-400 transition-colors">+91 98201 54567</a>
+                    <span className="text-gray-500">,</span>
+                    <a href="tel:+919821536060" className="hover:text-amber-400 transition-colors">+91 98215 36060</a>
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-4 text-gray-300">
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-amber-500" />
                   </div>
-                  <span>TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710</span>
+                  <div className="space-y-2.5">
+                    <div>
+                      <div className="font-mono text-[9px] tracking-[0.22em] text-amber-500/70 uppercase mb-0.5">Operational / Branch</div>
+                      <span>TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710</span>
+                    </div>
+                    <div>
+                      <div className="font-mono text-[9px] tracking-[0.22em] text-amber-500/70 uppercase mb-0.5">Registered Office</div>
+                      <span>9th Floor, 902, Madhurima CHS LTD, DN Nagar, Azad Nagar, Mumbai, Mumbai Suburban, Maharashtra 400053</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

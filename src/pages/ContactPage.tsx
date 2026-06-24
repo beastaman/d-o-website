@@ -104,35 +104,47 @@ export default function ContactPage() {
             {/* Contact details */}
             <div className="space-y-5">
               <h3 className="font-sora font-semibold text-white text-xl">Contact Details</h3>
-              <a href="mailto:design.dnomotorsports@gmail.com"
-                className="flex items-start gap-4 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-amber-500" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Email</div>
-                  <div className="text-gray-300 group-hover:text-amber-400 transition-colors">design.dnomotorsports@gmail.com</div>
+                  <div className="text-gray-300 flex flex-wrap gap-x-1 break-all">
+                    <a href="mailto:design.dnomotorsports@gmail.com" className="hover:text-amber-400 transition-colors">design.dnomotorsports@gmail.com</a>
+                    <span className="text-gray-600">,</span>
+                    <a href="mailto:dnomotorsportsengineering@gmail.com" className="hover:text-amber-400 transition-colors">dnomotorsportsengineering@gmail.com</a>
+                  </div>
                 </div>
-              </a>
+              </div>
 
-              <a href="tel:+919820154567" className="flex items-start gap-4 group">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5 text-amber-500" />
                 </div>
                 <div>
                   <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Phone</div>
-                  <div className="text-gray-300 group-hover:text-amber-400 transition-colors">+91 98201 54567</div>
+                  <div className="text-gray-300 flex flex-wrap gap-x-1">
+                    <a href="tel:+919820154567" className="hover:text-amber-400 transition-colors">+91 98201 54567</a>
+                    <span className="text-gray-600">,</span>
+                    <a href="tel:+919821536060" className="hover:text-amber-400 transition-colors">+91 98215 36060</a>
+                  </div>
                 </div>
-              </a>
+              </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
                   <MapPin className="w-5 h-5 text-amber-500" />
                 </div>
-                <div>
-                  <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Location</div>
-                  <div className="text-gray-300">TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710,<br />India 🇮🇳</div>
+                <div className="space-y-3">
+                  <div>
+                    <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Operational / Branch Address</div>
+                    <div className="text-gray-300">TTC Industrial Area, MIDC Industrial Area, Pawne, Navi Mumbai, Maharashtra 400710, India</div>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-gray-600 tracking-widest uppercase mb-1">Registered Office Address</div>
+                    <div className="text-gray-300">9th Floor, 902, Madhurima CHS LTD, DN Nagar, Azad Nagar, Mumbai, Mumbai Suburban, Maharashtra 400053, India</div>
+                  </div>
                 </div>
               </div>
                 <a 
